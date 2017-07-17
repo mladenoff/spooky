@@ -40,20 +40,20 @@ BeaTify is a web application inspired by Spotify built using Ruby on Rails and R
 
 ### Phase 2: Playlists Model, API, and components (2 days)
 
-**Objective:** Playlists can be created, played, edited and destroyed through the API.
+**Objective:** Playlists can be created, edited and destroyed through the API.
 
-### Phase 3: Playlist sharing (2 days)
+### Phase 3: Song search (1 days)
 
-**Objective:** Playlists can be shared by URL and within the app.
+**Objective:** Songs can be found through a search box.
 
-### Phase 4: Drag and drop playlists (2 days)
+### Phase 4: Continuous play while navigating the site (2 days)
 
-Allow organization of playlists with mouse.
+Songs play and continue to play while visiting other parts of the app.
 
 ### Phase 5: Play queue (1 day)
 
 **Objective:** Add ability to queue songs to play not off of the same record.
 
 ### Bonus Features (TBD)
-- [ ] Users can add tags to tracks
-- [ ] Recommendations based on similar listening
+- [ ] Bonus: Radio (shuffle play)
+- [ ] Bonus: Explore Page
