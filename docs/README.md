@@ -13,10 +13,9 @@ BeaTify is a web application inspired by Spotify built using Ruby on Rails and R
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Playlists/playlist CRUD
-- [ ] Audio playback and controls
-- [ ] Playlist sharing via URL
-- [ ] Drag and drop playlists
+- [ ] Song/playlist CRUD
+- [ ] Continuous play while navigating site
+- [ ] Following playlists/Friending users
 - [ ] Production README
 
 ## Design Docs
