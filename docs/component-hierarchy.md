@@ -37,3 +37,4 @@
 | '/albums/:id' | AlbumContainer |
 | '/albums' | AllAlbumsContainer |
 | '/users/:id/playlist/:id' | PlaylistContainer |
+| '/users/:id' | UserContainer |

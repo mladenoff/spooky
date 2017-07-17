@@ -22,9 +22,9 @@ column name | data type | details
 id          | integer   | not null, primary key
 name        | string    | not null
 artist_id   | integer   | not null, foreign key (references artists), indexed
-record_id   | integer   | not null, foreign key (references records), indexed
+album_id   | integer   | not null, foreign key (references albums), indexed
 
-## records
+## albums
 column name | data type | details
 ------------|-----------|-------
 id          | integer   | not null, primary key
@@ -53,4 +53,4 @@ column name   | data type | details
 id            | integer   | not null, primary key
 follower_id   | integer   | not null, foreign key (references users), indexed
 followee_id   | integer   | not null, foreign key (references users), indexed
-followee_type | string    | not null //marks followee as either playlists 
+followee_type | string    | not null //marks followee as either playlists

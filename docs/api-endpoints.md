@@ -11,6 +11,7 @@
 ### Users
 
 - `GET /api/users` - retrieve all users
+- `GET /api/users/:id` - retrieve a user
 - `POST /api/users` - create a user
 - `PATCH /api/users/:id` - update a user
 - `DELETE /api/users/:id` - delete a user
@@ -21,11 +22,15 @@
 - `DELETE /api/session` - delete a session (logout)
 
 ### Playlists
-- `GET /api/playlists` - retrieve the current user's playlists
+- `GET /api/playlists` - retrieve a user's playlists
 - `POST /api/playlists` - create a playlist
 - `GET /api/playlists/:id` - retrieve a playlist
 - `PATCH /api/playlists/:id` - update a playlist
 - `DELETE /api/playlists/:id` - delete a playlist
+
+### Tracks
+
+- `GET /api/tracks/:id` - retrieve a track
 
 ### Albums
 
@@ -34,3 +39,8 @@
 ### Artists
 
 - `GET /api/artist` - retrieve an artists albums
+
+### Follows
+
+- - `POST /api/follows` - create a new follow
+- `DELETE /api/follows` - delete a follow
