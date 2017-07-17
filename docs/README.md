@@ -1,6 +1,6 @@
 # BeaTify
 
-[Heroku link][heroku]
+[~~Heroku link~~][heroku] (not yet active)
 
 [Trello link][trello]
 
@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-BeaTify is a web application inspired by Spotify built using Ruby on Rails and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+BeaTify is a web application inspired by Spotify built using Ruby on Rails and React/Redux. This app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
@@ -25,11 +25,11 @@ BeaTify is a web application inspired by Spotify built using Ruby on Rails and R
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 
 
 ## Implementation Timeline
