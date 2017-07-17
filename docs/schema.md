@@ -45,3 +45,12 @@ column name | data type | details
 ------------|-----------|-------
 id          | integer   | not null, primary key
 track_id    | integer   | not null, foreign key (references tracks), indexed
+
+## follows
+
+column name   | data type | details
+--------------|-----------|---------------
+id            | integer   | not null, primary key
+follower_id   | integer   | not null, foreign key (references users), indexed
+followee_id   | integer   | not null, foreign key (references users), indexed
+followee_type | string    | not null //marks followee as either playlists 

@@ -50,9 +50,9 @@ BeaTify is a web application inspired by Spotify built using Ruby on Rails and R
 
 Songs play and continue to play while visiting other parts of the app.
 
-### Phase 5: Play queue (1 day)
+### Phase 5: Following playlists and users (2 day)
 
-**Objective:** Add ability to queue songs to play not off of the same record.
+**Objective:** Add ability to follow playlists and users.
 
 ### Bonus Features (TBD)
 - [ ] Bonus: Radio (shuffle play)
