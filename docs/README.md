@@ -1,10 +1,10 @@
 # Spookify
 
-[~~Heroku link~~][heroku] (not yet active)
+[Heroku link][heroku]
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://www.spookify.herokuapp.com
 [trello]: https://trello.com/b/EXU09EWm/spookify
 
 ## Minimum Viable Product
