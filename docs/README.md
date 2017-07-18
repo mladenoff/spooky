@@ -1,8 +1,8 @@
 # Spookify
 
-[Heroku link][heroku]
+[Heroku][heroku]
 
-[Trello link][trello]
+[Trello][trello]
 
 [heroku]: http://www.spookify.herokuapp.com
 [trello]: https://trello.com/b/EXU09EWm/spookify
