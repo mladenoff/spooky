@@ -1,15 +1,15 @@
-# BeaTify
+# Spookify
 
 [~~Heroku link~~][heroku] (not yet active)
 
 [Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/b/EXU09EWm/beatify
+[trello]: https://trello.com/b/EXU09EWm/spookify
 
 ## Minimum Viable Product
 
-BeaTify is a web application inspired by Spotify built using Ruby on Rails and React/Redux. This app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+Spookify is a web application inspired by Spotify built using Ruby on Rails and React/Redux. This app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login

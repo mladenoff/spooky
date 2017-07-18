@@ -42,5 +42,5 @@
 
 ### Follows
 
-- `POST /api/follows` - create a new follow
-- `DELETE /api/follows` - delete a follow
+- `POST /api/playlists/:id/follows` - create a new follow
+- `DELETE /api/playlists/:id/follows` - delete a follow
