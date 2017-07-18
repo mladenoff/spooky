@@ -14,6 +14,7 @@ Spookify is a web application inspired by Spotify built using Ruby on Rails and 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Song/playlist CRUD
+- [ ] Search
 - [ ] Continuous play while navigating site
 - [ ] Following playlists/Friending users
 - [ ] Production README
