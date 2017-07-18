@@ -1,6 +1,6 @@
 import {
   RECEIVE_CURRENT_USER,
-  RECEIVE_ERRORS
+  RECEIVE_SESSION_ERRORS
 } from '../action/session_actions';
 
 const defaultState = () => ({
@@ -12,11 +12,8 @@ const SessionReducer = (state = defaultState(), action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      // return Object.assign({}, state, {currentUser: action.currentUser,
-      //   errors: []});
       return {currentUser: action.currentUser, errors: []};
-    case RECEIVE_ERRORS:
-      // return state;
+    case RECEIVE_SESSION_ERRORS:
       return {currentUser: null, errors: action.errors};
     default:
       return state;
