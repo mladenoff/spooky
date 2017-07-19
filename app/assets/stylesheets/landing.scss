@@ -1,46 +1,99 @@
 $red: #d71e3a;
-
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-image: url(http://res.cloudinary.com/dsgktnrbx/image/upload/v1500503210/pexels-photo-477054_lhczrs.jpg);
+  background-size: cover;
+  background-position: center bottom;
+}
+.landing-header {
+  padding: 25px;
+  background: rgba(255, 255, 255, .1);
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+
+.landing-nav {
+  width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list li {
+  margin-left: 10px;
 }
 
 .logo-container {
+  opacity: 1;
   display: flex;
   align-items: center;
-
 }
+
 .logo {
-  height: 80px;
-  width: 80px;
-  border-radius: 45px;
+  height: 40px;
+  width: 40px;
   padding: 5px;
+  border-radius: 25px;
   display: inline;
   background-color: $red;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 700;
   font-family: "Roboto Condensed", Arial, sans-serif;
-  margin-left: 45px;
+  margin-left: 30px;
   text-transform: uppercase;
-  letter-spacing: 30px;
+  letter-spacing: 20px;
 }
 
 .landing-button {
   background-color: $red;
   text-transform: uppercase;
   color: #fff;
-  height: 450px;
-  width: 40%;
+  width: 120px;
   padding: 5px;
-  margin: 5px;
+  margin: 10px;
   font-family: "Roboto", Arial, sans-serif;
+  letter-spacing: 5px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.landing-button-light {
+  text-transform: uppercase;
+  color: #fff;
+  width: 120px;
+  padding: 4px;
+  margin: 10px;
+  font-family: "Roboto", Arial, sans-serif;
+  letter-spacing: 5px;
+  font-size: 14px;
+  background: 0;
+  border: 1px solid white;
+  text-align: center;
+  padding-left: 10px;
 }
 
 .loginButtonContainer {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-style: italic;
 }
