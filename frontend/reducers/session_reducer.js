@@ -1,7 +1,7 @@
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_SESSION_ERRORS
-} from '../action/session_actions';
+} from '../actions/session_actions';
 
 const defaultState = () => ({
   currentUser: null,
