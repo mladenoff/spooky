@@ -6,12 +6,15 @@ import SessionFormContainer from './session_form/session_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
+  <div className="container">
+    <div>
     <h1>🔦 Spookify</h1>
+    <br/>
     <LandingContainer />
     <br/>
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
+    </div>
   </div>
 );
 
