@@ -4,8 +4,11 @@ import { Link } from 'react-router-dom';
 const sessionLinks = () => (
   <div>
     <h2>"Music, it's me."</h2>
-    <Link to="/login">Sign in</Link>&nbsp;|&nbsp;
-    <Link to="/signup">Sign up</Link>
+    <br/>
+    <div id="loginButtonContainer">
+    <Link to="/login" className="landing-button">Sign in</Link>
+    <Link to="/signup" className="landing-button">Sign up</Link>
+    </div>
   </div>
 );
 
@@ -17,7 +20,9 @@ const personalLanding = (currentUser, logout) => (
 );
 
 const Landing = ({currentUser, logout}) => (
-  currentUser ? personalLanding(currentUser, logout) : sessionLinks()
+  <div>
+  {currentUser ? personalLanding(currentUser, logout) : sessionLinks()}
+  </div>
 );
 
 export default Landing;

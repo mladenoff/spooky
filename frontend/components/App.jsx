@@ -8,13 +8,18 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div className="container">
     <div>
-    <h1>🔦 Spooky</h1>
-    <br/>
-    <LandingContainer />
-    <br/>
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
-    </div>
+    <div className="logo-container">
+      <img src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500489690/flashlight_qmeggn.svg" className="logo"/>
+      <h1>
+         Spooky
+        </h1>
+      </div>
+      <br/>
+      <LandingContainer />
+      <br/>
+      <AuthRoute path="/login" component={SessionFormContainer} />
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+</div>
   </div>
 );
 
