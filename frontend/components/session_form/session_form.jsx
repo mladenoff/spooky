@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Spookify!
+          Welcome to Spooky!
           <br/>
           Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}

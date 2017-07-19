@@ -1,5 +1,5 @@
 {
-  "name": "spookify",
+  "name": "spooky",
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
@@ -18,15 +18,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mladenoff/spookify.git"
+    "url": "git+https://github.com/mladenoff/spooky.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mladenoff/spookify/issues"
+    "url": "https://github.com/mladenoff/spooky/issues"
   },
-  "homepage": "https://github.com/mladenoff/spookify#readme",
+  "homepage": "https://github.com/mladenoff/spooky#readme",
   "dependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",

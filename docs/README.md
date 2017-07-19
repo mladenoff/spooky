@@ -1,15 +1,15 @@
-# Spookify
+# Spooky
 
 [Heroku][heroku]
 
 [Trello][trello]
 
-[heroku]: http://www.spookify.herokuapp.com
-[trello]: https://trello.com/b/EXU09EWm/spookify
+[heroku]: http://www.get-spooked.herokuapp.com
+[trello]: https://trello.com/b/EXU09EWm/spooky
 
 ## Minimum Viable Product
 
-Spookify is a web application inspired by Spotify built using Ruby on Rails and React/Redux. This app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
+Spooky is a web application inspired by Spotify built using Ruby on Rails and React/Redux. This app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
