@@ -1,12 +1,23 @@
-.landing-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.landing-bg {
   height: 100vh;
   background-image: url(http://res.cloudinary.com/dsgktnrbx/image/upload/v1500512920/pexels-photo-489266_wdjvkh.jpg);
   background-size: cover;
   background-position: center bottom;
+  display: flex;
 }
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px);
+  width: 100%;
+  margin-top: auto;
+  overflow-y: auto;
+
+}
+
 .landing-header {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -57,6 +68,10 @@
 .logo-container {
   display: flex;
   align-items: center;
+  transition: all 0.5s;
+  &:hover{
+    opacity: .05;
+  }
 }
 
 .logo {
@@ -128,17 +143,18 @@ h1 {
 .quote {
   font-size: 80px;
   font-weight: 300;
-  padding: 40px;
+  margin-bottom: 40px;
   font-family: "Roboto Condensed", Arial, sans-serif;
   text-transform: uppercase;
   word-spacing: 30px;
 }
 
 .login-input {
-  border: 1px solid white;
+  border-bottom: 1px solid white;
   margin: 5px;
   padding: 5px;
   background: rgba(255, 255, 255, .2);
+  font-weight: 300;
 }
 
 .submit {
@@ -152,9 +168,10 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: center;
-  &:hover { color: $red;
-    background: #fff;
-  }
+  transition: all 0.5s;
+    &:hover {
+      background: rgba(0, 0, 0, .25)
+    }
 }
 
 .session-form {

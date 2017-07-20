@@ -2,7 +2,7 @@ import React from 'react';
 
 const FooterNav = () => (
   <nav>
-    Hello world.
+    <span>The music is not what it seems.</span>
   </nav>
 );
 
