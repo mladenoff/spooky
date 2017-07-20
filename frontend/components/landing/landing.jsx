@@ -3,13 +3,14 @@ import { Link, Route } from 'react-router-dom';
 
 class SessionLinks extends React.Component {
   constructor(props) {
-  super(props);
-  // this.handleClick = this.handleClick.bind(this);
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  // handleClick() {
-  //
-  // }
+  handleClick() {
+    const guestUser = {user: {username: 'squeeze_fan', password: 'password'}};
+    this.props.login(guestUser);
+  }
 
   render() {
     return(
@@ -18,7 +19,7 @@ class SessionLinks extends React.Component {
       <br/>
       <div className="login-button-container">
       <Link to="/signup" className="landing-button">Sign up</Link>
-      <Link to="/login" className="landing-button-light">Demo</Link>
+      <button onClick={this.handleClick} className="landing-button-light">Demo login</button>
       </div>
     </div>);
   }
@@ -27,7 +28,7 @@ class SessionLinks extends React.Component {
 const personalLanding = (currentUser, logout) => (
   <div>
   <h2>{currentUser.username}, it's music.</h2>
-  <button className="top-level-button" onClick={logout}>
+  <button className="landing-button" onClick={logout}>
     Log out
   </button>
   </div>

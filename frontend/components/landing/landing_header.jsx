@@ -22,9 +22,11 @@ const LandingHeader = (props) => (
         <li className="header-nav-link">Help</li>
         <li className="header-nav-link">Download</li>
         <li>|</li>
-        <li className="header-nav-link"><Link to="/login">Log in</Link></li>
+        <li className="header-nav-link">
+          { props.currentUser ? <Link to="/logout">Log out</Link> : <Link to="/login">Log in</Link> }
+        </li>
       </ul>
-      
+
     </nav>
 
   </header>
