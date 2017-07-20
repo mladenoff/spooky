@@ -207,3 +207,10 @@ h1 {
 footer {
   width: 100vw;
 }
+
+@media only screen and (max-width: 900px) {
+    /* For mobile phones: */
+  .login-button-container {
+        flex-direction: column;
+    }
+}
