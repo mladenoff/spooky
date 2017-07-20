@@ -3,18 +3,20 @@ import {Route} from 'react-router-dom';
 
 import LandingContainer from './landing/landing_container';
 import SessionFormContainer from './session_form/session_form_container';
-import LandingHeader from './landing/landing_header';
+import LandingHeaderContainer from './landing/landing_header_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <LandingHeader />
+    <LandingHeaderContainer />
     <div className="container">
       <br/>
-      <LandingContainer />
       <br/>
+      <div className="landing-panel">
+      <Route exact path="/" component={LandingContainer} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      </div>
     </div>
   </div>
 );

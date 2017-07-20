@@ -5,9 +5,9 @@ const sessionLinks = () => (
   <div>
     <h2 className="quote">"Music, it's me."</h2>
     <br/>
-    <div className="loginButtonContainer">
-    <Link to="/login" className="landing-button">Sign up</Link>
-    <Link to="/signup" className="landing-button-light">Demo</Link>
+    <div className="login-button-container">
+    <Link to="/signup" className="landing-button">Sign up</Link>
+    <Link to="/login" className="landing-button-light">Demo</Link>
     </div>
   </div>
 );

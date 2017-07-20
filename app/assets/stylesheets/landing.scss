@@ -4,18 +4,26 @@ $red: #d71e3a;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url(http://res.cloudinary.com/dsgktnrbx/image/upload/v1500503210/pexels-photo-477054_lhczrs.jpg);
+  background-image: url(http://res.cloudinary.com/dsgktnrbx/image/upload/v1500512920/pexels-photo-489266_wdjvkh.jpg);
   background-size: cover;
   background-position: center bottom;
 }
 .landing-header {
   padding: 25px;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(0, 0, 0, .1);
   width: 100%;
   position: fixed;
   display: flex;
   justify-content: center;
   z-index: 3;
+}
+
+.landing-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .1);
+  width: 400px; height: 200px;
 }
 
 .landing-nav {
@@ -46,6 +54,13 @@ $red: #d71e3a;
   border-radius: 25px;
   display: inline;
   background-color: $red;
+}
+
+.logo-alt {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  display: inline;
 }
 
 h1 {
@@ -85,7 +100,7 @@ h1 {
   padding-left: 10px;
 }
 
-.loginButtonContainer {
+.login-button-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -96,4 +111,24 @@ h1 {
   font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-style: italic;
+}
+
+.login-input {
+  border: 1px solid white;
+  margin: 5px;
+  background: rgba(255, 255, 255, .2);
+  padding: 5px;
+}
+
+.submit {
+  background-color: $red;
+  text-transform: uppercase;
+  color: #fff;
+  width: 120px;
+  padding: 5px;
+  margin: 10px;
+  font-family: "Roboto", Arial, sans-serif;
+  letter-spacing: 5px;
+  font-size: 14px;
+  padding-left: 10px;
 }

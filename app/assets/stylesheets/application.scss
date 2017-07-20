@@ -13,10 +13,15 @@
  *= require_tree .
  *= require_self
  */
+@import "./base/colors";
 
 body {
   font-family: "Roboto", Arial, sans-serif;
   text-align: center;
-  background-color: #1a1a1a;
+  background-color: $black;
   color: white;
+}
+
+.inline-link {
+  color: $red;
 }

@@ -31,9 +31,9 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
+      return (<span><Link to="/signup" className="inline-link">sign up</Link> instead</span>);
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return (<span><Link to="/login" className="inline-link">log in</Link> instead</span>);
     }
   }
 
@@ -58,23 +58,25 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Username
+            <label value="username">
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="USERNAME"
                 />
             </label>
             <br/>
-            <label>Password
+            <label value="password">
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                                placeholder="PASSWORD"
                 />
             </label>
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="submit"/>
           </div>
         </form>
       </div>
