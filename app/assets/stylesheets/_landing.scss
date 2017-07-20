@@ -4,6 +4,8 @@
   background-size: cover;
   background-position: center bottom;
   display: flex;
+  overflow: hidden;
+  flex-direction: column;
 }
 
 .landing-container {
@@ -13,9 +15,8 @@
   justify-content: center;
   height: calc(100vh - 100px);
   width: 100%;
-  margin-top: auto;
+  margin-top: 100px;
   overflow-y: auto;
-
 }
 
 .landing-header {
@@ -27,6 +28,8 @@
   display: flex;
   justify-content: center;
   z-index: 3;
+  box-sizing: border-box;
+  height: 100px;
 }
 
 .landing-panel {
@@ -50,6 +53,7 @@
 .nav-list {
   display: flex;
   font-weight: 300;
+  margin: 10px;
 }
 
 .nav-list li {
@@ -69,6 +73,7 @@
   display: flex;
   align-items: center;
   transition: all 0.5s;
+  margin: 10px;
   &:hover{
     opacity: .05;
   }
@@ -183,6 +188,7 @@ h1 {
   flex-direction: column;
   padding: 5px;
   background: rgba(0, 0, 0, .1);
+  min-height: 400px;
 }
 
 #welcome-text {
@@ -211,6 +217,35 @@ footer {
 @media only screen and (max-width: 900px) {
     /* For mobile phones: */
   .login-button-container {
-        flex-direction: column;
-    }
+    flex-direction: column;
+  }
+  .landing-nav {
+    flex-direction: column;
+  }
+  .nav-list li {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .landing-header {
+    position: static;
+    margin: inherit;
+    height: auto;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+    /* For mobile phones: */
+  .landing-header {
+    position: static;
+    margin: inherit;
+  }
+
+  .landing-container {
+    margin: auto;
+    justify-content: start;
+    flex-direction: column;
+  }
+  .login-button-container {
+    flex-direction: column;
+  }
 }
