@@ -37,13 +37,13 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return (
         <span>
-          <Link to="/signup" className="inline-link">sign up</Link> instead
+          Don't have an account?<Link to="/signup" className="inline-link"> Sign up</Link>
         </span>
       );
     } else {
       return (
         <span>
-          <Link to="/login" className="inline-link">log in</Link> instead
+          Already have an account?<Link to="/login" className="inline-link"> Log in</Link>
         </span>
       );
     }
@@ -62,37 +62,37 @@ class SessionForm extends React.Component {
 
   render(){
     return (
-        <form onSubmit={this.handleSubmit} className="session-form">
-          <div id="welcome-text">
-            <span>Welcome to Spooky!</span>
-            <br/>
-            <span>Please {this.props.formType} or {this.navLink()}
-              {this.renderErrors()}
-            </span>
-          </div>
-          <div className="login-form">
-            <br/>
-            <label value="username">
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-                placeholder="USERNAME"
-                />
-            </label>
-            <br/>
-            <label value="password">
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-                placeholder="PASSWORD"
-                />
-            </label>
-            <br/>
-            <input type="submit" value="Submit" className="submit"/>
-          </div>
-        </form>
+      <form onSubmit={this.handleSubmit} className="session-form">
+        <div id="welcome-text">
+          <span>Get spooked.</span>
+          <br/>
+          <span id="session-errors">
+            {this.renderErrors()}
+          </span>
+        </div>
+        <br/>
+        <label value="username">
+          <input type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            className="login-input"
+            placeholder="USERNAME"
+            />
+        </label>
+        <br/>
+        <label value="password">
+          <input type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            className="login-input"
+            placeholder="PASSWORD"
+            />
+        </label>
+        <br/>
+        <input type="submit" value="Submit" className="submit"/>
+        <br/>
+        <span id="welcome-text-small">{this.navLink()}</span>
+      </form>
     );
   }
 }

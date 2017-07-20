@@ -15,7 +15,7 @@ class SessionLinks extends React.Component {
   render() {
     return(
     <div>
-      <h2 className="quote">"Music, it's me."</h2>
+      <h2 className="quote">The music is out there</h2>
       <br/>
       <div className="login-button-container">
       <Link to="/signup" className="landing-button">Sign up</Link>
@@ -27,10 +27,10 @@ class SessionLinks extends React.Component {
 
 const personalLanding = (currentUser, logout) => (
   <div>
-  <h2>{currentUser.username}, it's music.</h2>
-  <button className="landing-button" onClick={logout}>
-    Log out
-  </button>
+    <h2>{currentUser.username}, it's music.</h2>
+    <button className="landing-button" onClick={logout}>
+      Log out
+    </button>
   </div>
 );
 
