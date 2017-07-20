@@ -15,11 +15,11 @@ const LandingHeader = (props) => (
       </div>
       </Link>
       <ul className="nav-list">
-        <li>Lorem</li>
-        <li>Ipsum</li>
-        <li>Dolor</li>
+        <li className="header-nav-link">Premium</li>
+        <li className="header-nav-link">Help</li>
+        <li className="header-nav-link">Download</li>
         <li>|</li>
-        <li><Link to="/login">Log in</Link></li>
+        <li className="header-nav-link"><Link to="/login">Log in</Link></li>
       </ul>
     </nav>
   </header>

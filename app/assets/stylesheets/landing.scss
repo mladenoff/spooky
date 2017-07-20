@@ -24,6 +24,8 @@ $red: #d71e3a;
   justify-content: center;
   background: rgba(0, 0, 0, .1);
   width: 400px; height: 200px;
+  margin: 100px;
+  padding: 15px;
 }
 
 .landing-nav {
@@ -35,14 +37,23 @@ $red: #d71e3a;
 
 .nav-list {
   display: flex;
+  font-weight: 300;
 }
 
 .nav-list li {
   margin-left: 10px;
 }
 
+.nav-list li.header-nav-link {
+  margin-left: 10px;
+  transition: all 0.5s;
+  font-weight: bold;
+  &:hover {
+    color: $red;
+  }
+}
+
 .logo-container {
-  opacity: 1;
   display: flex;
   align-items: center;
 }
@@ -76,28 +87,38 @@ h1 {
   background-color: $red;
   text-transform: uppercase;
   color: #fff;
-  width: 120px;
+  width: 160px;
   padding: 5px;
+  padding-left: 10px;
   margin: 10px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   letter-spacing: 5px;
   font-size: 14px;
-  padding-left: 10px;
+  box-sizing: border-box;
+  transition: all 0.5s;
+    &:hover { color: $red;
+      background: #fff;
+    }
 }
 
 .landing-button-light {
   text-transform: uppercase;
   color: #fff;
-  width: 120px;
+  width: 160px;
   padding: 4px;
+  padding-left: 9px;
   margin: 10px;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   letter-spacing: 5px;
   font-size: 14px;
   background: 0;
   border: 1px solid white;
   text-align: center;
-  padding-left: 10px;
+  box-sizing: border-box;
+  transition: all 0.5s;
+    &:hover { color: #000;
+      background: #fff;
+    }
 }
 
 .login-button-container {
@@ -109,7 +130,7 @@ h1 {
 
 .quote {
   font-family: "Roboto", Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   font-style: italic;
 }
 
@@ -131,4 +152,20 @@ h1 {
   letter-spacing: 5px;
   font-size: 14px;
   padding-left: 10px;
+  &:hover { color: $red;
+    background: #fff;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+#welcome-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }

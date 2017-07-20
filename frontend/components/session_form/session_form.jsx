@@ -17,6 +17,10 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return event => this.setState({
       [field]: event.currentTarget.value
@@ -52,10 +56,13 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Spooky!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
-          {this.renderErrors()}
+          <div id="welcome-text">
+            <span>Welcome to Spooky!</span>
+            <br/>
+            <span>Please {this.props.formType} or {this.navLink()}
+              {this.renderErrors()}
+            </span>
+          </div>
           <div className="login-form">
             <br/>
             <label value="username">
@@ -72,7 +79,7 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-                                placeholder="PASSWORD"
+                placeholder="PASSWORD"
                 />
             </label>
             <br/>
