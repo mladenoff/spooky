@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 const LandingHeader = (props) => (
   <header className="landing-header">
+
     <nav className="landing-nav">
+
       <Link to="/">
       <div className="logo-container">
         <img
@@ -14,6 +16,7 @@ const LandingHeader = (props) => (
         </h1>
       </div>
       </Link>
+
       <ul className="nav-list">
         <li className="header-nav-link">Premium</li>
         <li className="header-nav-link">Help</li>
@@ -21,7 +24,9 @@ const LandingHeader = (props) => (
         <li>|</li>
         <li className="header-nav-link"><Link to="/login">Log in</Link></li>
       </ul>
+      
     </nav>
+
   </header>
 );
 

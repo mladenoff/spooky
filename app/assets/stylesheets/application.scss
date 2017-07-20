@@ -10,19 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
- */
- 
-@import "./base/colors";
 
-body {
-  font-family: "Roboto", Arial, sans-serif;
-  text-align: center;
-  background-color: $black;
-  color: white;
-}
-
-.inline-link {
-  color: $red;
-}
+*= require main
+*= require_self
+*/

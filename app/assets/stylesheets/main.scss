@@ -1,0 +1,14 @@
+@import "./base/reset";
+@import "./base/colors";
+@import "./landing.scss";
+
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-color: $black;
+  color: white;
+}
+
+.inline-link {
+  color: $red;
+}
