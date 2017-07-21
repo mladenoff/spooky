@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TrackItem = () => (
-  <li className="track-item">"Mulder, it's me."</li>
-);
+const TrackItem = ({track}) => {
+  return(<li className="track-item">{track.artist} | {track.title}</li>);
+};
 
 export default TrackItem;
