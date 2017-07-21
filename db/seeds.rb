@@ -9,6 +9,7 @@
 User.destroy_all
 
 guest = User.create(username: 'squeeze_fan', password: 'password', name: 'Eugene Tooms')
+naomi = User.create(username: 'nae', password: 'password', name: 'Tiny Mouse')
 
 Artist.destroy_all
 
