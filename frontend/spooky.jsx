@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+import { requestAllTracks } from './actions/track_actions';
+
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
   if (window.currentUser) {
@@ -14,5 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.requestAllTracks = requestAllTracks;
   ReactDOM.render(<Root store={ store }/>, root);
 });

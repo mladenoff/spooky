@@ -25,4 +25,5 @@ spaceship_parts_t = Track.create(title: 'Spaceship Parts',
                                  artist_id: guts.id,
                                  album_id: spaceship_parts_a.id,
                                  url: 'http://res.cloudinary.com/dsgktnrbx/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
-                                 img_url: 'http://res.cloudinary.com/dsgktnrbx/image/upload/v1500605880/Spaceship_Parts_tkbpyf.jpg')
+                                 img_url: 'http://res.cloudinary.com/dsgktnrbx/image/upload/v1500605880/Spaceship_Parts_tkbpyf.jpg',
+                                 sequence: 1)
