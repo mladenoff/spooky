@@ -9,7 +9,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  artist_id  :integer
+#  img_url    :string
 #
 
 class Track < ApplicationRecord
+  belongs_to :artist
+  belongs_to :album
 end

@@ -8,4 +8,20 @@
 
 User.destroy_all
 
-User.create(username: 'squeeze_fan', password: 'password', name: 'Eugene Tooms')
+guest = User.create(username: 'squeeze_fan', password: 'password', name: 'Eugene Tooms')
+
+Artist.destroy_all
+
+guts = Artist.create(name: 'GUTS')
+
+Album.destroy_all
+
+spaceship_parts_a = Album.create(title: 'Spaceship Parts')
+
+Track.destroy_all
+
+spaceship_parts_t = Track.create(title: 'Spaceship Parts',
+                                 artist_id: guts.id,
+                                 album_id: spaceship_parts_a.id,
+                                 url: 'http://res.cloudinary.com/dsgktnrbx/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
+                                 img_url: 'http://res.cloudinary.com/dsgktnrbx/image/upload/v1500605880/Spaceship_Parts_tkbpyf.jpg')

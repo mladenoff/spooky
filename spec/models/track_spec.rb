@@ -9,6 +9,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  artist_id  :integer
+#  img_url    :string
 #
 
 require 'rails_helper'
