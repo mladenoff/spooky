@@ -7,16 +7,55 @@
   display: block;
   position: fixed;
   vertical-align: baseline;
+  z-index: 10;
+  height: 100vh;
+  width: 220px;
+  background-color: $black;
 }
 
 .player .nav-bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 24px 24px 119px 24px;
-  width: 220px;
+  height: 100%;
+  padding: 24px 24px 110px 24px;
+  box-sizing: border-box;
 }
 
 .logo-small {
   @extend .logo;
+}
+
+.main-view-container {
+  padding-left: 220px;
+  padding-bottom: 100px;
+  position: fixed;
+  background: linear-gradient($black, black);
+  height: 100%;
+}
+
+.main-nav {
+  flex-grow: 1;
+}
+
+.nav-bar-button {
+  @extend .submit;
+}
+
+.track-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.widget {
+  height: 100px;
+}
+
+.widget-container {
+  background-color: $black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 20;
 }
