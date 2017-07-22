@@ -10,7 +10,7 @@
   z-index: 10;
   height: 100vh;
   width: 220px;
-  background-color: $black;
+  background-color: rgba(26,26,26,.35);
 }
 
 .player .nav-bar {
@@ -24,6 +24,11 @@
 
 .logo-small {
   @extend .logo;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  padding: 3.2px;
+  box-sizing: border-box;
 }
 
 .main-view-container {
@@ -32,6 +37,7 @@
   position: fixed;
   background: linear-gradient($black, black);
   height: 100%;
+  width: 100%;
 }
 
 .main-nav {
@@ -46,10 +52,15 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
 }
 
 .widget {
   height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .widget-container {

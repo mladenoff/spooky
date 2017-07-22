@@ -1,5 +1,6 @@
-export const RECEIVE_PLAYBACK = 'RECEIVE_PLAYBACK';
+export const ENQUEUE_PLAYBACK = 'ENQUEUE_PLAYBACK';
 
-export const receivePlayback = () => ({
-  
+export const enqueuePlayback = tracks => ({
+  type: ENQUEUE_PLAYBACK,
+  tracks,
 });

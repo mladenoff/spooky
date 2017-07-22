@@ -4,7 +4,11 @@ import { Howl } from 'howler';
 import TrackItem from './track_item';
 
 class Tracks extends React.Component {
-  componentDidMount() {
+  constructor(props) {
+  super(props);
+  }
+
+  componentWillMount() {
     this.props.requestAllTracks();
   }
 
@@ -18,12 +22,15 @@ class Tracks extends React.Component {
     });
 
     window.sound = sound;
+    if (this.props.fetching) {
+        return "Fetching...";
+    }
 
     return (
       <div className="main-view-container">
         <div className="tracks">
         <ul className="track-list">
-          {tracks.map(track => <TrackItem key={track.id} track={track}/>)}
+            {tracks.map(track => <TrackItem key={track.id} track={track} tracks={tracks} enqueuePlayback={this.props.enqueuePlayback}/>)}
         </ul>
       </div>
     </div>

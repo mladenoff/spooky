@@ -6,7 +6,9 @@ class NavBar extends React.Component {
     return(
       <div className="widget-container">
         <div className="widget">
-          <ReactHowler />
+          { this.props.currentTrack !== null
+            ? <ReactHowler src={this.props.playQueue[this.props.currentTrack].url}/ >
+            : "No current track." }
         </div>
       </div>
     );
