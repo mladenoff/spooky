@@ -14,16 +14,35 @@ naomi = User.create(username: 'nae', password: 'password', name: 'Tiny Mouse')
 Artist.destroy_all
 
 guts = Artist.create(name: 'GUTS')
+aertime = Artist.create(name: 'AERTIME')
+double_ewes = Artist.create(name: 'Double Ewes')
 
 Album.destroy_all
 
-spaceship_parts_a = Album.create(title: 'Spaceship Parts')
+spaceship_parts_a = Album.create(title: 'Spaceship Parts',
+  img_url: 'http://res.cloudinary.com/dsgktnrbx/image/upload/v1500605880/Spaceship_Parts_tkbpyf.jpg',)
+
+train_tracks_a = Album.create(title: 'train tracks',
+  img_url: 'http://res.cloudinary.com/dsgktnrbx/image/upload/v1500751832/train_tracks_hw45yi.jpg',)
+caravilla_a = Album.create(title: 'Caravilla',
+  img_url: 'http://res.cloudinary.com/dsgktnrbx/image/upload/v1500751832/caravilla_udb0dy.jpg',)
 
 Track.destroy_all
 
+hippzer_t = Track.create(title: 'hippzer',
+  artist_id: aertime.id,
+  album_id: train_tracks_a.id,
+  url: 'http://res.cloudinary.com/dsgktnrbx/video/upload/v1500751835/hippzer_ujcjkc.mp3',
+  sequence: 2)
+
+caravilla_t = Track.create(title: 'Caravilla',
+  artist_id: double_ewes.id,
+  album_id: caravilla_a.id,
+  url: 'http://res.cloudinary.com/dsgktnrbx/video/upload/v1500751929/caravilla_vyaq88.mp3',
+  sequence: 2)
+
 spaceship_parts_t = Track.create(title: 'Spaceship Parts',
-                                 artist_id: guts.id,
-                                 album_id: spaceship_parts_a.id,
-                                 url: 'http://res.cloudinary.com/dsgktnrbx/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
-                                 img_url: 'http://res.cloudinary.com/dsgktnrbx/image/upload/v1500605880/Spaceship_Parts_tkbpyf.jpg',
-                                 sequence: 1)
+  artist_id: guts.id,
+  album_id: spaceship_parts_a.id,
+  url: 'http://res.cloudinary.com/dsgktnrbx/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
+  sequence: 1)

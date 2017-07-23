@@ -29,8 +29,9 @@ class Tracks extends React.Component {
     return (
       <div className="main-view-container">
         <div className="tracks">
+          <h3>ALL TRACKS</h3>
         <ul className="track-list">
-            {tracks.map(track => <TrackItem key={track.id} track={track} tracks={tracks} enqueuePlayback={this.props.enqueuePlayback}/>)}
+            {tracks.map((track, idx) => <TrackItem key={track.id} track={track} tracks={tracks} enqueuePlayback={this.props.enqueuePlayback} idx={idx}/>)}
         </ul>
       </div>
     </div>

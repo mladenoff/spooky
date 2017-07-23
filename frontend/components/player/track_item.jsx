@@ -8,11 +8,16 @@ class TrackItem extends React.Component {
   }
 
   handlePlayClick() {
-    this.props.enqueuePlayback(this.props.tracks);
+    this.props.enqueuePlayback(this.props.tracks.slice(this.props.idx));
   }
 
   render() {
-    return(<li className="track-item">{this.props.track.artist} • {this.props.track.title} <button className="play" onClick={this.handlePlayClick}>Play</button></li>);
+    return(<li className="track-item">
+      <div className="red-background">
+        <img src={this.props.track.img_url} className="album-art" onClick={this.handlePlayClick} />
+      </div>
+      {this.props.track.artist} • {this.props.track.title}
+    </li>);
   }
 }
 
