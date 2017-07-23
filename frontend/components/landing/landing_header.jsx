@@ -11,7 +11,7 @@ const LandingHeader = (props) => (
         <img
           src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500489690/flashlight_qmeggn.svg"
           className="logo"/>
-        <h1>
+        <h1 className="logo-text">
           Spooky
         </h1>
       </div>

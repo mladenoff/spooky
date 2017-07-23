@@ -43,13 +43,19 @@
   padding-left: 220px;
   padding-bottom: 100px;
   position: fixed;
-  background: linear-gradient($black, black);
+  background: linear-gradient(rgb(180,180,180), $black);
   height: 100%;
   width: 100%;
   overflow: auto;
   flex-direction: column;
   align-items: center;
   display: flex;
+}
+
+.view-header {
+  font-size: 32px;
+  word-spacing: 16px;
+  letter-spacing: 8px;
 }
 
 .tracks {

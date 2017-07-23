@@ -15,21 +15,10 @@ class Tracks extends React.Component {
   render() {
     const { tracks } = this.props;
 
-    window.tracks = tracks;
-
-    const sound = new Howl({
-      src: [`http://res.cloudinary.com/dsgktnrbx/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav`],
-    });
-
-    window.sound = sound;
-    if (this.props.fetching) {
-        return "Fetching...";
-    }
-
     return (
       <div className="main-view-container">
         <div className="tracks">
-          <h3>ALL TRACKS</h3>
+          <h3 className="view-header">ALL TRACKS</h3>
         <ul className="track-list">
             {tracks.map((track, idx) => <TrackItem key={track.id} track={track} tracks={tracks} enqueuePlayback={this.props.enqueuePlayback} idx={idx}/>)}
         </ul>
