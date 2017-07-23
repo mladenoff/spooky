@@ -9,6 +9,7 @@ class Widget extends React.Component {
     this.handlePauseClick = this.handlePauseClick.bind(this);
     this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleMuteClick = this.handleMuteClick.bind(this);
+    this.playPause = this.playPause.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -35,6 +36,18 @@ class Widget extends React.Component {
     }
   }
 
+  playPause() {
+    if (this.state.playing) {
+      return <img onClick={this.handlePauseClick}
+        className ="control-button"
+        src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500841148/pause_dgdaru.svg" />;
+    }else{
+      return <img onClick={this.handlePlayClick}
+        className ="control-button"
+        src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500841381/play_cnlwmc.svg" />;
+    }
+  }
+
   render() {
 
     let howler = null;
@@ -47,25 +60,15 @@ class Widget extends React.Component {
     }
 
     const muteButton = this.state.mute
-      ? <img src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500839847/mute_qdqplr.svg" className="control-button" alt="Mute"/>
-      : <img src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500840491/unmute_ni8mso.svg" className="control-button" alt="Unmute"/>;
-
-    const playPause = this.state.playing
-      ? <img onClick={this.handlePauseClick}
-          className ="control-button"
-          src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500841148/pause_dgdaru.svg" />
-      : <img onClick={this.handlePlayClick}
-          className ="control-button"
-          src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500841381/play_cnlwmc.svg" />;
+      ? <img src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500839847/mute_qdqplr.svg" className="control-button" onClick={this.handleMuteClick} alt="Mute"/>
+      : <img src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500840491/unmute_ni8mso.svg" className="control-button" onClick={this.handleMuteClick} alt="Unmute"/>;
 
     return(
       <div className="widget-container">
         {howler}
         <div className="widget">
-          {playPause}
-          <a onClick={this.handleMuteClick}>
-            {muteButton}
-          </a>
+          {this.playPause()}
+          {muteButton}
         </div>
       </div>
     );

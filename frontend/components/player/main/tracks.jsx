@@ -16,14 +16,12 @@ class Tracks extends React.Component {
     const { tracks } = this.props;
 
     return (
-      <div className="main-view-container">
-        <div className="tracks">
-          <h3 className="view-header">ALL TRACKS</h3>
+      <div className="tracks">
+        <h3 className="view-header">ALL TRACKS</h3>
         <ul className="track-list">
             {tracks.map((track, idx) => <TrackItem key={track.id} track={track} tracks={tracks} enqueuePlayback={this.props.enqueuePlayback} idx={idx}/>)}
         </ul>
       </div>
-    </div>
     );
   }
 }

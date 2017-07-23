@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-.main-nav {
+.main-nav-bar {
   flex-grow: 1;
 }
 
@@ -50,6 +50,30 @@
   flex-direction: column;
   align-items: center;
   display: flex;
+}
+
+.browse-nav {
+ display: flex;
+ justify-content: center;
+}
+
+.browse-nav-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
+.browse-nav li {
+  margin: 20px;
+  text-transform: uppercase;
+  width: 70px;
+}
+.browse-nav li:last-child {
+  text-align: right;
+}
+.browse-nav li:first-child {
+  text-align: left;
 }
 
 .view-header {
@@ -107,6 +131,7 @@
 
 .control-button {
   height: 50px; width: 50px;
+  cursor: pointer;
   &:hover {
     opacity: .1;
   }

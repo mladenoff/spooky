@@ -9,7 +9,7 @@ class NavBar extends React.Component {
             src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500489690/flashlight_qmeggn.svg"
             className="logo-small"/>
           <h2>{this.props.currentUser.username}, it's music.</h2>
-          <div className="main-nav">Grow!</div>
+          <div className="main-nav-bar"></div>
           <button className="nav-bar-button" onClick={this.props.logout}>
             Log out
           </button>
