@@ -104,3 +104,10 @@
 .control {
   cursor: pointer;
 }
+
+.control-button {
+  height: 50px; width: 50px;
+  &:hover {
+    opacity: .1;
+  }
+}

@@ -4,7 +4,7 @@ import Mailto from 'react-mailto';
 const FooterNav = () => (
   <nav>
     <div className="footer-text">
-      Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+      Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a> | Audio control icons by <a href="https://thenounproject.com/kozinn">Nikita Kozin</a> from the <a href="https://thenounproject.com">Noun Project</a>
   </div>
   <span>
     <a href="http://github.com/mladenoff/spooky" target="_blank">
