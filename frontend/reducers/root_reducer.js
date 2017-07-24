@@ -11,5 +11,5 @@ export default combineReducers({
   tracks: tracksReducer,
   playback: PlaybackReducer,
   fetching: FetchingReducer,
-  playlist: PlaylistReducer,
+  playlists: PlaylistReducer,
 });

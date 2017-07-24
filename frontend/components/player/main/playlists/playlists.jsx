@@ -1,5 +1,7 @@
 import React from 'react';
-import {Loading} from '../../../loading';
+
+import Loading from '../../../loading';
+import PlaylistsItem from './playlists_item';
 
 class Playlists extends React.Component {
   constructor(props) {
@@ -20,11 +22,12 @@ class Playlists extends React.Component {
       <div className="playlists">
         <h3 className="view-header">ALL PLAYLISTS</h3>
         <ul className="playlists-list">
-            {playlists.map((playlist, idx) =>
-              (<PlaylistItem key={playlist.id}
-                playlist={playlist}
-                playlists={playlists}
-                idx={idx}/>))}
+          {playlists.map((playlist, idx) =>
+            (<PlaylistsItem key={playlist.id}
+              playlist={playlist}
+              playlists={playlists}
+              idx={idx}/>))}
+
         </ul>
       </div>
     );

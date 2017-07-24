@@ -1,11 +1,12 @@
 import {
   RECEIVE_PLAYLISTS,
-} from '../actions/track_actions';
+} from '../actions/playlist_actions';
 
 const defaultState = () => ({});
 
-const tracksReducer = (state = defaultState(), action) => {
+const playlistReducer = (state = defaultState(), action) => {
   Object.freeze(state);
+  console.log("reducer?");
   switch (action.type) {
     case RECEIVE_PLAYLISTS:
       return action.playlists;
@@ -14,4 +15,4 @@ const tracksReducer = (state = defaultState(), action) => {
   }
 };
 
-export default tracksReducer;
+export default playlistReducer;

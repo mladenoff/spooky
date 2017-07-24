@@ -50,8 +50,11 @@ spaceship_parts_t = Track.create(title: 'Spaceship Parts',
 Playlist.destroy_all
 
 i_love_css = Playlist.create(title: 'I love CSS!!', user_id: guest.id)
+css_tears = Playlist.create(title: 'CSS Tears', user_id: guest.id)
 
 Playlisting.destroy_all
 
-Playlisting.create(playlist_id: i_love_css.id, track_id: caravilla_t.id, sequence: 1)
-Playlisting.create(playlist_id: i_love_css.id, track_id: hippzer_t.id, sequence: 2)
+Playlisting.create(playlist_id: i_love_css.id, track_id: caravilla_t.id, ord: 1)
+Playlisting.create(playlist_id: i_love_css.id, track_id: hippzer_t.id, ord: 2)
+
+Playlisting.create(playlist_id: css_tears.id, track_id: caravilla_t.id, ord: 1)

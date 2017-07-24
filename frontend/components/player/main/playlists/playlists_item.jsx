@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PlaylistItem extends React.Component {
+class PlaylistsItem extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +12,7 @@ class PlaylistItem extends React.Component {
   }
 
   render() {
-    return(<li className="track-item">
+    return(<li className="playlists-item">
       {this.props.playlist.title} • {this.props.playlist.username}
     </li>);
   }
@@ -20,4 +20,4 @@ class PlaylistItem extends React.Component {
 
 
 
-export default PlaylistItem;
+export default PlaylistsItem;
