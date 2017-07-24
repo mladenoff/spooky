@@ -1,9 +1,9 @@
 class CreatePlaylistings < ActiveRecord::Migration[5.0]
   def change
     create_table :playlistings do |t|
-      t.integer :playlist_id
-      t.integer :track_id
-      t.integer :sequence
+      t.integer :playlist_id, null: false
+      t.integer :track_id, null: false
+      t.integer :sequence, null: false
 
       t.timestamps
     end

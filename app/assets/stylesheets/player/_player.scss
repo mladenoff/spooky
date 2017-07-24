@@ -52,16 +52,32 @@
   display: flex;
 }
 
+.browse-nav-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.browse {
+  padding: 0px 50px 0px 50px;
+}
+
 .browse-nav {
  display: flex;
  justify-content: center;
+ align-items: center;
+ flex-direction: row;
 }
 
 .browse-nav-list {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+}
 
+.new-playlist-button {
+  position: absolute;
+  right: 0;
 }
 
 .browse-nav li {

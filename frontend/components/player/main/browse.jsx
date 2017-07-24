@@ -14,8 +14,8 @@ const Browse = () => (
           <li>Albums</li>
           <li>Playlists</li>
         </ul>
-        <NewPlaylistModal />
       </nav>
+      <NewPlaylistModal />
     </div>
     <ProtectedRoute path="/player/tracks" component={TracksContainer} />
   </div>

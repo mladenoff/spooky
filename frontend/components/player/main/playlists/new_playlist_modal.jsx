@@ -50,7 +50,7 @@ class NewPlaylistModal extends React.Component {
   render() {
     let formType;
     return (
-      <div>
+      <div className="new-playlist-button">
           <button className="submit" onClick={this.openModal}>New playlist</button>
           <Modal
           isOpen={this.state.modalIsOpen}

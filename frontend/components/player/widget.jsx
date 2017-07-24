@@ -56,7 +56,8 @@ class Widget extends React.Component {
         src={this.props.playback.playQueue[this.props.playback.currentTrack].url}
         volume={this.props.volume}
         playing={this.props.playback.playing}
-        mute={this.state.mute}/>;
+        mute={this.state.mute}
+        html5="true"/>;
     }
 
     const muteButton = this.state.mute

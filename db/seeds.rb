@@ -46,3 +46,12 @@ spaceship_parts_t = Track.create(title: 'Spaceship Parts',
   album_id: spaceship_parts_a.id,
   url: 'http://res.cloudinary.com/dsgktnrbx/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
   sequence: 1)
+
+Playlist.destroy_all
+
+i_love_css = Playlist.create(title: 'I love CSS!!', user_id: guest.id)
+
+Playlisting.destroy_all
+
+Playlisting.create(playlist_id: i_love_css.id, track_id: caravilla_t.id, sequence: 1)
+Playlisting.create(playlist_id: i_love_css.id, track_id: hippzer_t.id, sequence: 2)
