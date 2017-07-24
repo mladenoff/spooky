@@ -14,5 +14,5 @@ class Playlist < ApplicationRecord
 
   belongs_to :user
   has_many :playlistings
-  has_many :tracks, through: :tracks
+  has_many :tracks, through: :playlistings
 end
