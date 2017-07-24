@@ -15,8 +15,8 @@ class SessionLinks extends React.Component {
 
   render() {
     return(
-    <div>
-      <h2 className="quote">The music is out there</h2>
+    <div className="testing">
+      <h3 className="quote">The music is out there</h3>
       <br/>
       <div className="login-button-container">
       <Link to="/signup" className="landing-button">Sign up</Link>
