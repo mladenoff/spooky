@@ -22,17 +22,63 @@
   box-sizing: border-box;
 }
 
+
+
 .logo-small {
   @extend .logo;
   height: 32px;
   width: 32px;
   border-radius: 16px;
   padding: 3.2px;
-  box-sizing: border-box;
+  transition: all .75s;
+  &:hover {
+    opacity: .25;
+        filter: blur(1px);
+  }
+}
+
+.small-logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0;
+  opacity: 0;
+
+  transition: all .75s;
+  &:hover {
+    opacity: .05;
+
+  }
+}
+
+.logo-small-container {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // &:hover {
+  //   opacity: .05;
+  // }
 }
 
 .main-nav-bar {
   flex-grow: 1;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 5px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+
+}
+
+.nav-header {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 5px;
 }
 
 .nav-bar-button {
@@ -77,7 +123,7 @@
 
 .new-playlist-button {
   position: absolute;
-  right: 0;
+  right: -120px;
 }
 
 .browse-nav li {
@@ -131,6 +177,7 @@
   bottom: 0;
   width: 100%;
   z-index: 20;
+  padding: 0px 20px 0px 20px;
 }
 
 .widget {
@@ -151,4 +198,10 @@
   &:hover {
     opacity: .1;
   }
+}
+
+.control-button:last-child {
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
 }

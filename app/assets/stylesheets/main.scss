@@ -1,7 +1,5 @@
 @import "./base/reset";
 @import "./base/colors";
-@import "./landing.scss";
-@import "./player/player";
 
 body {
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
@@ -18,3 +16,29 @@ body {
 .red-background {
   background-color: $red;
 }
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $red;
+  box-sizing: border-box;
+  color: #fff;
+  width: 240px;
+  height: 48px;
+  padding: 5px;
+  padding-left: 10px;
+  margin: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+  transition: all 0.5s;
+    &:hover {
+      background: rgba(0, 0, 0, .25)
+    }
+}
+
+@import "./landing.scss";
+@import "./player/player";

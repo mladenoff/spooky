@@ -19,6 +19,7 @@ span, article, footer, time, small {
   background: transparent;
   box-sizing: border-box;
   // border: 1px dashed darkorange;
+  transition: all 0.5s;
 }
 
 ol, ul {
