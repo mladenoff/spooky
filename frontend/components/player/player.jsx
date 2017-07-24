@@ -1,5 +1,4 @@
 import React from 'react';
-import { Howl } from 'howler';
 
 import NavBarContainer from './nav_bar/nav_bar_container';
 import WidgetContainer from './widget_container';

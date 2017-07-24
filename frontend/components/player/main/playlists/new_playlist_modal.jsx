@@ -1,12 +1,13 @@
 import React from 'react';
 import Modal from 'react-modal';
+import ReactDOM from 'react-dom';
 
 const customStyles = {
-  // overlay : {
-  //   backgroundColor : rgba(0, 0 ,0 , 0.8)
-  // },
+  overlay : {
+    zIndex: 50
+  },
   content : {
-    borderRadius          : '4px',
+    borderRadius          : '0px',
     height                : "70%",
     width                 : "500px",
     top                   : '50%',
@@ -15,7 +16,8 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    border                : '2px solid #ccc'
+    border: '0px',
+    color : 'black'
   }
 };
 
@@ -49,36 +51,18 @@ class NewPlaylistModal extends React.Component {
     let formType;
     return (
       <div>
-        {this.props.type === "upload"
-          ? <div>
-          <button className="auth-buts" onClick={this.openModal}>Upload a Song</button>
+          <button className="submit" onClick={this.openModal}>New playlist</button>
           <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Session Modal">
-          <SongUploadFormContainer type={this.props.type}
-                             song={this.props.song}
-                             closeModal={this.closeModal}
-                             user={this.props.id} />
-        </Modal></div>
-        : <div>
-        <button className="auth-buts" onClick={this.openModal}>Edit Your Song</button>
-          <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Session Modal">
-          <SongUploadFormContainer type={this.props.type}
-                             song={this.props.song}
-                             closeModal={this.closeModal}
-                             user={this.props.id} />
+          contentLabel="Session Modal"
+          parentSelector={() => document.body}>
+          <div>
+            "Test"
+          </div>
         </Modal>
-        </div>
-            }
-
-      </div>
-    );
+      </div>);
   }
 }
 

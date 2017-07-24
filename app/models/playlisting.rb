@@ -1,0 +1,2 @@
+class Playlisting < ApplicationRecord
+end

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TracksContainer from './tracks_container';
+import NewPlaylistModal from './playlists/new_playlist_modal';
 
 import { ProtectedRoute } from '../../../util/route_util';
 
@@ -13,7 +14,7 @@ const Browse = () => (
           <li>Albums</li>
           <li>Playlists</li>
         </ul>
-        <button className="submit">New Playlist</button>
+        <NewPlaylistModal />
       </nav>
     </div>
     <ProtectedRoute path="/player/tracks" component={TracksContainer} />
