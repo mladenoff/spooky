@@ -13,7 +13,6 @@ class Widget extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("what the heck");
     this.setState({playing: nextProps.playback.playing});
   }
 
@@ -23,7 +22,6 @@ class Widget extends React.Component {
 
   handlePlayClick() {
     if(this.props.playback.currentTrack !== null){
-      console.log("hello!");
       this.props.play();
     }
   }
@@ -48,6 +46,10 @@ class Widget extends React.Component {
     }
   }
 
+  prevTrack() {
+    // if (this.state.cu)
+  }
+
   render() {
 
     let howler = null;
@@ -57,7 +59,7 @@ class Widget extends React.Component {
         volume={this.props.volume}
         playing={this.props.playback.playing}
         mute={this.state.mute}
-        html5="true"/>;
+        html5={true}/>;
     }
 
     const muteButton = this.state.mute
@@ -68,6 +70,7 @@ class Widget extends React.Component {
       <div className="widget-container">
         {howler}
         <div className="widget">
+          {this.prevTrack()}
           {this.playPause()}
           {muteButton}
         </div>

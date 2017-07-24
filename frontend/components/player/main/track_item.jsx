@@ -8,7 +8,7 @@ class TrackItem extends React.Component {
   }
 
   handlePlayClick() {
-    this.props.enqueuePlayback(this.props.tracks.slice(this.props.idx));
+    this.props.enqueuePlayback(this.props.tracks, this.props.idx);
   }
 
   render() {

@@ -11,6 +11,8 @@
 #
 
 class Playlisting < ApplicationRecord
+  validates :track, :playlist, presence: :true
+
   belongs_to :track
   belongs_to :playlist
 end

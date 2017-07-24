@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   requestAllTracks: () => dispatch(requestAllTracks()),
-  enqueuePlayback: (tracks) => dispatch(enqueuePlayback(tracks)),
+  enqueuePlayback: (tracks, currentTrack) => dispatch(enqueuePlayback(tracks, currentTrack)),
 });
 
 export default connect(
