@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
 import Root from './components/root';
+import {requestAllPlaylists} from './actions/playlist_actions';
 
 import { requestAllTracks } from './actions/track_actions';
 
@@ -17,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.requestAllTracks = requestAllTracks;
+  window.requestAllPlaylists = requestAllPlaylists;
   ReactDOM.render(<Root store={ store }/>, root);
 });

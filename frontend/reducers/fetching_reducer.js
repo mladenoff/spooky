@@ -2,6 +2,8 @@ import {
   START_FETCHING_TRACKS,
   RECEIVE_TRACKS, } from '../actions/track_actions';
 
+export const START_FETCHING = 'START_FETCHING';
+
 const defaultState = () => ({
   fetching: false
 });
@@ -9,12 +11,12 @@ const defaultState = () => ({
 const FetchingReducer = (state = false, action) => {
   Object.freeze(state);
   switch(action.type) {
-    case RECEIVE_TRACKS:
-      return false;
-    case START_FETCHING_TRACKS:
+    // case RECEIVE_TRACKS:
+    //   return false;
+    case START_FETCHING:
       return true;
     default:
-      return state;
+      return false;
   }
 };
 

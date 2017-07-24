@@ -2,6 +2,7 @@ import React from 'react';
 import { Howl } from 'howler';
 
 import TrackItem from './track_item';
+import Loading from '../../loading';
 
 class Tracks extends React.Component {
   constructor(props) {
@@ -15,8 +16,9 @@ class Tracks extends React.Component {
   render() {
     const { tracks } = this.props;
     if (this.props.loading === true) {
-      return <div>Loading</div>;
+      return <Loading />;
     }
+
     return (
       <div className="tracks">
         <h3 className="view-header">ALL TRACKS</h3>

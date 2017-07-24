@@ -6,7 +6,7 @@ export const createPlaylist = data => (
   })
 );
 
-export const getAllPlaylists = () => (
+export const fetchAllPlaylists = () => (
  $.ajax({
    method: 'GET',
    url: 'api/playlists',

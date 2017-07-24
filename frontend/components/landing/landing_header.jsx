@@ -9,7 +9,7 @@ const LandingHeader = (props) => (
       <Link to="/">
       <div className="logo-container">
         <img
-          src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500489690/flashlight_qmeggn.svg"
+          src="http://res.cloudinary.com/spooky/image/upload/v1500489690/flashlight_qmeggn.svg"
           className="logo"/>
         <h1 className="logo-text">
           Spooky
@@ -18,9 +18,9 @@ const LandingHeader = (props) => (
       </Link>
 
       <ul className="nav-list">
-        <li className="header-nav-link">Premium</li>
-        <li className="header-nav-link">Help</li>
-        <li className="header-nav-link">Download</li>
+        <li className="header-nav-link">These</li>
+        <li className="header-nav-link">Aren't</li>
+        <li className="header-nav-link">Links</li>
         <li>|</li>
         <li className="header-nav-link">
           { props.currentUser ? <Link to="/logout">Log out</Link> : <Link to="/login">Log in</Link> }

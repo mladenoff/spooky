@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
             />
         </label>
         <br/>
-        <input type="submit" value="Submit" className="submit"/>
+        <input type="submit" value="Submit" className="submit"/> 
         <br/>
         <span id="welcome-text-small">{this.navLink()}</span>
       </form>

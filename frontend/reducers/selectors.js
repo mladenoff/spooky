@@ -1,5 +1,7 @@
-import { values } from 'lodash';
+import * as _ from 'lodash';
 
-export const selectAllTracks = ({tracks}) => values(tracks);
+export const selectAllTracks = ({tracks}) => _.values(tracks);
 
-export const selectAllPlaylists = ({playlists}) => values(playlists);
+export const selectAllPlaylists = ({playlists}) =>(
+  _.orderBy(_.values(playlists), ['updated_at'], ['desc'])
+);

@@ -1,4 +1,5 @@
 import * as APIUtil from '../util/track_api_util';
+import { START_FETCHING } from '../reducers/fetching_reducer';
 
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
 export const RECEIVE_TRACK_ERRORS = 'RECEIVE_TRACK_ERRORS';
@@ -17,5 +18,5 @@ export const requestAllTracks = () => dispatch => {
 };
 
 export const startFetchingTracks = () => ({
-  type: START_FETCHING_TRACKS,
+  type: START_FETCHING,
 });

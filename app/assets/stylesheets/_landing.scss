@@ -1,6 +1,6 @@
 .landing-bg {
   height: 100vh;
-  background-image: url(http://res.cloudinary.com/dsgktnrbx/image/upload/v1500512920/pexels-photo-489266_wdjvkh.jpg);
+  background-image: url(http://res.cloudinary.com/spooky/image/upload/v1500512920/pexels-photo-489266_wdjvkh.jpg);
   background-size: cover;
   background-position: center bottom;
   display: flex;
@@ -165,6 +165,7 @@
 }
 
 .submit {
+  @extend button;
   width: 120px;
   margin: 10px;
   padding: 5px;

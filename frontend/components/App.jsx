@@ -9,7 +9,7 @@ const App = () => (
     <div>
       <Switch>
         <ProtectedRoute path="/player" component={Player} />
-        <Route path="/" component={LandingBG} />
+        <AuthRoute path="/" component={LandingBG} />
       </Switch>
     </div>
 );

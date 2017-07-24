@@ -45,25 +45,25 @@ class Widget extends React.Component {
     if (this.state.playing) {
       return <img onClick={this.handlePauseClick}
         className="control-button"
-        src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500841148/pause_dgdaru.svg" />;
+        src="http://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg" />;
     }else{
       return <img onClick={this.handlePlayClick}
         className="control-button"
-        src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500841381/play_cnlwmc.svg" />;
+        src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" />;
     }
   }
 
   prevTrack() {
     return<img
       src="http://res.cloudinary.com/spooky/image/upload/q_100/v1500883825/prev_mh7tqn.svg"
-      className="control-button"
+      className="control-button control-button-medium"
       onClick={this.handlePrevClick}/>;
   }
 
   nextTrack() {
     return <img
-      src="http://res.cloudinary.com/spooky/image/upload/q_100/v1500884211/next_ojnvpe.svg" 
-      className="control-button"/>;
+      src="http://res.cloudinary.com/spooky/image/upload/q_100/v1500884211/next_ojnvpe.svg"
+      className="control-button control-button-medium"/>;
   }
 
   render() {
@@ -78,10 +78,10 @@ class Widget extends React.Component {
     }
 
     const muteButton = this.state.mute
-      ? <img src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500839847/mute_qdqplr.svg"
+      ? <img src="http://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
       className="control-button"
       onClick={this.handleMuteClick} alt="Mute"/>
-      : <img src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500840491/unmute_ni8mso.svg"
+      : <img src="http://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
       className="control-button"
       onClick={this.handleMuteClick} alt="Unmute"/>;
 
@@ -111,4 +111,4 @@ export default Widget;
 //   ? <a onClick={this.handlePauseClick}>Pause</a>
 //   : <img onClick={this.handlePlayClick}
 //   className ="control-button"
-//   src="http://res.cloudinary.com/dsgktnrbx/image/upload/v1500841381/play_cnlwmc.svg" />}
+//   src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" />}
