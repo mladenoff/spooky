@@ -2,6 +2,8 @@ import React from 'react';
 
 import Loading from '../../loading';
 
+import NavPlaylistsItem from './nav_playlists_item';
+
 class NavPlaylists extends React.Component {
   constructor(props) {
   super(props);
@@ -19,7 +21,13 @@ class NavPlaylists extends React.Component {
 
     return (
       <div className="nav-playlists">
-        Your playlists ought to be here.
+        <ul>
+          {this.props.userPlaylists.map((playlist, idx) =>
+            (<NavPlaylistsItem key={playlist.id}
+              playlist={playlist}
+              playlists={this.props.userPlaylists}
+              idx={idx}/>))}
+        </ul>
       </div>
     );
   }

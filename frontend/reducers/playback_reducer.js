@@ -31,10 +31,12 @@ const PlaybackReducer = (state = defaultState(), action) => {
       return newState;
     case PREVIOUS:
       if (state.currentTrack > 0) {
-      newState = Object.assign({}, state, {currentTrack: (state.currentTrack - 1)});}
-      return newState;
+        newState = {currentTrack: (state.currentTrack - 1)};}
+      return Object.assign({}, state, newState);
     case SKIP:
-      return state;
+      if (state.currentTrack < state.playQueue.length - 1) {
+        newState = {currentTrack: (state.currentTrack + 1)};}
+      return Object.assign({}, state, newState);
     default:
       return state;
   }

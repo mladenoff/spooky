@@ -5,7 +5,7 @@ import { logout } from '../../actions/session_actions';
 import { pausePlayback,
   play,
   prevTrack,
-  nextTrack
+  skipTrack
 } from '../../actions/playback_actions';
 
 const mapStateToProps = (state) => ({
@@ -18,6 +18,7 @@ const mapDispatchToProps = (dispatch) => ({
   pausePlayback: () => dispatch(pausePlayback()),
   play: () => dispatch(play()),
   prevTrack: () => dispatch(prevTrack()),
+  skipTrack: () => dispatch(skipTrack())
 });
 
 export default connect(
