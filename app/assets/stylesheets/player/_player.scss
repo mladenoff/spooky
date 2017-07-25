@@ -22,8 +22,6 @@
   box-sizing: border-box;
 }
 
-
-
 .logo-small {
   @extend .logo;
   height: 32px;
@@ -80,7 +78,9 @@
   font-size: 14px;
   margin: 5px;
 }
-
+.nav-playlists {
+  text-align: left;
+}
 .nav-bar-button {
   @extend .submit;
 }

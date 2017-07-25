@@ -19,7 +19,7 @@ class NavPlaylists extends React.Component {
 
     return (
       <div className="nav-playlists">
-        Your mom.
+        Your playlists ought to be here.
       </div>
     );
   }
