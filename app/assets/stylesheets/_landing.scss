@@ -60,21 +60,23 @@
   margin-left: 10px;
 }
 
-.nav-list li.header-nav-link {
+li.header-nav-link {
   margin-left: 10px;
   transition: all 0.5s;
   font-weight: bold;
   &:hover {
     color: $red;
+    filter: blur(.5px);
   }
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  transition: all 1s;
+  transition: all 0.5s;
   margin: 10px;
   &:hover{
+    filter: blur(1px);
     opacity: .05;
   }
 }
