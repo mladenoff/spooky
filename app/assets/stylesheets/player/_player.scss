@@ -31,7 +31,7 @@
   transition: all .75s;
   &:hover {
     opacity: .25;
-        filter: blur(1px);
+    filter: blur(1px);
   }
 }
 
@@ -106,6 +106,13 @@
   position: relative;
 }
 
+@media only screen and (max-width: 1000px) {
+    /* For mobile phones: */
+  .browse-nav-container {
+    flex-direction: column;
+  }
+}
+
 .browse {
   padding: 0px 50px 0px 50px;
   min-height: 100%;
@@ -129,26 +136,40 @@
   flex-direction: row;
 }
 
+.browse-nav li.browse-nav-link {
+  margin: 20px;
+  text-transform: uppercase;
+  width: 70px;
+  transition: all 0.5s;
+  &:hover {
+    color: $red;
+    filter: blur(.75px);
+  }
+}
+
+.browse-nav li:last-child {
+  text-align: right;
+}
+
+.browse-nav li:first-child {
+  text-align: left;
+}
+
 div.new-playlist-button {
   position: absolute;
   right: 0;
 }
 
+@media only screen and (max-width: 1000px) {
+    /* For mobile phones: */
+  div.new-playlist-button {
+    position: relative;
+  }
+}
+
 button.new-playlist-button {
   font-size: 11px;
   padding: 7px 17px 8px 22px;
-}
-
-.browse-nav li {
-  margin: 20px;
-  text-transform: uppercase;
-  width: 70px;
-}
-.browse-nav li:last-child {
-  text-align: right;
-}
-.browse-nav li:first-child {
-  text-align: left;
 }
 
 .view-header {
@@ -168,17 +189,23 @@ button.new-playlist-button {
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  flex-basis: auto;
+  align-items: flex-start;
+  flex-basis: autp;
 }
 
 .track-item  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 20px;
+  flex-grow: 1;
 }
 
 .album-art {
   width: 200px;
   height: 200px;
   cursor: pointer;
+  transition: all 0.5s;
   &:hover {
     opacity: .7;
   }
@@ -201,27 +228,25 @@ button.new-playlist-button {
   display: flex;
 }
 .widget-container .track-image {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-right: 20px;
 }
 
 .track-words {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .widget-container .track-title {
   text-transform: uppercase;
   font-size: 16px;
-  letter-spacing: 8px;
 }
 
 .widget-container .artist-name {
-  text-transform: uppercase;
   font-size: 14px;
-  letter-spacing: 8px;
+  opacity: .6;
 }
 
 .widget {

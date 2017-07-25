@@ -105,10 +105,10 @@ class Widget extends React.Component {
 
     const muteButton = this.state.mute
       ? <img src="http://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
-      className="control-button"
+      className="control-button control-button-medium"
       onClick={this.handleMuteClick} alt="Mute"/>
       : <img src="http://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
-      className="control-button"
+      className="control-button control-button-medium"
       onClick={this.handleMuteClick} alt="Unmute"/>;
 
     return(

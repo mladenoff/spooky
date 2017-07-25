@@ -13,8 +13,10 @@ body {
   font-weight: bold;
 }
 
-.red-background {
+.album-background {
   background-color: $red;
+  height: 200px;
+  width: 200px;
 }
 
 button {

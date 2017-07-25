@@ -13,9 +13,9 @@ const Browse = () => (
     <div className="browse-nav-container">
       <nav className="browse-nav">
         <ul className="browse-nav-list">
-          <Link to="/player/tracks"><li>Tracks</li></Link>
-          <Link to="/player/loading"><li>Loading</li></Link>
-          <Link to="/player/playlists"><li>Playlists</li></Link>
+          <Link to="/player/tracks"><li className="browse-nav-link">Tracks</li></Link>
+          <Link to="/player/loading"><li className="browse-nav-link">Loading</li></Link>
+          <Link to="/player/playlists"><li className="browse-nav-link">Playlists</li></Link>
         </ul>
       </nav>
       <NewPlaylistModal />

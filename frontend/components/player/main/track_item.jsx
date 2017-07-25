@@ -13,7 +13,7 @@ class TrackItem extends React.Component {
 
   render() {
     return(<li className="track-item">
-      <div className="red-background">
+      <div className="album-background">
         <img src={this.props.track.img_url} className="album-art" onClick={this.handlePlayClick} />
       </div>
       {this.props.track.artist} • {this.props.track.title}
