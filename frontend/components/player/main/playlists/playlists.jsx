@@ -14,7 +14,7 @@ class Playlists extends React.Component {
 
   render() {
     const { playlists } = this.props;
-    if (this.props.loading === true) {
+    if (this.props.fetching === true) {
       return <Loading />;
     }
 

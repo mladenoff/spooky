@@ -100,6 +100,7 @@
 
 .browse-nav-container {
   display: flex;
+  align-items: center;
   justify-content: center;
   position: relative;
 }
@@ -107,15 +108,18 @@
 .browse {
   padding: 0px 50px 0px 50px;
   min-height: 100%;
+  min-width: 600px;
   height: 100%;
   display: block;
+
 }
 
 .browse-nav {
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: row;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 .browse-nav-list {
@@ -124,9 +128,14 @@
   flex-direction: row;
 }
 
-.new-playlist-button {
+div.new-playlist-button {
   position: absolute;
-  right: -120px;
+  right: 0;
+}
+
+button.new-playlist-button {
+  font-size: 11px;
+  padding: 7px 17px 8px 22px;
 }
 
 .browse-nav li {

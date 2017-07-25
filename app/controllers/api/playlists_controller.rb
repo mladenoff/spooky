@@ -4,7 +4,13 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def index
-    @playlists = Playlist.all
+    @playlists = {}
+    if params.key?(:user_id)
+      @playlists = Playlist.where(user_id: params[:user_id])
+    else
+      @playlists = Playlist.all
+    end
     render :index
   end
+
 end

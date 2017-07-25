@@ -16,6 +16,13 @@ export const requestAllPlaylists = () => dispatch => {
   );
 };
 
+export const requestUserPlaylists = (id) => dispatch => {
+  dispatch(startFetchingPlaylists());
+  return APIUtil.fetchUserPlaylists(id).then(playlists => (
+    dispatch(receivePlaylists(playlists)))
+  );
+};
+
 export const startFetchingPlaylists = () => ({
   type: START_FETCHING,
 });

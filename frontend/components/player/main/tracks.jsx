@@ -15,7 +15,7 @@ class Tracks extends React.Component {
 
   render() {
     const { tracks } = this.props;
-    if (this.props.loading === true) {
+    if (this.props.fetching === true) {
       return <Loading />;
     }
 

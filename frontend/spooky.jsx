@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
 import Root from './components/root';
-import {requestAllPlaylists} from './actions/playlist_actions';
-
-import { requestAllTracks } from './actions/track_actions';
+import {requestUserPlaylists} from './actions/playlist_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
@@ -18,6 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.requestAllPlaylists = requestAllPlaylists;
+  window.requestUserPlaylists = requestUserPlaylists;
   ReactDOM.render(<Root store={ store }/>, root);
 });

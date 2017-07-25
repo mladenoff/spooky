@@ -6,10 +6,10 @@ const defaultState = () => ({});
 
 const playlistReducer = (state = defaultState(), action) => {
   Object.freeze(state);
-  console.log("reducer?");
+  let newState = {};
   switch (action.type) {
     case RECEIVE_PLAYLISTS:
-      return action.playlists;
+      return Object.assign(newState, state, action.playlists);
     default:
       return state;
   }

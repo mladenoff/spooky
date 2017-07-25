@@ -8,7 +8,7 @@ import { requestAllPlaylists } from '../../../../actions/playlist_actions';
 
 const mapStateToProps = (state) => ({
   playlists: selectAllPlaylists(state),
-  loading: state.fetching,
+  fetching: state.fetching,
 });
 
 const mapDispatchToProps = (dispatch) => ({

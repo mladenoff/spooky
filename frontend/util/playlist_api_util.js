@@ -13,9 +13,9 @@ export const fetchAllPlaylists = () => (
  })
 );
 
-//  export const getUserPlaylists = () => (
-//   $.ajax({
-//     method: 'GET',
-//     url: 'api/playlists',
-//   })
-// );
+export const fetchUserPlaylists = (id) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${id}/playlists/`,
+  })
+);

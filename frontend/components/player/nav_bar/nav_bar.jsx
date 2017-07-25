@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import NavPlaylistsContainer from './nav_playlists_container';
+
 class NavBar extends React.Component {
   render() {
     return(
@@ -15,6 +17,7 @@ class NavBar extends React.Component {
           <h2>{this.props.currentUser.username}, it's music.</h2>
           <div className="main-nav-bar">
             <span className="nav-header">Your playlists</span>
+            <NavPlaylistsContainer />
           </div>
           <button className="nav-bar-button" onClick={this.props.logout}>
             Log out

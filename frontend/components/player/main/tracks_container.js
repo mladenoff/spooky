@@ -7,7 +7,7 @@ import { selectAllTracks } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
   tracks: selectAllTracks(state),
-  loading: state.fetching,
+  fetching: state.fetching,
 });
 
 const mapDispatchToProps = (dispatch) => ({
