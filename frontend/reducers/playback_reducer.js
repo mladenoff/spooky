@@ -2,7 +2,9 @@ import { ENQUEUE_PLAYBACK,
   PAUSE,
   PLAY,
   PREVIOUS,
-  SKIP } from '../actions/playback_actions';
+  SKIP
+} from '../actions/playback_actions';
+import {PLAY_PLAYLIST} from '../actions/playlist_actions';
 
 const defaultState = () => ({
   currentTrack: null,
@@ -16,13 +18,18 @@ const PlaybackReducer = (state = defaultState(), action) => {
   let newState = {};
   switch (action.type) {
     case ENQUEUE_PLAYBACK:
-      const newQueue = action.tracks;
       return {
         volume: state.volume,
-        playQueue: newQueue,
+        playQueue: action.tracks,
         currentTrack: action.currentTrack,
         playing: true,
       };
+    case PLAY_PLAYLIST:
+      return Object.assign({}, state, {
+        playQueue: action.tracks,
+        currentTrack: action.currentTrack,
+        playing: true,
+      });
     case PAUSE:
       newState = Object.assign({}, state, {playing: false});
       return newState;

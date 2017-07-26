@@ -13,9 +13,16 @@ export const fetchAllPlaylists = () => (
  })
 );
 
-export const fetchUserPlaylists = (id) => (
+export const fetchUserPlaylists = (userId) => (
   $.ajax({
     method: 'GET',
-    url: `api/users/${id}/playlists/`,
+    url: `api/users/${userId}/playlists/`,
+  })
+);
+
+export const fetchPlaylist = (id) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/playlists/${id}/`,
   })
 );

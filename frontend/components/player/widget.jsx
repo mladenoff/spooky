@@ -27,23 +27,28 @@ class Widget extends React.Component {
     this.setState({
       playing: nextProps.playback.playing,
     });
-    if(nextProps.playback.currentTrack !== this.state.currentTrack){this.clearRAF();}
+    if(nextProps.playback.currentTrack !== this.state.currentTrack){
+      console.log("song switch");
+      this.clearRAF();
+    }
     this.setState({
       currentTrack: nextProps.playback.currentTrack,
     });
   }
 
-  // componentDidUpdate(){
-  //   if(this.state.playing && this.state.loaded){this.renderSeekPos();}
-  // } TODO: MAKE ME GO
+  componentDidUpdate(prevProps, prevState){
+    if(!prevState.playing && this.state.playing && this.state.loaded){
+      this.renderSeekPos();
+    }
+  }
 
   renderSeekPos () {
-    this.setState({
-      seek: this.player.seek()
-    });
-    if (this.state.playing) {
-      this._raf = raf(this.renderSeekPos);
-    }
+    if(this.loaded){this.setState({
+        seek: this.player.seek()
+      });
+      if (this.state.playing) {
+        this._raf = raf(this.renderSeekPos);
+      }}
   }
 
   handleOnLoad () {
@@ -51,13 +56,15 @@ class Widget extends React.Component {
       loaded: true,
       duration: this.player.duration()
     });
-    if (this.state.playing) {this.renderSeekPos();}
+    if (this.state.playing) {
+      this.renderSeekPos();
+    }
   }
 
   handleOnEnd () {
-    // this.setState({
-    //   playing: false
-    // });
+    this.setState({
+      playing: false
+    });
     this.clearRAF();
   }
 
@@ -130,9 +137,13 @@ class Widget extends React.Component {
   }
 
   clearRAF () {
+    console.log("hit clear?");
     raf.cancel(this._raf);
   }
-  // {this.props.playback.playQueue[this.props.playback.currentTrack].title}
+
+  minutesSeconds(s) {
+    return(s-(s%=60))/60+(9<s?':':':0')+s;
+  }
 
   render() {
     let howler = null;
@@ -159,9 +170,9 @@ class Widget extends React.Component {
 
     const playTime = (
         <div>
-          {(this.state.seek !== undefined) ? this.state.seek.toFixed(2) : '0.00'}
+          {(this.state.seek !== undefined) ? this.minutesSeconds(this.state.seek.toFixed()) : '0.00'}
           {'—'}
-          {(this.state.duration) ? this.state.duration.toFixed(2) : '0.00'}
+          {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0.00'}
         </div>
       );
 
