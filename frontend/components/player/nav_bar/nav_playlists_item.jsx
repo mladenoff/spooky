@@ -13,9 +13,13 @@ class NavPlaylistsItem extends React.Component {
 
   render() {
     return(
-      <li className="playlists-item">
-        <div className="playlists-item-sub info">{this.props.playlist.title}</div>
-        <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button"/>
+      <li className="nav-playlists-item">
+        <div className="nav-playlists-item info">
+          {this.props.playlist.title}
+        </div>
+        <img
+          src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
+          className="playlist-button"/>
       </li>
     );
   }

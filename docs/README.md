@@ -4,7 +4,7 @@
 
 [Trello][trello]
 
-[heroku]: http://www.get-spooked.herokuapp.com
+[heroku]: https://get-spooked.herokuapp.com/
 [trello]: https://trello.com/b/EXU09EWm/spooky
 
 ## Minimum Viable Product
