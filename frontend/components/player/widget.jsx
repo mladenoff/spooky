@@ -27,8 +27,7 @@ class Widget extends React.Component {
     this.setState({
       playing: nextProps.playback.playing,
     });
-    if(nextProps.playback.currentTrack !== this.state.currentTrack){
-      console.log("song switch");
+    if(nextProps.playback.currentTrack !== this.props.playback.currentTrack){
       this.clearRAF();
     }
     this.setState({
@@ -43,12 +42,12 @@ class Widget extends React.Component {
   }
 
   renderSeekPos () {
-    if(this.loaded){this.setState({
+    this.setState({
         seek: this.player.seek()
       });
       if (this.state.playing) {
         this._raf = raf(this.renderSeekPos);
-      }}
+      }
   }
 
   handleOnLoad () {
@@ -62,6 +61,7 @@ class Widget extends React.Component {
   }
 
   handleOnEnd () {
+    console.log("does this end?");
     this.setState({
       playing: false
     });
@@ -137,7 +137,6 @@ class Widget extends React.Component {
   }
 
   clearRAF () {
-    console.log("hit clear?");
     raf.cancel(this._raf);
   }
 
@@ -152,8 +151,10 @@ class Widget extends React.Component {
         src={this.props.playback.playQueue[this.props.playback.currentTrack].url}
         onLoad={this.handleOnLoad}
         onEnd={this.handleOnEnd}
+        onPlay={() => console.log("playing!")}
+        onStop={() => console.log("stopped!")}
         volume={this.props.volume}
-        playing={this.props.playback.playing}
+        playing={this.state.playing}
         mute={this.state.mute}
         html5={true}
         ref={(ref) => (this.player = ref)}/>
@@ -170,9 +171,9 @@ class Widget extends React.Component {
 
     const playTime = (
         <div>
-          {(this.state.seek !== undefined) ? this.minutesSeconds(this.state.seek.toFixed()) : '0.00'}
+          {(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}
           {'—'}
-          {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0.00'}
+          {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}
         </div>
       );
 

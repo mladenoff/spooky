@@ -16,6 +16,7 @@ Artist.destroy_all
 guts = Artist.create(name: 'GUTS')
 aertime = Artist.create(name: 'AERTIME')
 double_ewes = Artist.create(name: 'Double Ewes')
+doorbells = Artist.create(name: 'The Doorbells')
 
 Album.destroy_all
 
@@ -26,6 +27,8 @@ train_tracks_a = Album.create(title: 'train tracks',
   img_url: 'http://res.cloudinary.com/spooky/image/upload/v1500751832/train_tracks_hw45yi.jpg',)
 caravilla_a = Album.create(title: 'Caravilla',
   img_url: 'http://res.cloudinary.com/spooky/image/upload/v1500751832/caravilla_udb0dy.jpg',)
+ding_dong_a = Album.create(title: 'Ding Dong',
+  img_url: 'http://res.cloudinary.com/spooky/image/upload/v1501101701/ding-dong_g0qmza.jpg',)
 
 Track.destroy_all
 
@@ -45,6 +48,12 @@ spaceship_parts_t = Track.create(title: 'Spaceship Parts',
   artist_id: guts.id,
   album_id: spaceship_parts_a.id,
   url: 'http://res.cloudinary.com/spooky/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
+  sequence: 1)
+
+ding_dong_t = Track.create(title: 'Ding Dong',
+  artist_id: doorbells.id,
+  album_id: ding_dong_a.id,
+  url: 'http://res.cloudinary.com/spooky/video/upload/v1501101699/ding-dong_wq4bog.wav',
   sequence: 1)
 
 Playlist.destroy_all

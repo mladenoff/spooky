@@ -8,7 +8,7 @@ class NavPlaylistsItem extends React.Component {
   }
 
   handlePlayClick() {
-    this.props.enqueuePlayback(this.props.tracks, this.props.idx);
+    this.props.requestPlaylistPlayback(this.props.playlist.id);
   }
 
   render() {
@@ -19,7 +19,8 @@ class NavPlaylistsItem extends React.Component {
         </div>
         <img
           src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
-          className="playlist-button"/>
+          className="playlist-button"
+          onClick={this.handlePlayClick}/>
       </li>
     );
   }

@@ -14,7 +14,6 @@ class BrowseNav extends React.Component {
       <nav className="browse-nav">
         <ul className="browse-nav-list">
           <Link to="/player/tracks"><li className="browse-nav-link">Tracks</li></Link>
-          <Link to="/player/loading"><li className="browse-nav-link">Loading</li></Link>
           <Link to="/player/playlists"><li className="browse-nav-link">Playlists</li></Link>
         </ul>
       </nav>
@@ -26,3 +25,4 @@ class BrowseNav extends React.Component {
 export default withRouter(BrowseNav);
 
 //TODO: add highlights for page headings
+          // <Link to="/player/loading"><li className="browse-nav-link">Loading</li></Link>

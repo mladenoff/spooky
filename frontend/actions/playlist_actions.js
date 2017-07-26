@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/playlist_api_util';
 import {START_FETCHING} from '../reducers/fetching_reducer';
+import {orderPlaylist} from '../reducers/selectors';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
@@ -18,7 +19,7 @@ export const receivePlaylist = playlist => ({
 
 export const playPlaylist = tracks => ({
   type: PLAY_PLAYLIST,
-  tracks,
+  tracks: orderPlaylist(tracks),
 });
 
 export const requestAllPlaylists = () => dispatch => {
