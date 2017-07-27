@@ -18,6 +18,7 @@ class NavBar extends React.Component {
           <div className="main-nav-bar">
             <span className="nav-header">Your playlists</span>
             <NavPlaylistsContainer />
+            <span className="nav-header">Followed playlists</span>
           </div>
           <button className="nav-bar-button" onClick={this.props.logout}>
             Log out

@@ -10,7 +10,7 @@ class AddTrackItem extends React.Component {
   handleAddTrack(e) {
     e.preventDefault();
     const data = {playlist_id: this.props.playlist.id, playlisting: {track_id: this.props.trackId}};
-    this.props.addTrack(data);
+    this.props.addTrack(data).then(this.props.closeModal());
   }
 
   render() {

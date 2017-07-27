@@ -17,10 +17,10 @@ class NavPlaylistsItem extends React.Component {
         <div className="nav-playlists-item info">
           {this.props.playlist.title}
         </div>
-        <img
+        { this.props.playlist.count > 0 ? <img
           src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
           className="playlist-button"
-          onClick={this.handlePlayClick}/>
+          onClick={this.handlePlayClick}/> : null}
       </li>
     );
   }

@@ -31,6 +31,6 @@ export const addTrack = (data) => (
   $.ajax({
     method: 'POST',
     url: `api/playlists/${data.playlist_id}/playlistings`,
-    data: {track_id: data.track_id}
+    data
   })
-);
+); //TODO: ASK ABOUT THIS!!!

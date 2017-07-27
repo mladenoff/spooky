@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactHowler from 'react-howler';
 import raf from 'raf'; // requestAnimationFrame polyfill
+import ProgressBar from 'react-progressbar.js';
 
 class Widget extends React.Component {
   constructor(props) {
@@ -43,7 +44,8 @@ class Widget extends React.Component {
 
   renderSeekPos () {
     this.setState({
-        seek: this.player.seek()
+        seek: this.player.seek(),
+        progress: (this.player.seek() / this.player.duration())
       });
       if (this.state.playing) {
         this._raf = raf(this.renderSeekPos);
@@ -166,19 +168,40 @@ class Widget extends React.Component {
       className="control-button control-button-medium"
       onClick={this.handleMuteClick} alt="Unmute"/>;
 
-    const playTime = (
-        <div>
-          {(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}
-          {'—'}
-          {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}
-        </div>
-      );
+    // const playTime = (
+    //     <div>
+    //       {(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}
+    //       <Line progress={this.state.progress} />
+    //       {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}
+    //     </div>
+    //   );
+
+    const Line = ProgressBar.Line;
+
+  const barOptions = {
+    strokeWidth: 4,
+    easing: 'easeInOut',
+    duration: 1400,
+    color: '#FFEA82',
+    trailColor: 'rgb(180,180,180)',
+    trailWidth: 1,
+    svgStyle: {width: '100%', height: '100%'},
+    from: {color: '#FFFFFF'},
+    to: {color: '#d71e3a'},
+    step: (state, bar) => {
+      bar.path.setAttribute('stroke', state.color);
+    }
+  };
 
     return(
       <div className="widget-container">
         {howler}
         <div className="widget">
-          {playTime}
+          <div>
+            {(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}
+            <Line progress={this.state.progress} options={barOptions} />
+            {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}
+          </div>
           {this.trackInfo()}
           {this.prevTrack()}
           {this.playPause()}
