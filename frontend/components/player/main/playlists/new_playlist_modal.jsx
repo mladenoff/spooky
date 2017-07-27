@@ -11,18 +11,18 @@ const customStyles = {
   content : {
     borderRadius          : '0px',
     height                : "400px",
-    minWidth : '400px',
+    minWidth              : '400px',
     width                 : "100%",
     top                   : '50%',
     left                  : '50%',
-    right                 : 'auto',
+    right                 : 0,
     bottom                : 'auto',
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
-    padding : '0',
-    border: '0px',
-    color : 'white',
-    backgroundColor : 'white'
+    padding               : '0',
+    border                : '0px',
+    color                 : 'white',
+    backgroundColor       : 'white'
   }
 };
 
@@ -64,7 +64,7 @@ class NewPlaylistModal extends React.Component {
           contentLabel="Session Modal"
           parentSelector={() => document.body}>
 
-            <NewPlaylistFormContainer />
+            <NewPlaylistFormContainer closeModal={this.closeModal}/>
 
         </Modal>
       </div>);

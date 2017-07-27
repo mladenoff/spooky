@@ -1,7 +1,4 @@
 class Api::PlaylistsController < ApplicationController
-  def create
-
-  end
 
   def index
     @playlists = {}
@@ -16,6 +13,24 @@ class Api::PlaylistsController < ApplicationController
   def show
     @playlist = Playlist.find(params[:id])
     render :show
+  end
+
+  def create
+    @playlist = Playlist.new(playlist_params)
+    @playlist.user_id = current_user.id
+
+    if @playlist.save
+      @playlists = [@playlist]
+      render :index
+    else
+      render(json: ["Bad news bears"], status: 666)
+    end
+  end
+
+  private
+
+  def playlist_params
+    params.require(:playlist).permit(:title, :creator_id)
   end
 
 end

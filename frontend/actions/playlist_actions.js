@@ -50,6 +50,12 @@ export const requestPlaylistPlayback = (id) => dispatch => {
   );
 };
 
+export const createPlaylist = data => dispatch => (
+  APIUtil.createPlaylist(data).then(playlists => (
+    dispatch(receivePlaylists(playlists)))
+  )
+);
+
 export const startFetchingPlaylists = () => ({
   type: START_FETCHING,
 });
