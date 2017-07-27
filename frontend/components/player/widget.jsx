@@ -65,9 +65,9 @@ class Widget extends React.Component {
   handleOnEnd () {
     this.setState({
       playing: false,
-      seek: 0,
       progress: 0
     });
+    if(this.state.playing === false){this.setState({seek: 0});}
     this.clearRAF();
   }
 
