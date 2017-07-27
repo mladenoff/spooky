@@ -8,10 +8,15 @@ class NewPlaylistForm extends React.Component {
       playlistTitle: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   componentDidMount(){
     this.titleInput.focus();
+  }
+  handleCancel(e){
+    e.preventDefault();
+    this.props.closeModal();
   }
 
   handleSubmit(e){
@@ -21,10 +26,6 @@ class NewPlaylistForm extends React.Component {
     // .then(data =>
     //   this.props.history.push(`/pokemon/${data.pokemon.id}`)); TODO: a redirect? close modal?
   }
-
-  // handleCancel(){ TODO: for cancel button (see bottom of this file)
-  //
-  // }
 
   update(field) {
     return event => this.setState({
@@ -45,6 +46,7 @@ class NewPlaylistForm extends React.Component {
             placeholder="Start typing..."
             />
           <div className="login-button-container">
+            <button className="landing-button-light" onClick={this.handleCancel}>Cancel</button>
             <button className="landing-button" onClick={this.handleSubmit}>Create</button>
           </div>
         </form>
@@ -57,4 +59,4 @@ class NewPlaylistForm extends React.Component {
 
 export default NewPlaylistForm;
 
-//<button className="landing-button-light">Cancel</button> TODO: add cancel button to form
+// TODO: add cancel button to form

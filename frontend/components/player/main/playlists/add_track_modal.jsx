@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 
-import AddTrackContainer from './add_track_modal';
+import AddTrackContainer from './add_track_container';
 
 const customStyles = {
   overlay : {
@@ -22,7 +22,7 @@ const customStyles = {
     padding               : '0',
     border                : '0px',
     color                 : 'white',
-    backgroundColor       : 'white'
+    backgroundColor       : 'black'
   }
 };
 
@@ -53,14 +53,13 @@ class AddTrackModal extends React.Component {
   }
 
   render() {
-    let formType;
     return (
       <div className="album-option add" onClick={this.openModal}>
-          <Modal
+        <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="Session Modal"
+          contentLabel="Add Track Modal"
           parentSelector={() => document.body}>
             <AddTrackContainer closeModal={this.closeModal} trackId={this.props.trackId}/>
         </Modal>

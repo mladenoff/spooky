@@ -27,9 +27,10 @@ export const fetchPlaylist = (id) => (
   })
 );
 
-export const addTrack = (track_id) => (
+export const addTrack = (data) => (
   $.ajax({
     method: 'POST',
-    url: `api/playlists/${track_id}/playlistings`
+    url: `api/playlists/${data.playlist_id}/playlistings`,
+    data
   })
 );

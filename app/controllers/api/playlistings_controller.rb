@@ -1,9 +1,9 @@
 class Api::PlaylistingsController < ApplicationController
 
   def create
-    @playlisting = Playlisting.new(playlisting_params)
-    @playlisting.user_id = current_user.id
+    @playlisting = Playlisting.new(track_id: playlisting_params[:track_id], playlist_id: params[:playlist_id])
 
+    @playlisting.ord = Playlist.find(params[:playlist_id]).tracks.length
     if @playlisting.save
       render(json: ["Success!"], status: 200)
     else
