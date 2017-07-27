@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
 import Search from './search';
-import { requestAllTracks } from '../../../actions/track_actions';
-import { enqueuePlayback } from '../../../actions/playback_actions';
-import { selectAllTracks } from '../../../reducers/selectors';
+import { requestAllTracks } from '../../../../actions/track_actions';
+import { enqueuePlayback } from '../../../../actions/playback_actions';
+import { selectAllTracks } from '../../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
   tracks: selectAllTracks(state),

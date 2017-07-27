@@ -27,6 +27,7 @@ class NavPlaylists extends React.Component {
               playlist={playlist}
               requestPlaylistPlayback={this.props.requestPlaylistPlayback}
               playlists={this.props.userPlaylists}
+              currentPlaylist={this.props.currentPlaylist}
               idx={idx}/>))}
         </ul>
       </div>

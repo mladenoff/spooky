@@ -11,12 +11,18 @@ class NavPlaylistsItem extends React.Component {
     this.props.requestPlaylistPlayback(this.props.playlist.id);
   }
 
+  playlistTitle() {
+    if(this.props.currentPlaylist === this.props.playlist.id){
+      return <div className="nav-playlists-item info now-playing">{this.props.playlist.title}</div>;
+    }else{
+      return <div className="nav-playlists-item info">{this.props.playlist.title}</div>;
+    }
+  }
+
   render() {
     return(
       <li className="nav-playlists-item">
-        <div className="nav-playlists-item info">
-          {this.props.playlist.title}
-        </div>
+        {this.playlistTitle()}
         { this.props.playlist.count > 0 ? <img
           src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
           className="playlist-button"

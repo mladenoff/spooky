@@ -11,6 +11,7 @@ const defaultState = () => ({
   playQueue: [],
   volume: 1,
   playing: false,
+  playlist: null
 });
 
 const PlaybackReducer = (state = defaultState(), action) => {
@@ -23,12 +24,14 @@ const PlaybackReducer = (state = defaultState(), action) => {
         playQueue: action.tracks,
         currentTrack: action.currentTrack,
         playing: true,
+        playlist: null,
       };
     case PLAY_PLAYLIST:
       return Object.assign({}, state, {
         playQueue: action.tracks,
         currentTrack: 0,
         playing: true,
+        playlist: action.playlist,
       });
     case PAUSE:
       newState = Object.assign({}, state, {playing: false});

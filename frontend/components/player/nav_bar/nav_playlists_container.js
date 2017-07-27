@@ -7,6 +7,7 @@ import { orderUserPlaylists } from '../../../reducers/selectors';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
+  currentPlaylist: state.playback.playlist,
   userPlaylists: orderUserPlaylists(state.playlists, state.session.currentUser.id),
 });
 

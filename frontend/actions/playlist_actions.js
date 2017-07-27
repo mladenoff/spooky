@@ -17,9 +17,10 @@ export const receivePlaylist = playlist => ({
   playlist,
 });
 
-export const playPlaylist = tracks => ({
+export const playPlaylist = (tracks, id) => ({
   type: PLAY_PLAYLIST,
   tracks: orderPlaylist(tracks),
+  playlist: id
 });
 
 export const requestAllPlaylists = () => dispatch => {
@@ -45,8 +46,8 @@ export const requestPlaylist = (id) => dispatch => {
 
 export const requestPlaylistPlayback = (id) => dispatch => {
   dispatch(startFetchingPlaylists());
-  return APIUtil.fetchPlaylist(id).then(playlist => (
-    dispatch(playPlaylist(playlist)))
+  return APIUtil.fetchPlaylist(id).then((playlist) => (
+    dispatch(playPlaylist(playlist, id)))
   );
 };
 

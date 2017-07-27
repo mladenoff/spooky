@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TrackItem from './track_item';
-import Loading from '../../loading';
+import TrackItem from '../track_item';
+import Loading from '../../../loading';
 
-class Tracks extends React.Component {
+class Search extends React.Component {
   constructor(props) {
   super(props);
   }
@@ -34,4 +34,4 @@ class Tracks extends React.Component {
   }
 }
 
-export default Tracks;
+export default Search;
