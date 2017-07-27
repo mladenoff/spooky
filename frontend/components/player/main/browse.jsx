@@ -2,9 +2,9 @@ import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 
 import TracksContainer from './tracks_container';
-import BrowseNav from './browse_nav';
-import NewPlaylistModal from './playlists/new_playlist_modal';
 import PlaylistsContainer from './playlists/playlists_container';
+import SearchContainer from './search/search_container';
+import BrowseNav from './browse_nav';
 import Loading from '../../loading';
 
 import { ProtectedRoute } from '../../../util/route_util';
@@ -15,6 +15,7 @@ const Browse = () => (
     <ProtectedRoute path="/player/tracks" component={TracksContainer} />
     <ProtectedRoute path="/player/loading" component={Loading} />
     <ProtectedRoute path="/player/playlists" component={PlaylistsContainer} />
+    <ProtectedRoute path="/player/search" component={SearchContainer} />
   </div>
 );
 

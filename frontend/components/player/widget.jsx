@@ -64,7 +64,9 @@ class Widget extends React.Component {
 
   handleOnEnd () {
     this.setState({
-      playing: false
+      playing: false,
+      seek: 0,
+      progress: 0
     });
     this.clearRAF();
   }
@@ -155,6 +157,7 @@ class Widget extends React.Component {
         volume={this.props.volume}
         playing={this.state.playing}
         mute={this.state.mute}
+        preload={false}
         html5={true}
         ref={(ref) => (this.player = ref)}/>
       ;
@@ -162,10 +165,10 @@ class Widget extends React.Component {
 
     const muteButton = this.state.mute
       ? <img src="http://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
-      className="control-button control-button-medium"
+      className="control-button control-button-medium mute-button"
       onClick={this.handleMuteClick} alt="Mute"/>
       : <img src="http://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
-      className="control-button control-button-medium"
+      className="control-button control-button-medium mute-button"
       onClick={this.handleMuteClick} alt="Unmute"/>;
 
     // const playTime = (
@@ -178,34 +181,40 @@ class Widget extends React.Component {
 
     const Line = ProgressBar.Line;
 
-  const barOptions = {
-    strokeWidth: 4,
-    easing: 'easeInOut',
-    duration: 1400,
-    color: '#FFEA82',
-    trailColor: 'rgb(180,180,180)',
-    trailWidth: 1,
-    svgStyle: {width: '100%', height: '100%'},
-    from: {color: '#FFFFFF'},
-    to: {color: '#d71e3a'},
-    step: (state, bar) => {
-      bar.path.setAttribute('stroke', state.color);
-    }
-  };
+    const barOptions = {
+      strokeWidth: 4,
+      easing: 'easeInOut',
+      duration: 1400,
+      color: '#FFEA82',
+      trailColor: 'rgb(180,180,180)',
+      trailWidth: 2,
+      svgStyle: {width: '100%', height: '100%'},
+      from: {color: '#FFFFFF'},
+      to: {color: 'rgb(215, 30, 58, .2)'},
+      step: (state, bar) => {
+        bar.path.setAttribute('stroke', state.color);
+      }
+    };
 
     return(
       <div className="widget-container">
         {howler}
         <div className="widget">
-          <div>
-            {(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}
-            <Line progress={this.state.progress} options={barOptions} />
-            {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}
-          </div>
           {this.trackInfo()}
+          <div className="track-stack">
+          <div className="progress-container">
+            <span>{(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}</span>
+            <Line progress={this.state.progress}
+              options={barOptions}
+              containerClassName={'progressbar-container'}/>
+            <span>{(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}</span>
+          </div>
+          <div className="track-controls">
           {this.prevTrack()}
           {this.playPause()}
           {this.skipTrack()}
+          </div>
+          </div>
           {muteButton}
         </div>
       </div>
