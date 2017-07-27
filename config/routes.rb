@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :tracks, only: [:index]
-    resources :playlists, only: [:create, :index, :show]
+    resources :playlists, only: [:create, :index, :show] do
+      resources :playlistings, only: [:create]
+    end
   end
 
 end

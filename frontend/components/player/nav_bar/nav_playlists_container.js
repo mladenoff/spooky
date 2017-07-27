@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import NavPlaylists from './nav_playlists';
 import { requestUserPlaylists, requestPlaylistPlayback } from '../../../actions/playlist_actions';
-import { orderUserPlaylists, selectAllPlaylists } from '../../../reducers/selectors';
+import { orderUserPlaylists } from '../../../reducers/selectors';
 
 
 const mapStateToProps = (state) => ({

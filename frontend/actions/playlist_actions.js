@@ -56,6 +56,13 @@ export const createPlaylist = data => dispatch => (
   )
 );
 
+export const addTrack = trackId => dispatch => (
+  APIUtil.addTrack(trackId)
+  // .then(playlists => (
+  //   dispatch(receivePlaylists(playlists)))
+  // )
+);
+
 export const startFetchingPlaylists = () => ({
   type: START_FETCHING,
 });
