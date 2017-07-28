@@ -19,14 +19,27 @@ class NavPlaylistsItem extends React.Component {
     }
   }
 
+  playlistIcon() {
+    if(this.props.playlist.count > 0){
+      if(this.props.currentPlaylist === this.props.playlist.id){
+        return null;
+        // return <img TODO: this will need some pause logic
+        // src="http://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg"
+        // className="playlist-button"
+        // onClick={this.handlePlayClick}/>;
+      }else{return <img
+        src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
+        className="playlist-button"
+        onClick={this.handlePlayClick}/>;
+      }
+    }
+  }
+
   render() {
     return(
       <li className="nav-playlists-item">
         {this.playlistTitle()}
-        { this.props.playlist.count > 0 ? <img
-          src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
-          className="playlist-button"
-          onClick={this.handlePlayClick}/> : null}
+        {this.playlistIcon()}
       </li>
     );
   }

@@ -26,7 +26,8 @@ class Playlists extends React.Component {
             (<PlaylistsItem key={playlist.id}
               playlist={playlist}
               playlists={playlists}
-              idx={idx}/>))}
+              idx={idx}
+              currentUser={this.props.currentUser}/>))}
 
         </ul>
       </div>

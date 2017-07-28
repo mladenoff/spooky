@@ -11,7 +11,7 @@
 
 class Playlist < ApplicationRecord
   validates :title, :user_id, presence: true
-  validates :title, uniqueness: { scope: :user_id}
+  validates :title, uniqueness: { scope: :user}
 
   belongs_to :user
   has_many :playlistings

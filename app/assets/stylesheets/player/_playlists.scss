@@ -4,19 +4,19 @@
 }
 
 .playlists-item {
+  height: 36px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   margin: 2px 0px 2px 0px;
   transition: all .5s;
+  padding: 0 5% 0 5%;
   &:hover {
-    background-color: rgba(26,26,26,.5);
+    background-color: rgba(26,26,26,.25);
   }
-}
-
-.playlists-item-sub.ord {
-
 }
 
 .playlists-item-sub.info {
@@ -25,10 +25,32 @@
   flex-basis: 0%;
 }
 
+.info.username {
+  text-transform: uppercase;
+  font-size: 13px;
+  opacity: .5;
+}
+
+.playlist-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.small-follow-button {
+  font-size: 9px;
+  letter-spacing: 4.5px;
+  padding: 2px 2px 2px 6.5px;
+}
+
 .playlist-button {
   width: 20px;
   height: 20px;
   display: inline;
+  cursor: pointer;
+  &:hover {
+    filter: blur(1px);
+  }
 }
 
 .new-playlist-form-container {

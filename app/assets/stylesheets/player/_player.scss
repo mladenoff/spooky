@@ -91,6 +91,7 @@
   flex-direction: row;
   align-items: center;
   margin: 5px;
+  cursor: pointer;
 }
 
 .nav-playlists-item.info {
@@ -100,6 +101,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   flex-grow: 1;
+}
+
+.nav-playlists-item:hover .info {
+    color: $red;
+    filter: blur(.5px);
 }
 
 .nav-bar-button {

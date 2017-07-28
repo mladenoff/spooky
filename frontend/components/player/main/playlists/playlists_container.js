@@ -9,6 +9,7 @@ import { requestAllPlaylists } from '../../../../actions/playlist_actions';
 const mapStateToProps = (state) => ({
   playlists: selectAllPlaylists(state.playlists),
   fetching: state.fetching,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

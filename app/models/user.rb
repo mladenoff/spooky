@@ -23,6 +23,8 @@ class User < ApplicationRecord
   before_validation :ensure_session_token_uniqueness
 
   has_many :playlists
+  has_many :follows
+  has_many :followed_playlists, through: :follows, source: :playlist
 
   def password= password
     self.password_digest = BCrypt::Password.create(password)
