@@ -40,7 +40,8 @@ class Search extends React.Component {
 
   fireSearch() {
     const data = {search: {term: this.state.searchQuery}};
-    if(this.state.searchQuery !== ""){
+    if(this.state.searchQuery === ""){
+      this.props.clearSearch();}else{
       this.props.requestSearchResults(data);
     }
   }

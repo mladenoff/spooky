@@ -15,6 +15,7 @@ class BrowseNav extends React.Component {
         <ul className="browse-nav-list">
           <Link to="/player/tracks"><li className="browse-nav-link">Tracks</li></Link>
           <Link to="/player/playlists"><li className="browse-nav-link">Playlists</li></Link>
+          <Link to="/player/search"><li className="browse-nav-link">Search</li></Link>
         </ul>
       </nav>
       <NewPlaylistModal />

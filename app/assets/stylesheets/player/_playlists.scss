@@ -1,6 +1,18 @@
+.playlists-list {
+  padding: 0px 50px 0px 50px;
+  cursor: pointer;
+}
+
 .playlists-item {
   display: flex;
   flex-direction: row;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin: 2px 0px 2px 0px;
+  transition: all .5s;
+  &:hover {
+    background-color: rgba(26,26,26,.5);
+  }
 }
 
 .playlists-item-sub.ord {
