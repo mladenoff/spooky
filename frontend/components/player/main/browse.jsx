@@ -6,6 +6,7 @@ import PlaylistsContainer from './playlists/playlists_container';
 import SearchContainer from './search/search_container';
 import BrowseNav from './browse_nav';
 import Loading from '../../loading';
+import PlaylistContainer from './playlists/playlist_container';
 
 import { ProtectedRoute } from '../../../util/route_util';
 
@@ -17,6 +18,7 @@ const Browse = () => (
     <ProtectedRoute path="/player/loading" component={Loading} />
     <ProtectedRoute path="/player/playlists" component={PlaylistsContainer} />
     <ProtectedRoute path="/player/search" component={SearchContainer} />
+    <ProtectedRoute path="/player/playlist/:playlistId" component={PlaylistContainer}/>
   </div>
   </div>
 );
