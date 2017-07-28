@@ -6,6 +6,7 @@ export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const START_FETCHING_PLAYLISTS = 'START_FETCHING_PLAYLISTS';
 export const PLAY_PLAYLIST = 'PLAY_PLAYLIST';
+export const RECEIVE_FOLLOWS = 'RECEIVE_FOLLOWS';
 
 export const receivePlaylists = playlists => ({
   type: RECEIVE_PLAYLISTS,
@@ -21,6 +22,11 @@ export const playPlaylist = (tracks, id) => ({
   type: PLAY_PLAYLIST,
   tracks: orderPlaylist(tracks),
   playlist: id
+});
+
+export const receiveUserFollows = (currentUser) => ({
+  type: RECEIVE_FOLLOWS,
+  currentUser
 });
 
 export const requestAllPlaylists = () => dispatch => {
@@ -60,6 +66,17 @@ export const createPlaylist = data => dispatch => (
 export const addTrack = (data) => dispatch => (
   APIUtil.addTrack(data).then(playlists => (
     dispatch(receivePlaylists(playlists)))
+  )
+);
+
+export const followPlaylist = (playlistId) => dispatch => (
+  APIUtil.followPlaylist(playlistId).then(user => (
+    dispatch(receiveUserFollows(user)))
+  )
+);
+export const unfollowPlaylist = (playlistId) => dispatch => (
+  APIUtil.unfollowPlaylist(playlistId).then(user => (
+    dispatch(receiveUserFollows(user)))
   )
 );
 

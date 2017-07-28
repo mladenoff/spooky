@@ -34,3 +34,16 @@ export const addTrack = (data) => (
     data
   })
 ); //TODO: ASK ABOUT THIS!!!
+
+export const followPlaylist = (playlistId) => (
+  $.ajax({
+    method: 'POST',
+    url: `/api/playlists/${playlistId}/follows`,
+  })
+);
+export const unfollowPlaylist = (playlistId) => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/playlists/${playlistId}/follows/${playlistId}`,
+  })
+);

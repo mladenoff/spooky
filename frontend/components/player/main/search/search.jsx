@@ -18,15 +18,11 @@ class Search extends React.Component {
     this.fireSearch = this.fireSearch.bind(this);
   }
 
-  // component
-
   componentWillReceiveProps(nextProps) {
     this.setState({tracks: nextProps.tracks});
-    // this.props.requestAllTracks(); //TODO: maybe clear tracks?
   }
 
   componentDidMount(){
-    // if(!this.props.fetching){
       this.searchInput.focus();
     // }
   }
@@ -62,10 +58,7 @@ class Search extends React.Component {
   }}
 
   render() {
-
-
     //UPDATE TO REFLECT INPUT CLASS NAME
-
     return (
       <div className="tracks">
         <h3 className="view-header">SEARCH</h3>
@@ -79,13 +72,11 @@ class Search extends React.Component {
             />
         </form>
         <div className="search-tracks">
-                   {this.trackview()}
-                 </div>
+          {this.trackview()}
+        </div>
       </div>
     );
   }
 }
 
 export default Search;
-
-            // onChange={this.update('searchQuery')}

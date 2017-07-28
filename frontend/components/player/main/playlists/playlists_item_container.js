@@ -4,7 +4,7 @@ import PlaylistsItem from './playlists_item';
 
 import AddTrack from './add_track';
 
-import {requestPlaylistPlayback} from '../../../../actions/playlist_actions';
+import {requestPlaylistPlayback, followPlaylist, unfollowPlaylist} from '../../../../actions/playlist_actions';
 // import { orderUserPlaylists } from '../../../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -15,7 +15,9 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestPlaylistPlayback: (id) => dispatch(requestPlaylistPlayback(id))
+  requestPlaylistPlayback: (id) => dispatch(requestPlaylistPlayback(id)),
+  followPlaylist: (playlistId) => dispatch(followPlaylist(playlistId)),
+  unfollowPlaylist: (playlistId) => dispatch(unfollowPlaylist(playlistId))
 });
 
 export default connect(

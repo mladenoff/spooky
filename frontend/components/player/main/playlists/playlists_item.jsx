@@ -5,10 +5,19 @@ class PlaylistsItem extends React.Component {
     super(props);
 
     this.handlePlayClick = this.handlePlayClick.bind(this);
+    this.handleFollowClick = this.handleFollowClick.bind(this);
+    this.handleUnfollowClick = this.handleUnfollowClick.bind(this);
   }
 
   handlePlayClick() {
     this.props.requestPlaylistPlayback(this.props.playlist.id);
+  }
+
+  handleFollowClick() {
+    this.props.followPlaylist(this.props.playlist.id);
+  }
+  handleUnfollowClick() {
+    this.props.unfollowPlaylist(this.props.playlist.id);
   }
 
   render() {
@@ -19,8 +28,12 @@ class PlaylistsItem extends React.Component {
           <span className="info username"> {this.props.playlist.username}</span>
         </div>
         <div className="playlist-buttons">
-          { this.props.currentUser.id !== this.props.playlist.user_id && !this.props.currentUser.follows.includes(this.props.playlist.id) ? <button className="small-follow-button">Follow</button> : null}
-          { this.props.currentUser.id !== this.props.playlist.user_id && this.props.currentUser.follows.includes(this.props.playlist.id) ? <button className="small-follow-button">Unfollow</button> : null}
+          { this.props.currentUser.id !== this.props.playlist.user_id && !this.props.currentUser.follows.includes(this.props.playlist.id) ?
+            <button className="small-follow-button" onClick={this.handleFollowClick}>Follow</button> :
+              null}
+          { this.props.currentUser.id !== this.props.playlist.user_id && this.props.currentUser.follows.includes(this.props.playlist.id) ?
+            <button className="small-follow-button" onClick={this.handleUnfollowClick}>Unfollow</button> :
+              null}
           <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button" onClick={this.handlePlayClick}/>
         </div>
       </li>
