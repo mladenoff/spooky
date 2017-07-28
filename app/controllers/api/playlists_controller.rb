@@ -2,12 +2,15 @@ class Api::PlaylistsController < ApplicationController
 
   def index
     @playlists = {}
+
     if params.key?(:user_id)
       @playlists = Playlist.where(user_id: params[:user_id])
-      @playlists += Playlist.joins(:follows).where("follows.user_id = ?", current_user.id)
+      @playlists += Playlist.joins(:follows)
+        .where("follows.user_id = ?", current_user.id)
     else
       @playlists = Playlist.all
     end
+
     render :index
   end
 
@@ -24,7 +27,7 @@ class Api::PlaylistsController < ApplicationController
       @playlists = [@playlist]
       render :index
     else
-      render(json: ["Bad news bears"], status: 666)
+      render json: @playlist.errors, status: 422
     end
   end
 

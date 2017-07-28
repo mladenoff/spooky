@@ -15,31 +15,19 @@ class NewPlaylistForm extends React.Component {
   componentDidMount(){
     this.titleInput.focus();
   }
-  
+
   handleCancel(e){
     e.preventDefault();
     this.props.closeModal();
   }
 
-  // handleKeyPress(e){
-  //   e.preventDefault();
-  //   if(event.key === 'Enter'){
-  //     this.handleSubmit();
-  //   }else if(e.key === 'Escape'){
-  //     this.handleCancel();
-  //   }else{this.update('playlistTitle');}
-  // }
-
   handleSubmit(e){
     e.preventDefault();
     const playlist = {playlist: {title: this.state.playlistTitle}};
     this.props.createPlaylist(playlist).then(this.props.closeModal());
-    // .then(data =>
-    //   this.props.history.push(`/pokemon/${data.pokemon.id}`)); TODO: a redirect? close modal?
   }
 
   update(field) {
-    // if(e.key === 'Enter'){console.log("HIII!");}
     return event => this.setState({
       [field]: event.currentTarget.value
     });

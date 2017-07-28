@@ -15,11 +15,11 @@ class NavPlaylists extends React.Component {
 
   render() {
     const { tracks } = this.props;
+
     if (this.props.fetching === true) {
       return <Loading />;
     }
 
-    console.log(this.props.userFollows);
     return (
       <div className="main-nav-bar">
         <h3 className="nav-header">Your playlists</h3>
