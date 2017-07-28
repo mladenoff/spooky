@@ -18,7 +18,7 @@ class TrackItem extends React.Component {
       <div className="album-background">
         <img src={this.props.track.img_url} className="album-art"  />
         <div className="album-option play" onClick={this.handlePlayClick}>
-          <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" />
+          <img src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" />
         </div>
         <AddTrackModal trackId={this.props.track.id}/>
       </div>

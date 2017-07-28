@@ -34,7 +34,7 @@ class PlaylistsItem extends React.Component {
           { this.props.currentUser.id !== this.props.playlist.user_id && this.props.currentUser.follows.includes(this.props.playlist.id) ?
             <button className="small-follow-button" onClick={this.handleUnfollowClick}>Unfollow</button> :
               null}
-          <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button" onClick={this.handlePlayClick}/>
+          <img src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button" onClick={this.handlePlayClick}/>
         </div>
       </li>
     );
@@ -53,7 +53,7 @@ export default PlaylistsItem;
 //     <li className="playlists-item">
 //         <div>{this.props.idx + 1}</div>
 //         <div className="playlists-item-sub info">
-//           <span>{this.props.playlist.title}</span> <span>{this.props.playlist.username}</span></div> <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button"/>
+//           <span>{this.props.playlist.title}</span> <span>{this.props.playlist.username}</span></div> <img src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button"/>
 //     </li>
 //   );
 // }

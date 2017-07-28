@@ -1,24 +1,35 @@
-# README
+# Spooky
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Spooky][live-link] is a music SOMETHING inspired by [Spotify][spotify]. It is a single-page full-stack web application built on React/Redux, Ruby on Rails, and a ProgresSQL database.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+* User accounts, with secure authentication both on the back- and frontends.
 
-* System dependencies
+* Users can create playlists and add songs to them.
 
-* Configuration
+* Playlists are followable by
 
-* Database creation
+### Playlist creation
 
-* Database initialization
+### Browsing and following playlists
 
-* How to run the test suite
+###
 
-* Services (job queues, cache servers, search engines, etc.)
+## Project Design
 
-* Deployment instructions
+Spooky was designed over a two week period in Summer 2017. The [initial proposal]BLAH includes MVP features, an implementation timeline and more extensive documentation.
 
-* ...
+## Technologies
+
+Audio playback is through [howler.js][howler] an open source library from GoldFire Studios.  
+
+## Future direction
+
+UI
+More hubs
+Stat keeping
+
+[live-link]: https://get-spooked.herokuapp.com
+[spotify]: https://spotify.com
+[howler]: https://howlerjs.com

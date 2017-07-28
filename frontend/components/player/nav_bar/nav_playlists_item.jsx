@@ -24,11 +24,11 @@ class NavPlaylistsItem extends React.Component {
       if(this.props.currentPlaylist === this.props.playlist.id){
         return null;
         // return <img TODO: this will need some pause logic
-        // src="http://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg"
+        // src="https://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg"
         // className="playlist-button"
         // onClick={this.handlePlayClick}/>;
       }else{return <img
-        src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
+        src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
         className="playlist-button"
         onClick={this.handlePlayClick}/>;
       }

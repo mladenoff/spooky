@@ -21,7 +21,7 @@ class LandingHeader extends React.Component {
       <Link to="/">
       <div className="logo-container">
         <img
-          src="http://res.cloudinary.com/spooky/image/upload/v1500489690/flashlight_qmeggn.svg"
+          src="https://res.cloudinary.com/spooky/image/upload/v1500489690/flashlight_qmeggn.svg"
           className="logo"/>
         <h1 className="logo-text">
           Spooky

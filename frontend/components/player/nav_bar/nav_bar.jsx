@@ -10,7 +10,7 @@ class NavBar extends React.Component {
         <nav className="nav-bar">
           <Link to="/player/tracks" className="logo-small-container">
             <img
-              src="http://res.cloudinary.com/spooky/image/upload/v1500489690/flashlight_qmeggn.svg"
+              src="https://res.cloudinary.com/spooky/image/upload/v1500489690/flashlight_qmeggn.svg"
               className="logo-small"/>
             <span className="small-logo-text">Spooky</span>
           </Link>

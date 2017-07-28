@@ -4,7 +4,7 @@ import SessionLinks from './session_links';
 
 const personalLanding = (currentUser, logout) => (
   <div>
-    <h2>{currentUser.username}, it's music.</h2>
+    <h2 className="nav-quote">{currentUser.username}, it's music.</h2>
     <button className="landing-button" onClick={logout}>
       Log out
     </button>
