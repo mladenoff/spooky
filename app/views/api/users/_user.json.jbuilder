@@ -1,5 +1,5 @@
 json.extract! user, :id, :username
 
-json.playlists do
-  json.array! user.playlists.pluck :id
+json.follows do
+  json.array! user.follows.pluck :playlist_id
 end

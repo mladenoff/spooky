@@ -7,7 +7,9 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state ={
+    this.props.clearSearch();
+
+    this.state={
       searchQuery: "",
       tracks: this.props.tracks
     };

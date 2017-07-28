@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post "api/search", to: 'api/tracks#search', defaults: { format: :json }
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:create] do
+    resources :users, only: [:create, :show] do
       resources :playlists, only: [:index]
     end
     resource :session, only: [:create, :destroy]

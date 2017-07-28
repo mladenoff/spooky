@@ -8,7 +8,7 @@
 
 User.destroy_all
 
-guest = User.create(username: 'squeeze_fan', password: 'password', name: 'Eugene Tooms')
+guest = User.create(username: 'squeeze_fan', password: 'password', name: 'Eugene Tunes')
 nae = User.create(username: 'nae', password: 'password', name: 'Tiny Mouse')
 
 Artist.destroy_all
@@ -17,8 +17,11 @@ guts = Artist.create(name: 'GUTS')
 aertime = Artist.create(name: 'AERTIME')
 double_ewes = Artist.create(name: 'Double Ewes')
 doorbells = Artist.create(name: 'The Doorbells')
+a_small_gang = Artist.create(name: 'A Small Gang of Short and Long Legs')
 
 Album.destroy_all
+
+def_art = 'http://res.cloudinary.com/spooky/image/upload/v1501230042/record_ffljy4.svg'
 
 spaceship_parts_a = Album.create(title: 'Spaceship Parts',
   img_url: 'http://res.cloudinary.com/spooky/image/upload/v1500605880/Spaceship_Parts_tkbpyf.jpg',)
@@ -29,6 +32,8 @@ caravilla_a = Album.create(title: 'Caravilla',
   img_url: 'http://res.cloudinary.com/spooky/image/upload/v1500751832/caravilla_udb0dy.jpg',)
 ding_dong_a = Album.create(title: 'Ding Dong',
   img_url: 'http://res.cloudinary.com/spooky/image/upload/v1501101701/ding-dong_g0qmza.jpg',)
+
+your_body_is_home_a = Album.create(title: 'Your Body is Home', img_url: def_art)
 
 Track.destroy_all
 
@@ -44,7 +49,7 @@ caravilla_t = Track.create(title: 'Caravilla',
   url: 'http://res.cloudinary.com/spooky/video/upload/v1500751929/caravilla_vyaq88.mp3',
   sequence: 2)
 
-spaceship_parts_t = Track.create(title: 'Spaceship Partsxxxxxjhkfhjkfdhjkjkhsdfkjhafkhjlsdsfdlhjk',
+spaceship_parts_t = Track.create(title: 'Spaceship Parts',
   artist_id: guts.id,
   album_id: spaceship_parts_a.id,
   url: 'http://res.cloudinary.com/spooky/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
@@ -55,6 +60,13 @@ ding_dong_t = Track.create(title: 'Ding Dong',
   album_id: ding_dong_a.id,
   url: 'http://res.cloudinary.com/spooky/video/upload/v1501101699/ding-dong_wq4bog.wav',
   sequence: 1)
+
+your_body_is_home_t = Track.create(title: 'Your Body is Home',
+  artist_id: a_small_gang.id,
+  album_id: your_body_is_home_a.id,
+  url: 'http://res.cloudinary.com/spooky/video/upload/v1501229489/Your_Body_is_Home_ejnegr.mp3',
+  sequence: 1)
+
 
 Playlist.destroy_all
 

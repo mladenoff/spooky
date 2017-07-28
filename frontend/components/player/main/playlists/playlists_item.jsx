@@ -8,7 +8,7 @@ class PlaylistsItem extends React.Component {
   }
 
   handlePlayClick() {
-    this.props.enqueuePlayback(this.props.tracks, this.props.idx);
+    this.props.requestPlaylistPlayback(this.props.playlist.id);
   }
 
   render() {
@@ -19,8 +19,9 @@ class PlaylistsItem extends React.Component {
           <span className="info username"> {this.props.playlist.username}</span>
         </div>
         <div className="playlist-buttons">
-          { this.props.currentUser.id !== this.props.playlist.user_id ? <button className="small-follow-button">Follow</button> : null}
-          <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button"/>
+          { this.props.currentUser.id !== this.props.playlist.user_id && !this.props.currentUser.follows.includes(this.props.playlist.id) ? <button className="small-follow-button">Follow</button> : null}
+          { this.props.currentUser.id !== this.props.playlist.user_id && this.props.currentUser.follows.includes(this.props.playlist.id) ? <button className="small-follow-button">Unfollow</button> : null}
+          <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button" onClick={this.handlePlayClick}/>
         </div>
       </li>
     );
