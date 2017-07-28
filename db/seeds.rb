@@ -55,18 +55,17 @@ spaceship_parts_t = Track.create(title: 'Spaceship Parts',
   url: 'https://res.cloudinary.com/spooky/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
   sequence: 1)
 
-ding_dong_t = Track.create(title: 'Ding Dong',
-  artist_id: doorbells.id,
-  album_id: ding_dong_a.id,
-  url: 'https://res.cloudinary.com/spooky/video/upload/v1501101699/ding-dong_wq4bog.wav',
-  sequence: 1)
-
 your_body_is_home_t = Track.create(title: 'Your Body is Home',
   artist_id: a_small_gang.id,
   album_id: your_body_is_home_a.id,
   url: 'https://res.cloudinary.com/spooky/video/upload/v1501229489/Your_Body_is_Home_ejnegr.mp3',
   sequence: 1)
 
+  ding_dong_t = Track.create(title: 'Ding Dong',
+  artist_id: doorbells.id,
+  album_id: ding_dong_a.id,
+  url: 'https://res.cloudinary.com/spooky/video/upload/v1501101699/ding-dong_wq4bog.wav',
+  sequence: 1)
 
 Playlist.destroy_all
 
