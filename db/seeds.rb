@@ -10,6 +10,7 @@ User.destroy_all
 
 guest = User.create(username: 'squeeze_fan', password: 'password', name: 'Eugene Tunes')
 nae = User.create(username: 'nae', password: 'password', name: 'Tiny Mouse')
+e20 = User.create(username: 'E-20', password: 'password', name: 'Twenty Water')
 
 Artist.destroy_all
 
@@ -69,9 +70,10 @@ your_body_is_home_t = Track.create(title: 'Your Body is Home',
 
 Playlist.destroy_all
 
-i_love_css = Playlist.create(title: 'I love CSS!!', user_id: guest.id)
-css_tears = Playlist.create(title: 'CSS Tears', user_id: guest.id)
+i_love_css = Playlist.create(title: 'JavaScript Jams', user_id: guest.id)
+css_tears = Playlist.create(title: 'All the Hits', user_id: guest.id)
 mouse_tracks = Playlist.create(title: 'Mouse Tracks', user_id: nae.id)
+slaps = Playlist.create(title: 'Bay Area Slappers', user_id: e20.id)
 
 Playlisting.destroy_all
 
