@@ -13,10 +13,10 @@ Spooky is a web application inspired by Spotify built using Ruby on Rails and Re
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Song/playlist CRUD
+- [ ] Playlist CRUD
 - [ ] Search
 - [ ] Continuous play while navigating site
-- [ ] Following playlists/Friending users
+- [ ] Following playlists
 - [ ] Production README
 
 ## Design Docs

@@ -33,7 +33,7 @@ export const addTrack = (data) => (
     url: `api/playlists/${data.playlist_id}/playlistings`,
     data
   })
-); //TODO: ASK ABOUT THIS!!!
+);
 
 export const followPlaylist = (playlistId) => (
   $.ajax({

@@ -3,6 +3,14 @@
   cursor: pointer;
 }
 
+.add-track {
+  padding: 50px;
+}
+
+.add-track .playlists-item-sub {
+  cursor: pointer;
+}
+
 .playlists-item {
   height: 36px;
   display: flex;
@@ -15,7 +23,7 @@
   transition: all .5s;
   padding: 0 5% 0 5%;
   &:hover {
-    background-color: rgba(26,26,26,.25);
+    background-color: rgba(26,26,26,.5);
   }
 }
 

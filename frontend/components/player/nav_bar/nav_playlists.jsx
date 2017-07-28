@@ -19,7 +19,10 @@ class NavPlaylists extends React.Component {
       return <Loading />;
     }
 
+    console.log(this.props.userFollows);
     return (
+      <div className="main-nav-bar">
+        <h3 className="nav-header">Your playlists</h3>
       <div className="nav-playlists">
         <ul>
           {this.props.userPlaylists.map((playlist, idx) =>
@@ -31,6 +34,19 @@ class NavPlaylists extends React.Component {
               idx={idx}/>))}
         </ul>
       </div>
+      <h3 className="nav-header">Followed playlists</h3>
+        <div className="nav-playlists">
+          <ul>
+            {this.props.userFollows.map((playlist, idx) =>
+              (<NavPlaylistsItem key={playlist.id}
+                playlist={playlist}
+                requestPlaylistPlayback={this.props.requestPlaylistPlayback}
+                playlists={this.props.userFollows}
+                currentPlaylist={this.props.currentPlaylist}
+                idx={idx}/>))}
+          </ul>
+        </div>
+    </div>
     );
   }
 }

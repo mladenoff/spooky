@@ -64,7 +64,7 @@ class SessionForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} className="session-form">
         <div id="welcome-text">
-          <span>{ this.props.formType === 'login' ? "Log in to get spooked." : "Sign up to get spooked." }</span>
+          <span>{ this.props.formType === 'login' ? "Log in and get Spooked." : "Sign up and get Spooked." }</span>
           <br/>
           <span id="session-errors">
             {this.renderErrors()}

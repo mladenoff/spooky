@@ -16,6 +16,8 @@ class Playlist < ApplicationRecord
   belongs_to :user
   has_many :playlistings
   has_many :tracks, through: :playlistings
+  has_many :follows
+  has_many :followers, through: :follows, source: :user
 
   def tracks_in_order
     self.tracks

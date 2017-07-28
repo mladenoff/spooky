@@ -7,7 +7,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.clearSearch();
+    //
 
     this.state={
       searchQuery: "",
@@ -23,6 +23,7 @@ class Search extends React.Component {
   }
 
   componentDidMount(){
+      this.props.clearSearch();
       this.searchInput.focus();
     // }
   }

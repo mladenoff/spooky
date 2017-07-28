@@ -4,7 +4,7 @@ class Api::FollowsController < ApplicationController
     @follow = Follow.new(playlist_id: params[:playlist_id])
     @follow.user_id = current_user.id
     if @follow.save
-      @user = @follow.user
+      @user = @follow.follower
       render 'api/users/show'
     else
       render json: @follow.errors.full_messages, status: 422
@@ -14,7 +14,7 @@ class Api::FollowsController < ApplicationController
   def destroy
     @follow = Follow.where(playlist_id: params[:playlist_id], user_id: current_user.id)[0]
     if @follow.destroy
-      @user = @follow.user
+      @user = @follow.follower
       render 'api/users/show'
     else
       render json: @follow.errors.full_messages, status: 422

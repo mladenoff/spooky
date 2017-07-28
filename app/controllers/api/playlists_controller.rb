@@ -4,6 +4,7 @@ class Api::PlaylistsController < ApplicationController
     @playlists = {}
     if params.key?(:user_id)
       @playlists = Playlist.where(user_id: params[:user_id])
+      @playlists += Playlist.joins(:follows).where("follows.user_id = ?", current_user.id)
     else
       @playlists = Playlist.all
     end

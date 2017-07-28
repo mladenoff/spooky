@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LandingHeader = (props) => (
+class LandingHeader extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const guestUser = {user: {username: 'squeeze_fan', password: 'password'}};
+    this.props.login(guestUser);
+  }
+
+  render() {
+    return(
   <header className="landing-header">
 
     <nav className="landing-nav">
@@ -18,18 +30,19 @@ const LandingHeader = (props) => (
       </Link>
 
       <ul className="nav-list">
-        <li className="header-nav-link">These</li>
-        <li className="header-nav-link">Aren't</li>
-        <li className="header-nav-link">Links</li>
+        <li className="header-nav-link"><a href="https://github.com/mladenoff/spooky/blob/master/README.md">Info</a></li>
+        <li className="header-nav-link"><a onClick={this.handleClick}>Demo</a></li>
+        <li className="header-nav-link"><Link to="/signup">Sign up</Link></li>
         <li>|</li>
         <li className="header-nav-link">
-          { props.currentUser ? <Link to="/logout">Log out</Link> : <Link to="/login">Log in</Link> }
+          { this.props.currentUser ? <Link to="/logout">Log out</Link> : <Link to="/login">Log in</Link> }
         </li>
       </ul>
 
     </nav>
 
-  </header>
-);
+  </header>);
+  }
+}
 
 export default LandingHeader;

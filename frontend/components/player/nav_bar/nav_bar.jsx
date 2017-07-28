@@ -15,12 +15,7 @@ class NavBar extends React.Component {
             <span className="small-logo-text">Spooky</span>
           </Link>
           <h2>{this.props.currentUser.username}, it's music.</h2>
-          <Link to="/player/search"><h2>SEARCH</h2></Link>
-          <div className="main-nav-bar">
-            <span className="nav-header">Your playlists</span>
             <NavPlaylistsContainer />
-            <span className="nav-header">Followed playlists</span>
-          </div>
           <button className="nav-bar-button" onClick={this.props.logout}>
             Log out
           </button>

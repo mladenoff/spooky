@@ -81,3 +81,7 @@ Playlisting.create(playlist_id: i_love_css.id, track_id: hippzer_t.id, ord: 1)
 
 Playlisting.create(playlist_id: css_tears.id, track_id: caravilla_t.id, ord: 0)
 Playlisting.create(playlist_id: mouse_tracks.id, track_id: caravilla_t.id, ord: 0)
+
+Follow.destroy_all
+
+Follow.create(playlist_id: css_tears.id, user_id: nae.id)

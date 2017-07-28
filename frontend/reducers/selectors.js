@@ -12,6 +12,15 @@ export const orderUserPlaylists = (playlists, currentUserId) => (
     { 'user_id': currentUserId })
 );
 
+export const orderUserFollows = (playlists, currentUserFollows) => (
+  _.filter(
+    selectAllPlaylists(playlists),
+    (playlist) => {
+      return(currentUserFollows.includes(playlist.id));
+    }
+  )
+);
+
 export const orderPlaylist = (playlist) => (
   _.orderBy(_.values(playlist), ['ord'], ['desc'])
 );

@@ -10,13 +10,9 @@
 #
 
 class Follow < ApplicationRecord
-  validates :playlist, :user, presence: true
-  validates :playlist, uniqueness: { scope: :user}
+  validates :playlist, :follower, presence: true
+  validates :playlist, uniqueness: { scope: :follower}
 
   belongs_to :playlist
-  belongs_to :user
-
-  def create
-    
-  end
+  belongs_to :follower, foreign_key: :user_id, class_name: :User
 end
