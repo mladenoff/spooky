@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Search from './search';
-import { requestAllTracks } from '../../../../actions/track_actions';
+import { requestSearchResults } from '../../../../actions/search_actions';
 import { enqueuePlayback } from '../../../../actions/playback_actions';
 import { selectAllTracks } from '../../../../reducers/selectors';
 
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestAllTracks: () => dispatch(requestAllTracks()),
+  requestSearchResults: (search) => dispatch(requestSearchResults(search)),
   enqueuePlayback: (tracks, currentTrack) => dispatch(enqueuePlayback(tracks, currentTrack)),
 });
 

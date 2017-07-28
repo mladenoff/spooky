@@ -9,25 +9,26 @@ class NewPlaylistForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    // this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   componentDidMount(){
     this.titleInput.focus();
   }
+  
   handleCancel(e){
     e.preventDefault();
     this.props.closeModal();
   }
 
-  handleKeyPress(e){
-    // e.preventDefault();
-    if(event.key === 'Enter'){
-      this.handleSubmit();
-    }else if(e.key === 'Escape'){
-      this.handleCancel();
-    }else{this.update('playlistTitle');}
-  }
+  // handleKeyPress(e){
+  //   e.preventDefault();
+  //   if(event.key === 'Enter'){
+  //     this.handleSubmit();
+  //   }else if(e.key === 'Escape'){
+  //     this.handleCancel();
+  //   }else{this.update('playlistTitle');}
+  // }
 
   handleSubmit(e){
     e.preventDefault();
@@ -55,17 +56,17 @@ class NewPlaylistForm extends React.Component {
             value={this.state.playlistTitle}
             className="new-playlist-title"
             placeholder="Start typing..."
-            onKeyPress={this.handleKeyPress}
             />
           <div className="login-button-container">
-            <button className="landing-button-light" onClick={this.handleCancel}>Cancel</button>
             <button className="landing-button" onClick={this.handleSubmit}>Create</button>
+            <button className="landing-button-light" onClick={this.handleCancel}>Cancel</button>
           </div>
         </form>
       </div>
     );
   }
 }
+// onKeyPress={this.handleKeyPress}
 
 
 

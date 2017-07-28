@@ -44,7 +44,7 @@ caravilla_t = Track.create(title: 'Caravilla',
   url: 'http://res.cloudinary.com/spooky/video/upload/v1500751929/caravilla_vyaq88.mp3',
   sequence: 2)
 
-spaceship_parts_t = Track.create(title: 'Spaceship Parts',
+spaceship_parts_t = Track.create(title: 'Spaceship Partsxxxxxjhkfhjkfdhjkjkhsdfkjhafkhjlsdsfdlhjk',
   artist_id: guts.id,
   album_id: spaceship_parts_a.id,
   url: 'http://res.cloudinary.com/spooky/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
@@ -64,8 +64,8 @@ mouse_tracks = Playlist.create(title: 'Mouse Tracks', user_id: nae.id)
 
 Playlisting.destroy_all
 
-Playlisting.create(playlist_id: i_love_css.id, track_id: caravilla_t.id, ord: 1)
-Playlisting.create(playlist_id: i_love_css.id, track_id: hippzer_t.id, ord: 2)
+Playlisting.create(playlist_id: i_love_css.id, track_id: caravilla_t.id, ord: 0)
+Playlisting.create(playlist_id: i_love_css.id, track_id: hippzer_t.id, ord: 1)
 
-Playlisting.create(playlist_id: css_tears.id, track_id: caravilla_t.id, ord: 1)
-Playlisting.create(playlist_id: mouse_tracks.id, track_id: caravilla_t.id, ord: 1)
+Playlisting.create(playlist_id: css_tears.id, track_id: caravilla_t.id, ord: 0)
+Playlisting.create(playlist_id: mouse_tracks.id, track_id: caravilla_t.id, ord: 0)

@@ -13,8 +13,14 @@
 #
 
 class Track < ApplicationRecord
+  validates :title, :url, :artist, :album, presence: true
+
   belongs_to :artist
   belongs_to :album
   has_many :playlistings
   has_many :playlists, through: :playlistings
+
+  def self.search(term)
+    self.joins(:artist, :album).where("tracks.title ILIKE ? OR artists.name ILIKE ? OR albums.title ILIKE ?", "%#{term}%", "%#{term}%", "%#{term}%")
+  end
 end

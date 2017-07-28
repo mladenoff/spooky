@@ -13,9 +13,9 @@ class NavPlaylistsItem extends React.Component {
 
   playlistTitle() {
     if(this.props.currentPlaylist === this.props.playlist.id){
-      return <div className="nav-playlists-item info now-playing">{this.props.playlist.title}</div>;
+      return <div className="nav-playlists-item info now-playing overflow">{this.props.playlist.title}</div>;
     }else{
-      return <div className="nav-playlists-item info">{this.props.playlist.title}</div>;
+      return <div className="nav-playlists-item info overflow">{this.props.playlist.title}</div>;
     }
   }
 

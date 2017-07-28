@@ -16,13 +16,13 @@ class TrackItem extends React.Component {
   render() {
     return(<li className="track-item">
       <div className="album-background">
+        <img src={this.props.track.img_url} className="album-art"  />
         <div className="album-option play" onClick={this.handlePlayClick}>
           <img src="http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" />
         </div>
         <AddTrackModal trackId={this.props.track.id}/>
-        <img src={this.props.track.img_url} className="album-art"  />
       </div>
-      {this.props.track.artist} • {this.props.track.title}
+      <span className="track-item-words overflow">{this.props.track.artist} • {this.props.track.title}</span>
     </li>);
   }
 }

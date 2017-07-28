@@ -28,11 +28,11 @@
   width: 32px;
   border-radius: 16px;
   padding: 3.2px;
-  transition: all .75s;
-  &:hover {
-    opacity: .25;
-    filter: blur(1px);
-  }
+  transition: all 1s;
+  // &:hover {
+  //   opacity: .25;
+  //   filter: blur(1px);
+  // }
 }
 
 .small-logo-text {
@@ -43,12 +43,17 @@
   letter-spacing: 10px;
   margin: 0;
   opacity: 0;
+  transition: all 1s;
+}
 
-  transition: all .75s;
-  &:hover {
-    opacity: .05;
+.logo-small-container:hover .logo-small {
+  opacity: .75;
+  filter: blur(.5px);
+}
 
-  }
+.logo-small-container:hover .small-logo-text {
+  filter: blur(.5px);
+  opacity: .05;
 }
 
 .logo-small-container {
@@ -57,10 +62,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  // &:hover {
-  //   opacity: .05;
-  // }
 }
 
 .main-nav-bar {
@@ -93,13 +94,17 @@
 }
 
 .nav-playlists-item.info {
+  display: block;
+  // width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0%;
 }
 
 .nav-bar-button {
   @extend .submit;
+  height: 28px;
 }
 
 .main-view-container {
@@ -109,28 +114,42 @@
   background: linear-gradient(rgb(180,180,180), $black);
   height: 100%;
   width: 100%;
-  overflow-y: auto;
+  min-width: 800px;
+  overflow-y: hidden;
   overflow-x: hidden;
-  // flex-direction: column;
-  // align-items: center;
-  // display: flex;
-  display: block;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  // display: block;
+}
+
+.trapper {
+  width: 100%;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  // padding: 0px 50px 0px 50px;
 }
 
 .browse-nav-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
+  margin: 0px 50px 0px 50px;
 }
 
 .browse {
   padding: 0px 50px 0px 50px;
-  min-height: 100%;
+  // min-height: 100%;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   display: block;
   min-width: 400px; //TODO: why does the nav ooze out when the track doesn't?
+  overflow-y: auto;
+  // padding-bottom: 100px;
 }
 
 .browse-nav {
@@ -139,7 +158,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 }
 
 .browse-nav-list {
@@ -175,7 +194,7 @@ div.new-playlist-button {
 @media only screen and (max-width: 1000px) {
     /* For mobile phones: */
   div.new-playlist-button {
-    position: relative;
+    position: static;
   }
 }
 
@@ -187,6 +206,7 @@ div.new-playlist-button {
   }
   .browse-nav-list {
     flex-direction: column;
+    flex-grow: 1;
   }
   .browse-nav li:last-child {
     text-align: center;
@@ -195,7 +215,12 @@ div.new-playlist-button {
   .browse-nav li:first-child {
     text-align: center;
   }
+
+  .trapper {
+    display: block;
+  }
 }
+
 button.new-playlist-button {
   font-size: 11px;
   padding: 7px 17px 8px 22px;
@@ -213,6 +238,13 @@ button.new-playlist-button {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  overflow-y: auto;
+  // height: 100%;
+  width: 100%;
+}
+
+.search-tracks {
+  overflow-y: auto;
 }
 
 .track-list {
@@ -220,7 +252,7 @@ button.new-playlist-button {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  flex-basis: autp;
+  flex-basis: auto;
 }
 
 .track-item  {
@@ -231,38 +263,57 @@ button.new-playlist-button {
   flex-grow: 1;
 }
 
+// .track-item:last-child {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin: 20px;
+//   flex-grow: 3;
+// }
+
 .album-art {
   width: 200px;
   height: 200px;
   position: absolute;
   object-fit: cover;
   transition: all 0.5s;
-  &:hover {
-    opacity: .7;
-  }
+  z-index: 0;
+}
+
+.album-background:hover .album-art {
+  opacity: .5;
+}
+
+.album-background:hover .album-option {
+  opacity: 1;
 }
 
 .album-option {
-  background-color: $red;
+  // background-color: $red;
   cursor: pointer;
   position: absolute;
-  width: 200px; height: 100px;
+
   object-fit: contain;
-  z-index: 13;
   opacity: 0;
   display: flex;
   align-items: center;
+  z-index: 3;
   &:hover {
-    opacity: .3;
+    filter: blur(1px);
   }
 }
 
 .play {
-  // background-image: url(http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg);
-
+  background-image: url(http://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg);
+  width: 100px; height: 100px;
+  top: 50px;
+  left: 50px;
 }
 .add {
-  top: 100px;
+  background-image: url(http://res.cloudinary.com/spooky/image/upload/v1501218159/add_fe3skb.svg);
+  width: 50px; height: 50px;
+  top: 150px;
+  left: 150px;
 }
 
 .album-option img{
@@ -276,6 +327,10 @@ button.new-playlist-button {
   width: 200px;
   position: relative;
   display: block;
+}
+
+.track-item-words {
+  width: 250px;
 }
 
 .widget-container {
@@ -293,11 +348,16 @@ button.new-playlist-button {
   margin-left: 10px;
   text-align: left;
   display: flex;
+  overflow: hidden;
+  width: 210px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .widget-container .track-image {
   width: 60px;
   height: 60px;
   margin-right: 20px;
+  object-fit: cover;
 }
 
 .track-words {
@@ -309,16 +369,25 @@ button.new-playlist-button {
 .widget-container .track-title {
   text-transform: uppercase;
   font-size: 16px;
+  width: 130px;
 }
 
 .widget-container .artist-name {
   font-size: 14px;
   opacity: .6;
+  width: 130px;
+}
+
+.overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .widget {
   height: 100px;
   display: flex;
+  min-width: 800px;
   flex-direction: row;
   justify-content: center;
   align-items: center;

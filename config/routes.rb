@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#root'
 
+  post "api/search", to: 'api/tracks#search', defaults: { format: :json }
+
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create] do
       resources :playlists, only: [:index]

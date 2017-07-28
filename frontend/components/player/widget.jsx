@@ -69,6 +69,9 @@ class Widget extends React.Component {
     });
     if(this.state.playing === false){this.setState({seek: 0});}
     this.clearRAF();
+    if (this.props.playback.currentTrack !== null && this.props.playback.currentTrack < this.props.playback.playQueue.length - 1) {
+      this.props.skipTrack();
+    }
   }
 
   handlePauseClick() {
@@ -132,8 +135,8 @@ class Widget extends React.Component {
       return <div className="track-info">
         <div className="track-image"><img src={this.props.playback.playQueue[this.props.playback.currentTrack].img_url} /></div>
         <div className="track-words">
-          <div className="track-title"><span>{this.props.playback.playQueue[this.props.playback.currentTrack].title}</span></div>
-          <div className="artist-name"><span>{this.props.playback.playQueue[this.props.playback.currentTrack].artist}</span></div>
+          <div className="track-title overflow"><span>{this.props.playback.playQueue[this.props.playback.currentTrack].title}</span></div>
+          <div className="artist-name overflow"><span>{this.props.playback.playQueue[this.props.playback.currentTrack].artist}</span></div>
         </div>
       </div>;
     }
