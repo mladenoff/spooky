@@ -71,6 +71,8 @@ class Widget extends React.Component {
     this.clearRAF();
     if (this.props.playback.currentTrack !== null && this.props.playback.currentTrack < this.props.playback.playQueue.length - 1) {
       this.props.skipTrack();
+    }else{
+      this.props.pausePlayback();
     }
   }
 
@@ -154,6 +156,7 @@ class Widget extends React.Component {
     let howler = null;
     if (this.props.playback.currentTrack !== null) {
       howler = <ReactHowler
+        autoPlay={false}
         src={this.props.playback.playQueue[this.props.playback.currentTrack].url}
         onLoad={this.handleOnLoad}
         onEnd={this.handleOnEnd}

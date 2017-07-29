@@ -49,8 +49,6 @@ The existing routes on both the front and back end could support a wider variety
 
 ### Stat keeping
 
-
-
 [live-link]: https://get-spooked.herokuapp.com
 [spotify]: https://spotify.com
 [howler]: https://howlerjs.com
