@@ -36,6 +36,8 @@ ding_dong_a = Album.create(title: 'Ding Dong',
 
 your_body_is_home_a = Album.create(title: 'Your Body is Home', img_url: def_art)
 
+money_a = Album.create(title: '$$$$', img_url: def_art)
+
 Track.destroy_all
 
 hippzer_t = Track.create(title: 'hippzer',
@@ -50,23 +52,43 @@ caravilla_t = Track.create(title: 'Caravilla',
   url: 'https://res.cloudinary.com/spooky/video/upload/v1500751929/caravilla_vyaq88.mp3',
   sequence: 2)
 
-spaceship_parts_t = Track.create(title: 'Spaceship Parts',
+spaceship_parts_t = Track.create(
+  title: 'Spaceship Parts',
   artist_id: guts.id,
   album_id: spaceship_parts_a.id,
   url: 'https://res.cloudinary.com/spooky/video/upload/v1500605788/01_Spaceship_Parts_a3jhor.wav',
   sequence: 1)
 
-your_body_is_home_t = Track.create(title: 'Your Body is Home',
+your_body_is_home_t = Track.create(
+  title: 'Your Body is Home',
   artist_id: a_small_gang.id,
   album_id: your_body_is_home_a.id,
   url: 'https://res.cloudinary.com/spooky/video/upload/v1501229489/Your_Body_is_Home_ejnegr.mp3',
   sequence: 1)
 
-  ding_dong_t = Track.create(title: 'Ding Dong',
-  artist_id: doorbells.id,
-  album_id: ding_dong_a.id,
-  url: 'https://res.cloudinary.com/spooky/video/upload/v1501101699/ding-dong_wq4bog.wav',
-  sequence: 1)
+Track.create(title: 'Lakeside',
+artist_id: aertime.id,
+album_id: money_a.id,
+url: 'https://res.cloudinary.com/spooky/video/upload/v1501229428/01_Lakeside_vvkgry.mp3',
+sequence: 1)
+
+Track.create(title: "What a Feelin'",
+artist_id: aertime.id,
+album_id: money_a.id,
+url: 'https://res.cloudinary.com/spooky/video/upload/v1501229429/02_What_a_Feelin_qfxp6o.mp3',
+sequence: 2)
+
+Track.create(title: 'Falling Asleep in a Chair',
+artist_id: aertime.id,
+album_id: money_a.id,
+url: 'https://res.cloudinary.com/spooky/video/upload/v1501229429/03_Falling_Asleep_in_a_Chair_joixdu.mp3',
+sequence: 3)
+
+ding_dong_t = Track.create(title: 'Ding Dong',
+artist_id: doorbells.id,
+album_id: ding_dong_a.id,
+url: 'https://res.cloudinary.com/spooky/video/upload/v1501101699/ding-dong_wq4bog.wav',
+sequence: 1)
 
 Playlist.destroy_all
 
