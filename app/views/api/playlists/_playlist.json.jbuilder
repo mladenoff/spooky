@@ -1,6 +1,7 @@
 json.extract! playlist, :id, :title
 json.extract! playlist.user, :username
 json.user_id playlist.user.id
+
 json.count playlist.playlistings.length
 if playlist.playlistings.empty?
   json.updated_at Time.now.to_i

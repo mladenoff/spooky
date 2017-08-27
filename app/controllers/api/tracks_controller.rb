@@ -6,7 +6,7 @@ class Api::TracksController < ApplicationController
 
   def search
     @tracks = Track.search(search_params[:term])
-    render 'api/tracks/index'
+    render "api/tracks/index"
   end
 
   private

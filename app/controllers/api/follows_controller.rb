@@ -12,7 +12,8 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = Follow.where(playlist_id: params[:playlist_id], user_id: current_user.id)[0]
+    @follow = Follow
+      .where(playlist_id: params[:playlist_id], user_id: current_user.id)[0]
     if @follow.destroy
       @user = @follow.follower
       render 'api/users/show'
