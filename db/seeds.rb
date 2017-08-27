@@ -66,13 +66,15 @@ your_body_is_home_t = Track.create(
   url: 'https://res.cloudinary.com/spooky/video/upload/v1501229489/Your_Body_is_Home_ejnegr.mp3',
   sequence: 1)
 
-Track.create(title: 'Lakeside',
-artist_id: aertime.id,
-album_id: money_a.id,
-url: 'https://res.cloudinary.com/spooky/video/upload/v1501229428/01_Lakeside_vvkgry.mp3',
-sequence: 1)
+Track.create(
+  title: 'Lakeside',
+  artist_id: aertime.id,
+  album_id: money_a.id,
+  url: 'https://res.cloudinary.com/spooky/video/upload/v1501229428/01_Lakeside_vvkgry.mp3',
+  sequence: 1)
 
-Track.create(title: "What a Feelin'",
+Track.create(
+title: "What a Feelin'",
 artist_id: aertime.id,
 album_id: money_a.id,
 url: 'https://res.cloudinary.com/spooky/video/upload/v1501229429/02_What_a_Feelin_qfxp6o.mp3',

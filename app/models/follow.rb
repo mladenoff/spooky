@@ -11,7 +11,7 @@
 
 class Follow < ApplicationRecord
   validates :playlist, :follower, presence: true
-  validates :playlist, uniqueness: { scope: :follower}
+  validates :playlist, uniqueness: { scope: :follower }
 
   belongs_to :playlist
   belongs_to :follower, foreign_key: :user_id, class_name: :User

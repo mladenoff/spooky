@@ -12,7 +12,7 @@
 
 class Playlisting < ApplicationRecord
   validates :track_id, :playlist_id, presence: :true
-  validates :track, uniqueness: { scope: :playlist}
+  validates :track, uniqueness: { scope: :playlist }
 
   belongs_to :track
   belongs_to :playlist

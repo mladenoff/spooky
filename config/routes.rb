@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   # delete "api/playlists/:playlist_id/follows", to: 'api/tracks#search', defaults: { format: :json }
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:create, :show] do
+    resources :users, only: %i(create show) do
       resources :playlists, only: [:index]
     end
-    resource :session, only: [:create, :destroy]
+    resource :session, only: %i(create destroy)
     resources :tracks, only: [:index]
-    resources :playlists, only: [:create, :index, :show] do
-      resources :playlistings, only: [:create]
-      resources :follows, only: [:create, :destroy]
+    resources :playlists, only: %i(create index show) do
+      resources :playlistings, only: %i(create)
+      resources :follows, only: %i(create destroy)
     end
   end
 
