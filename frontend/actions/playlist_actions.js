@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/playlist_api_util';
-import {START_FETCHING} from '../reducers/fetching_reducer';
-import {orderPlaylist} from '../reducers/selectors';
+import { START_FETCHING } from '../reducers/fetching_reducer';
+import { orderPlaylist } from '../reducers/selectors';
 
 export const RECEIVE_PLAYLISTS = 'RECEIVE_PLAYLISTS';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
@@ -24,35 +24,35 @@ export const playPlaylist = (tracks, id) => ({
   playlist: id
 });
 
-export const receiveUserFollows = (currentUser) => ({
+export const receiveUserFollows = currentUser => ({
   type: RECEIVE_FOLLOWS,
   currentUser
 });
 
-export const requestAllPlaylists = () => dispatch => {
+export const requestAllPlaylists = () => (dispatch) => {
   dispatch(startFetchingPlaylists());
   return APIUtil.fetchAllPlaylists().then(playlists => (
     dispatch(receivePlaylists(playlists)))
   );
 };
 
-export const requestUserPlaylists = (userId) => dispatch => {
+export const requestUserPlaylists = userId => (dispatch) => {
   dispatch(startFetchingPlaylists());
   return APIUtil.fetchUserPlaylists(userId).then(playlists => (
     dispatch(receivePlaylists(playlists)))
   );
 };
 
-export const requestPlaylist = (id) => dispatch => {
+export const requestPlaylist = id => (dispatch) => {
   dispatch(startFetchingPlaylists());
   return APIUtil.fetchPlaylist(id).then(playlist => (
     dispatch(receivePlaylist(playlist)))
   );
 };
 
-export const requestPlaylistPlayback = (id) => dispatch => {
+export const requestPlaylistPlayback = id => (dispatch) => {
   dispatch(startFetchingPlaylists());
-  return APIUtil.fetchPlaylist(id).then((playlist) => (
+  return APIUtil.fetchPlaylist(id).then(playlist => (
     dispatch(playPlaylist(playlist, id)))
   );
 };
@@ -63,18 +63,18 @@ export const createPlaylist = data => dispatch => (
   )
 );
 
-export const addTrack = (data) => dispatch => (
+export const addTrack = data => dispatch => (
   APIUtil.addTrack(data).then(playlists => (
     dispatch(receivePlaylists(playlists)))
   )
 );
 
-export const followPlaylist = (playlistId) => dispatch => (
+export const followPlaylist = playlistId => dispatch => (
   APIUtil.followPlaylist(playlistId).then(user => (
     dispatch(receiveUserFollows(user)))
   )
 );
-export const unfollowPlaylist = (playlistId) => dispatch => (
+export const unfollowPlaylist = playlistId => dispatch => (
   APIUtil.unfollowPlaylist(playlistId).then(user => (
     dispatch(receiveUserFollows(user)))
   )

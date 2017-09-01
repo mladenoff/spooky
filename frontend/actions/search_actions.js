@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/search_api_util';
-import {START_FETCHING} from '../reducers/fetching_reducer';
-import {RECEIVE_TRACKS} from './track_actions';
+import { START_FETCHING } from '../reducers/fetching_reducer';
+import { RECEIVE_TRACKS } from './track_actions';
 //
 export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
@@ -13,7 +13,7 @@ export const clearSearch = results => ({ //At this stage search results are alwa
   type: CLEAR_SEARCH,
 });
 
-export const requestSearchResults = (search) => dispatch => {
+export const requestSearchResults = search => (dispatch) => {
   dispatch(startFetchingSearchResults());
   return APIUtil.fetchSearchResults(search).then(results => ( //At this stage search results are always tracks
     dispatch(receiveSearch(results)))

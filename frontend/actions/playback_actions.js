@@ -10,18 +10,18 @@ export const enqueuePlayback = (tracks, currentTrack) => ({
   currentTrack,
 });
 
-export const pausePlayback = () =>({
+export const pausePlayback = () => ({
   type: PAUSE,
 });
 
-export const play = () =>({
+export const play = () => ({
   type: PLAY,
 });
 
-export const prevTrack = () =>({
+export const prevTrack = () => ({
   type: PREVIOUS,
 });
 
-export const skipTrack = () =>({
+export const skipTrack = () => ({
   type: SKIP,
 });
