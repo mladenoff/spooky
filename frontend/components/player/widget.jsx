@@ -28,7 +28,7 @@ class Widget extends React.Component {
     this.setState({
       playing: nextProps.playback.playing,
     });
-    if(nextProps.playback.currentTrack !== this.props.playback.currentTrack){
+    if (nextProps.playback.currentTrack !== this.props.playback.currentTrack) {
       this.clearRAF();
     }
     this.setState({
@@ -36,13 +36,13 @@ class Widget extends React.Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState){
-    if(!prevState.playing && this.state.playing && this.state.loaded){
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.playing && this.state.playing && this.state.loaded) {
       this.renderSeekPos();
     }
   }
 
-  renderSeekPos () {
+  renderSeekPos() {
     this.setState({
         seek: this.player.seek(),
         progress: (this.player.seek() / this.player.duration())
@@ -52,7 +52,7 @@ class Widget extends React.Component {
       }
   }
 
-  handleOnLoad () {
+  handleOnLoad() {
     this.setState({
       loaded: true,
       duration: this.player.duration()
@@ -62,16 +62,16 @@ class Widget extends React.Component {
     }
   }
 
-  handleOnEnd () {
+  handleOnEnd() {
     this.setState({
       playing: false,
       progress: 0
     });
-    if(this.state.playing === false){this.setState({seek: 0});}
+    if (this.state.playing === false) { this.setState({ seek: 0 }); }
     this.clearRAF();
     if (this.props.playback.currentTrack !== null && this.props.playback.currentTrack < this.props.playback.playQueue.length - 1) {
       this.props.skipTrack();
-    }else{
+    } else {
       this.props.pausePlayback();
     }
   }
@@ -81,7 +81,7 @@ class Widget extends React.Component {
   }
 
   handlePlayClick() {
-    if(this.props.playback.currentTrack !== null){
+    if (this.props.playback.currentTrack !== null) {
       this.props.play();
     }
   }
@@ -99,10 +99,10 @@ class Widget extends React.Component {
   }
 
   handleMuteClick() {
-    if(this.state.mute){
-      this.setState({mute: false});
-    }else{
-      this.setState({mute: true});
+    if (this.state.mute) {
+      this.setState({ mute: false });
+    } else {
+      this.setState({ mute: true });
     }
   }
 
@@ -111,7 +111,7 @@ class Widget extends React.Component {
       return <img onClick={this.handlePauseClick}
         className="control-button"
         src="https://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg" />;
-    }else{
+    } else {
       return <img onClick={this.handlePlayClick}
         className="control-button"
         src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" />;
@@ -119,17 +119,18 @@ class Widget extends React.Component {
   }
 
   prevTrack() {
-    return<img
+    return (<img
       src="https://res.cloudinary.com/spooky/image/upload/q_100/v1500883825/prev_mh7tqn.svg"
       className="control-button control-button-medium"
-      onClick={this.handlePrevClick}/>;
+      onClick={this.handlePrevClick}/>);
   }
 
   skipTrack() {
-    return <img
+    return (<img
       src="https://res.cloudinary.com/spooky/image/upload/q_100/v1500884211/next_ojnvpe.svg"
+      alt="Skip track"
       className="control-button control-button-medium"
-      onClick={this.handleSkipClick}/>;
+      onClick={this.handleSkipClick}/>);
   }
 
   trackInfo() {
@@ -144,7 +145,7 @@ class Widget extends React.Component {
     }
   }
 
-  clearRAF () {
+  clearRAF() {
     raf.cancel(this._raf);
   }
 
@@ -170,12 +171,16 @@ class Widget extends React.Component {
     }
 
     const muteButton = this.state.mute
-      ? <img src="https://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
-      className="control-button control-button-medium mute-button"
-      onClick={this.handleMuteClick} alt="Mute"/>
-      : <img src="https://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
-      className="control-button control-button-medium mute-button"
-      onClick={this.handleMuteClick} alt="Unmute"/>;
+      ? (<img
+        src="https://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
+        className="control-button control-button-medium mute-button"
+        onClick={this.handleMuteClick} alt="Mute"
+      />)
+      : (<img src="https://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
+        className="control-button control-button-medium mute-button"
+        onClick={this.handleMuteClick}
+        alt="Unmute"
+      />);
 
     // const playTime = (
     //     <div>
@@ -194,32 +199,34 @@ class Widget extends React.Component {
       color: '#FFEA82',
       trailColor: 'rgb(180,180,180)',
       trailWidth: 2,
-      svgStyle: {width: '100%', height: '100%'},
-      from: {color: '#FFFFFF'},
-      to: {color: 'rgb(215, 30, 58, .2)'},
+      svgStyle: { width: '100%', height: '100%' },
+      from: { color: '#FFFFFF' },
+      to: { color: 'rgb(215, 30, 58, .2)' },
       step: (state, bar) => {
         bar.path.setAttribute('stroke', state.color);
       }
     };
 
-    return(
+    return (
       <div className="widget-container">
         {howler}
         <div className="widget">
           {this.trackInfo()}
           <div className="track-stack">
-          <div className="progress-container">
-            <span>{(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}</span>
-            <Line progress={this.state.progress}
-              options={barOptions}
-              containerClassName={'progressbar-container'}/>
-            <span>{(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}</span>
-          </div>
-          <div className="track-controls">
-          {this.prevTrack()}
-          {this.playPause()}
-          {this.skipTrack()}
-          </div>
+            <div className="progress-container">
+              <span>{(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}</span>
+              <Line
+                progress={this.state.progress}
+                options={barOptions}
+                containerClassName={'progressbar-container'}
+              />
+              <span>{(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}</span>
+            </div>
+            <div className="track-controls">
+              {this.prevTrack()}
+              {this.playPause()}
+              {this.skipTrack()}
+            </div>
           </div>
           {muteButton}
         </div>

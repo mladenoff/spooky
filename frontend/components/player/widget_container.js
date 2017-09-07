@@ -8,12 +8,12 @@ import { pausePlayback,
   skipTrack
 } from '../../actions/playback_actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   playback: state.playback,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   pausePlayback: () => dispatch(pausePlayback()),
   play: () => dispatch(play()),

@@ -10,7 +10,7 @@ const defaultState = () => ({
 
 const FetchingReducer = (state = false, action) => {
   Object.freeze(state);
-  switch(action.type) {
+  switch (action.type) {
     case START_FETCHING:
       return true;
     default:

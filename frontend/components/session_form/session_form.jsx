@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm({user});
+    this.props.processForm({ user });
   }
 
   navLink() {
@@ -43,16 +43,17 @@ class SessionForm extends React.Component {
     } else {
       return (
         <span>
-          Already have an account?<Link to="/login" className="inline-link"> Log in</Link>
+          Already have an account?
+          <Link to="/login" className="inline-link"> Log in</Link>
         </span>
       );
     }
   }
 
   renderErrors() {
-    return(
+    return (
       <ul>
-        {this.props.errors.map((error,i) => (
+        {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>))}
@@ -60,37 +61,39 @@ class SessionForm extends React.Component {
     );
   }
 
-  render(){
+  render() {
     return (
       <form onSubmit={this.handleSubmit} className="session-form">
         <div id="welcome-text">
           <span>{ this.props.formType === 'login' ? "Log in and get Spooked." : "Sign up and get Spooked." }</span>
-          <br/>
+          <br />
           <span id="session-errors">
             {this.renderErrors()}
           </span>
         </div>
-        <br/>
+        <br />
         <label value="username">
-          <input type="text"
+          <input
+            type="text"
             value={this.state.username}
             onChange={this.update('username')}
             className="login-input"
             placeholder="USERNAME"
-            />
+          />
         </label>
-        <br/>
+        <br />
         <label value="password">
-          <input type="password"
+          <input
+            type="password"
             value={this.state.password}
             onChange={this.update('password')}
             className="login-input"
             placeholder="PASSWORD"
-            />
+          />
         </label>
-        <br/>
-        <input type="submit" value="Submit" className="submit"/>
-        <br/>
+        <br />
+        <input type="submit" value="Submit" className="submit" />
+        <br />
         <span id="welcome-text-small">{this.navLink()}</span>
       </form>
     );

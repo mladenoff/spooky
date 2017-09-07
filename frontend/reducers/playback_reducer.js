@@ -4,7 +4,7 @@ import { ENQUEUE_PLAYBACK,
   PREVIOUS,
   SKIP
 } from '../actions/playback_actions';
-import {PLAY_PLAYLIST} from '../actions/playlist_actions';
+import { PLAY_PLAYLIST } from '../actions/playlist_actions';
 
 const defaultState = () => ({
   currentTrack: null,
@@ -34,18 +34,20 @@ const PlaybackReducer = (state = defaultState(), action) => {
         playlist: action.playlist,
       });
     case PAUSE:
-      newState = Object.assign({}, state, {playing: false});
+      newState = Object.assign({}, state, { playing: false });
       return newState;
     case PLAY:
-      newState = Object.assign({}, state, {playing: true});
+      newState = Object.assign({}, state, { playing: true });
       return newState;
     case PREVIOUS:
       if (state.currentTrack > 0) {
-        newState = {currentTrack: (state.currentTrack - 1)};}
+        newState = { currentTrack: (state.currentTrack - 1) };
+      }
       return Object.assign({}, state, newState);
     case SKIP:
       if (state.currentTrack < state.playQueue.length - 1) {
-        newState = {currentTrack: (state.currentTrack + 1)};}
+        newState = { currentTrack: (state.currentTrack + 1) };
+      }
       return Object.assign({}, state, newState);
     default:
       return state;
