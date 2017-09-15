@@ -2,7 +2,7 @@ import { ENQUEUE_PLAYBACK,
   PAUSE,
   PLAY,
   PREVIOUS,
-  SKIP
+  SKIP,
 } from '../actions/playback_actions';
 import { PLAY_PLAYLIST } from '../actions/playlist_actions';
 

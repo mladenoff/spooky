@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
   pausePlayback: () => dispatch(pausePlayback()),
   play: () => dispatch(play()),
   prevTrack: () => dispatch(prevTrack()),
-  skipTrack: () => dispatch(skipTrack())
+  skipTrack: () => dispatch(skipTrack()),
 });
 
 export default connect(

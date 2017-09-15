@@ -9,7 +9,7 @@ class Search extends React.Component {
 
     //
 
-    this.state={
+    this.state = {
       searchQuery: "",
       tracks: this.props.tracks
     };
@@ -18,14 +18,13 @@ class Search extends React.Component {
     this.fireSearch = this.fireSearch.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({tracks: nextProps.tracks});
+  componentDidMount() {
+    this.props.clearSearch();
+    this.searchInput.focus();
   }
 
-  componentDidMount(){
-      this.props.clearSearch();
-      this.searchInput.focus();
-    // }
+  componentWillReceiveProps(nextProps) {
+    this.setState({ tracks: nextProps.tracks });
   }
 
   handleSearch(e) {
@@ -38,25 +37,31 @@ class Search extends React.Component {
   }
 
   fireSearch() {
-    const data = {search: {term: this.state.searchQuery}};
-    if(this.state.searchQuery === ""){
-      this.props.clearSearch();}else{
+    const data = { search: { term: this.state.searchQuery } };
+    if (this.state.searchQuery === "") {
+      this.props.clearSearch();
+    } else {
       this.props.requestSearchResults(data);
     }
   }
 
-  trackview (){if (this.props.fetching === true) {
-    return <Loading />;
-  } else {
-    return <ul className="track-list">
+  trackview() {
+    if (this.props.fetching === true) {
+      return <Loading />;
+    } else {
+      return (<ul className="track-list">
         {this.state.tracks.map((track, idx) =>
-          (<TrackItem key={track.id}
+          (<TrackItem
+            key={track.id}
             track={track}
             tracks={this.state.tracks}
             enqueuePlayback={this.props.enqueuePlayback}
-            idx={idx}/>))}
-    </ul>;
-  }}
+            idx={idx}
+          />)
+        )}
+      </ul>);
+    }
+  }
 
   render() {
     //UPDATE TO REFLECT INPUT CLASS NAME
@@ -64,13 +69,14 @@ class Search extends React.Component {
       <div className="tracks">
         <h3 className="view-header">SEARCH</h3>
         <form>
-          <input type="text"
+          <input
+            type="text"
             ref={(input) => { this.searchInput = input; }}
             onChange={this.handleSearch}
             value={this.state.searchQuery}
             className="new-playlist-title"
             placeholder="Start typing..."
-            />
+          />
         </form>
         <div className="search-tracks">
           {this.trackview()}

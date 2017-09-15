@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import Playlist from './playlist';
 // import { requestAllTracks } from '../../../actions/track_actions';
 // import { enqueuePlayback } from '../../../actions/playback_actions';
 // import { selectAllTracks } from '../../../reducers/selectors';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   playlists: state.playlists,
   fetching: state.fetching,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   // requestAllTracks: () => dispatch(requestAllTracks()),
   // enqueuePlayback: (tracks, currentTrack) => dispatch(enqueuePlayback(tracks, currentTrack)),
 });
