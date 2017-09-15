@@ -21,19 +21,26 @@ class PlaylistsItem extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <li className="playlists-item">
         <div>
           <span>{this.props.playlist.title}</span>
           <span className="info username"> {this.props.playlist.username}</span>
         </div>
         <div className="playlist-buttons">
-          { this.props.currentUser.id !== this.props.playlist.user_id && !this.props.currentUser.follows.includes(this.props.playlist.id) ?
-            <button className="small-follow-button" onClick={this.handleFollowClick}>Follow</button> :
-              null}
+          { this.props.currentUser.id !== this.props.playlist.user_id
+            && !this.props.currentUser.follows.includes(this.props.playlist.id)
+            ? <button
+              className="small-follow-button"
+              onClick={this.handleFollowClick}
+            >
+              Follow
+            </button>
+            : null
+          }
           { this.props.currentUser.id !== this.props.playlist.user_id && this.props.currentUser.follows.includes(this.props.playlist.id) ?
             <button className="small-follow-button" onClick={this.handleUnfollowClick}>Unfollow</button> :
-              null}
+            null}
           <img src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button" onClick={this.handlePlayClick}/>
         </div>
       </li>
@@ -42,11 +49,9 @@ class PlaylistsItem extends React.Component {
 }
 
 
-
 export default PlaylistsItem;
 
 //TODO: for list view
-
 
 // render() {
 //   return(

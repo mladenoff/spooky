@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import TracksContainer from './tracks_container';
 import PlaylistsContainer from './playlists/playlists_container';
@@ -12,17 +12,20 @@ import { ProtectedRoute } from '../../../util/route_util';
 
 const Browse = () => (
   <div className="trapper">
-  <BrowseNav />
-  <div className="browse">
-    <ProtectedRoute path="/player/tracks" component={TracksContainer} />
-    <ProtectedRoute path="/player/loading" component={Loading} />
-    <ProtectedRoute path="/player/playlists" component={PlaylistsContainer} />
-    <ProtectedRoute path="/player/search" component={SearchContainer} />
-    <ProtectedRoute path="/player/playlist/:playlistId" component={PlaylistContainer}/>
-  </div>
+    <BrowseNav />
+    <div className="browse">
+      <ProtectedRoute path="/player/tracks" component={TracksContainer} />
+      <ProtectedRoute path="/player/loading" component={Loading} />
+      <ProtectedRoute path="/player/playlists" component={PlaylistsContainer} />
+      <ProtectedRoute path="/player/search" component={SearchContainer} />
+      <ProtectedRoute
+        path="/player/playlist/:playlistId"
+        component={PlaylistContainer}
+      />
+    </div>
   </div>
 );
 
 export default Browse;
-//import PlaylistContainer from './playlists/playlist_container';
+// import PlaylistContainer from './playlists/playlist_container';
 // <ProtectedRoute path=`/player/playlist/:id` component={PlaylistsContainer} /> TODO: add ME IN

@@ -4,7 +4,7 @@ class NewPlaylistForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state ={
+    this.state = {
       playlistTitle: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -12,18 +12,18 @@ class NewPlaylistForm extends React.Component {
     // this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.titleInput.focus();
   }
 
-  handleCancel(e){
+  handleCancel(e) {
     e.preventDefault();
     this.props.closeModal();
   }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
-    const playlist = {playlist: {title: this.state.playlistTitle}};
+    const playlist = { playlist: { title: this.state.playlistTitle } };
     this.props.createPlaylist(playlist).then(this.props.closeModal());
   }
 
@@ -34,20 +34,28 @@ class NewPlaylistForm extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div className="new-playlist-form-container">
         <h3 className="view-header">Create playlist</h3>
         <form className="new-playlist-form">
-          <input type="text"
+          <input
+            type="text"
             ref={(input) => { this.titleInput = input; }}
             onChange={this.update('playlistTitle')}
             value={this.state.playlistTitle}
             className="new-playlist-title"
             placeholder="Start typing..."
-            />
+          />
           <div className="login-button-container">
-            <button className="landing-button" onClick={this.handleSubmit}>Create</button>
-            <button className="landing-button-light" onClick={this.handleCancel}>Cancel</button>
+            <button className="landing-button" onClick={this.handleSubmit}>
+              Create
+            </button>
+            <button
+              className="landing-button-light"
+              onClick={this.handleCancel}
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>
@@ -55,7 +63,6 @@ class NewPlaylistForm extends React.Component {
   }
 }
 // onKeyPress={this.handleKeyPress}
-
 
 
 export default NewPlaylistForm;

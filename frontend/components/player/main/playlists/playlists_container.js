@@ -6,13 +6,13 @@ import {
   selectAllPlaylists } from '../../../../reducers/selectors';
 import { requestAllPlaylists } from '../../../../actions/playlist_actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   playlists: selectAllPlaylists(state.playlists),
   fetching: state.fetching,
   currentUser: state.session.currentUser
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   requestAllPlaylists: () => dispatch(requestAllPlaylists())
 });
 

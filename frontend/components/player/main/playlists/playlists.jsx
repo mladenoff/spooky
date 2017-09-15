@@ -5,10 +5,6 @@ import PlaylistsItem from './playlists_item';
 import PlaylistsItemContainer from './playlists_item_container';
 
 class Playlists extends React.Component {
-  constructor(props) {
-  super(props);
-  }
-
   componentWillMount() {
     this.props.requestAllPlaylists();
   }
@@ -24,12 +20,14 @@ class Playlists extends React.Component {
         <h3 className="view-header">ALL PLAYLISTS</h3>
         <ul className="playlists-list">
           {playlists.map((playlist, idx) =>
-            (<PlaylistsItemContainer key={playlist.id}
+            (<PlaylistsItemContainer
+              key={playlist.id}
               playlist={playlist}
               playlists={playlists}
               idx={idx}
-              currentUser={this.props.currentUser}/>))}
-
+              currentUser={this.props.currentUser}
+            />)
+          )}
         </ul>
       </div>
     );

@@ -9,7 +9,7 @@ export const selectAllPlaylists = playlists => (
 export const orderUserPlaylists = (playlists, currentUserId) => (
   _.filter(
     selectAllPlaylists(playlists),
-    { 'user_id': currentUserId })
+    { user_id: currentUserId })
 );
 
 export const orderUserFollows = (playlists, currentUserFollows) => (

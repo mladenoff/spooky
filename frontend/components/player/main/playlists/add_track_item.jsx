@@ -9,19 +9,23 @@ class AddTrackItem extends React.Component {
 
   handleAddTrack(e) {
     e.preventDefault();
-    const data = {playlist_id: this.props.playlist.id, playlisting: {track_id: this.props.trackId}};
+    const data = {
+      playlist_id: this.props.playlist.id,
+      playlisting: { track_id: this.props.trackId },
+    };
     this.props.addTrack(data).then(this.props.closeModal());
   }
 
   render() {
-    return(
+    return (
       <li className="playlists-item">
-          <div className="playlists-item-sub info" onClick={this.handleAddTrack}>{this.props.playlist.title}</div>
+        <div className="playlists-item-sub info" onClick={this.handleAddTrack}>
+          {this.props.playlist.title}
+        </div>
       </li>
     );
   }
 }
-
 
 
 export default AddTrackItem;

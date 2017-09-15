@@ -8,12 +8,14 @@ class LandingHeader extends React.Component {
   }
 
   handleClick() {
-    const guestUser = {user: {username: 'squeeze_fan', password: 'password'}};
+    const guestUser = {
+      user: { username: 'squeeze_fan', password: 'password' }
+    };
     this.props.login(guestUser);
   }
 
   render() {
-    return(
+    return (
       <header className="landing-header">
 
         <nav className="landing-nav">
@@ -22,7 +24,9 @@ class LandingHeader extends React.Component {
             <div className="logo-container">
               <img
                 src="https://res.cloudinary.com/spooky/image/upload/v1500489690/flashlight_qmeggn.svg"
-                className="logo"/>
+                className="logo"
+                alt="Spooky logo"
+              />
               <h1 className="logo-text">
               Spooky
               </h1>
@@ -30,12 +34,25 @@ class LandingHeader extends React.Component {
           </Link>
 
           <ul className="nav-list">
-            <li className="header-nav-link"><a href="https://github.com/mladenoff/spooky/blob/master/README.md">Info</a></li>
-            <li className="header-nav-link"><a onClick={this.handleClick}>Demo</a></li>
-            <li className="header-nav-link"><Link to="/signup">Sign up</Link></li>
+            <li className="header-nav-link">
+              <a
+                href="https://github.com/mladenoff/spooky/blob/master/README.md"
+              >
+                Info
+              </a>
+            </li>
+            <li className="header-nav-link">
+              <a onClick={this.handleClick}>Demo</a>
+            </li>
+            <li className="header-nav-link">
+              <Link to="/signup">Sign up</Link>
+            </li>
             <li>|</li>
             <li className="header-nav-link">
-              { this.props.currentUser ? <Link to="/logout">Log out</Link> : <Link to="/login">Log in</Link> }
+              { this.props.currentUser
+                ? <Link to="/logout">Log out</Link>
+                : <Link to="/login">Log in</Link>
+              }
             </li>
           </ul>
 

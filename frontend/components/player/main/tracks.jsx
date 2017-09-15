@@ -4,10 +4,6 @@ import TrackItem from './track_item';
 import Loading from '../../loading';
 
 class Tracks extends React.Component {
-  constructor(props) {
-  super(props);
-  }
-
   componentWillMount() {
     this.props.requestAllTracks();
   }
@@ -22,16 +18,20 @@ class Tracks extends React.Component {
       <div className="tracks">
         <h3 className="view-header">ALL TRACKS</h3>
         <ul className="track-list">
-            {tracks.map((track, idx) =>
-              (<TrackItem key={track.id}
-                track={track}
-                tracks={tracks}
-                enqueuePlayback={this.props.enqueuePlayback}
-                idx={idx}/>))}
+          {tracks.map((track, idx) =>
+            (<TrackItem
+              key={track.id}
+              track={track}
+              tracks={tracks}
+              enqueuePlayback={this.props.enqueuePlayback}
+              idx={idx}
+            />)
+          )}
         </ul>
       </div>
     );
   }
 }
+
 
 export default Tracks;

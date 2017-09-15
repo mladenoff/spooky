@@ -5,15 +5,15 @@ import ReactDOM from 'react-dom';
 import NewPlaylistFormContainer from './new_playlist_form_container';
 
 const customStyles = {
-  overlay : {
+  overlay: {
     zIndex: 50
   },
-  content : {
-    borderRadius          : '0px',
-    height                : "400px",
-    minWidth              : '400px',
-    width                 : "100%",
-    top                   : '50%',
+  content: {
+    borderRadius: '0px',
+    height: "400px",
+    minWidth: '400px',
+    width: "100%",
+    top: '50%',
     left                  : '50%',
     right                 : 0,
     bottom                : 'auto',
@@ -40,7 +40,7 @@ class NewPlaylistModal extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
   //
   // afterOpenModal() {
@@ -49,22 +49,25 @@ class NewPlaylistModal extends React.Component {
   // }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
 
   render() {
     let formType;
     return (
       <div className="new-playlist-button">
-          <button onClick={this.openModal} className="new-playlist-button">New playlist</button>
-          <Modal
+        <button onClick={this.openModal} className="new-playlist-button">
+          New playlist
+        </button>
+        <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Session Modal"
-          parentSelector={() => document.body}>
+          parentSelector={() => document.body}
+        >
 
-            <NewPlaylistFormContainer closeModal={this.closeModal}/>
+          <NewPlaylistFormContainer closeModal={this.closeModal} />
 
         </Modal>
       </div>);

@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 
 import NavPlaylists from './nav_playlists';
-
-import { requestUserPlaylists,
-  requestPlaylistPlayback
+import {
+  requestUserPlaylists,
+  requestPlaylistPlayback,
 } from '../../../actions/playlist_actions';
-
-import { orderUserPlaylists,
-  orderUserFollows
+import {
+  orderUserPlaylists,
+  orderUserFollows,
 } from '../../../reducers/selectors';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   currentPlaylist: state.playback.playlist,
   userPlaylists: orderUserPlaylists(
@@ -21,10 +21,10 @@ const mapStateToProps = (state) => ({
   ),
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  requestUserPlaylists: (id) => dispatch(requestUserPlaylists(id)),
-  requestPlaylistPlayback: (playlist_id, tracks) => (
-    dispatch(requestPlaylistPlayback(playlist_id, tracks))
+const mapDispatchToProps = dispatch => ({
+  requestUserPlaylists: id => dispatch(requestUserPlaylists(id)),
+  requestPlaylistPlayback: (playlistId, tracks) => (
+    dispatch(requestPlaylistPlayback(playlistId, tracks))
   )
 });
 

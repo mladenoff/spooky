@@ -15,13 +15,13 @@ export const receiveTracks = tracks => ({
   tracks,
 });
 
+export const startFetchingTracks = () => ({
+  type: START_FETCHING,
+});
+
 export const requestAllTracks = () => (dispatch) => {
   dispatch(startFetchingTracks());
   return APIUtil.fetchAllTracks().then(tracks => (
     dispatch(receiveTracks(tracks)))
   );
 };
-
-export const startFetchingTracks = () => ({
-  type: START_FETCHING,
-});

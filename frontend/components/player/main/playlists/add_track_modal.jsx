@@ -5,24 +5,24 @@ import ReactDOM from 'react-dom';
 import AddTrackContainer from './add_track_container';
 
 const customStyles = {
-  overlay : {
+  overlay: {
     zIndex: 50
   },
-  content : {
-    borderRadius          : '0px',
-    height                : "400px",
-    minWidth              : '400px',
-    width                 : "100%",
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 0,
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)',
-    padding               : '0',
-    border                : '0px',
-    color                 : 'white',
-    backgroundColor       : 'rgba(26, 26, 26, .75)'
+  content: {
+    borderRadius: '0px',
+    height: "400px",
+    minWidth: '400px',
+    width: "100%",
+    top: '50%',
+    left: '50%',
+    right: 0,
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    padding: '0',
+    border: '0px',
+    color: 'white',
+    backgroundColor: 'rgba(26, 26, 26, .75)',
   }
 };
 
@@ -40,7 +40,7 @@ class AddTrackModal extends React.Component {
   }
 
   openModal() {
-    this.setState({modalIsOpen: true});
+    this.setState({ modalIsOpen: true });
   }
   //
   // afterOpenModal() {
@@ -49,7 +49,7 @@ class AddTrackModal extends React.Component {
   // }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
 
   render() {
@@ -60,8 +60,12 @@ class AddTrackModal extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Add Track Modal"
-          parentSelector={() => document.body}>
-            <AddTrackContainer closeModal={this.closeModal} trackId={this.props.trackId}/>
+          parentSelector={() => document.body}
+        >
+          <AddTrackContainer
+            closeModal={this.closeModal}
+            trackId={this.props.trackId}
+          />
         </Modal>
       </div>);
   }

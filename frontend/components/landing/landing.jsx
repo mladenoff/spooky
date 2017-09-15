@@ -13,7 +13,10 @@ const personalLanding = (currentUser, logout) => (
 
 const Landing = ({ currentUser, logout, login }) => (
   <div>
-    {currentUser ? personalLanding(currentUser, logout) : <SessionLinks login={login} />}
+    {currentUser
+      ? personalLanding(currentUser, logout)
+      : <SessionLinks login={login} />
+    }
   </div>
 );
 

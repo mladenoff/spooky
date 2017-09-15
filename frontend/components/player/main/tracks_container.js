@@ -5,14 +5,15 @@ import { requestAllTracks } from '../../../actions/track_actions';
 import { enqueuePlayback } from '../../../actions/playback_actions';
 import { selectAllTracks } from '../../../reducers/selectors';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   tracks: selectAllTracks(state),
   fetching: state.fetching,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   requestAllTracks: () => dispatch(requestAllTracks()),
-  enqueuePlayback: (tracks, currentTrack) => dispatch(enqueuePlayback(tracks, currentTrack)),
+  enqueuePlayback: (tracks, currentTrack) =>
+    dispatch(enqueuePlayback(tracks, currentTrack)),
 });
 
 export default connect(

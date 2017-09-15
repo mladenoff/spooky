@@ -37,7 +37,8 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login') {
       return (
         <span>
-          Don't have an account?<Link to="/signup" className="inline-link"> Sign up</Link>
+          Don't have an account?
+          <Link to="/signup" className="inline-link"> Sign up</Link>
         </span>
       );
     } else {
@@ -65,7 +66,11 @@ class SessionForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit} className="session-form">
         <div id="welcome-text">
-          <span>{ this.props.formType === 'login' ? "Log in and get Spooked." : "Sign up and get Spooked." }</span>
+          <span>
+            { this.props.formType === 'login'
+              ? "Log in and get Spooked."
+              : "Sign up and get Spooked." }
+          </span>
           <br />
           <span id="session-errors">
             {this.renderErrors()}

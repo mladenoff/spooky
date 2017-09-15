@@ -4,11 +4,14 @@ import { Link, Route, withRouter } from 'react-router-dom';
 class SessionLinks extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    const guestUser = { user: { username: 'squeeze_fan', password: 'password' } };
+    const guestUser = {
+      user: { username: 'squeeze_fan', password: 'password' }
+    };
     this.props.login(guestUser);
   }
 
@@ -23,7 +26,8 @@ class SessionLinks extends React.Component {
             Demo login
           </button>
         </div>
-      </div>);
+      </div>
+    );
   }
 }
 
