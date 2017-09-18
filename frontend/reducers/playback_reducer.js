@@ -14,7 +14,7 @@ const defaultState = () => ({
   playlist: null
 });
 
-const PlaybackReducer = (state = defaultState(), action) => {
+const playbackReducer = (state = defaultState(), action) => {
   Object.freeze(state);
   let newState = {};
   switch (action.type) {
@@ -54,4 +54,4 @@ const PlaybackReducer = (state = defaultState(), action) => {
   }
 };
 
-export default PlaybackReducer;
+export default playbackReducer;

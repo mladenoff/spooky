@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
 
-import SessionReducer from './session_reducer';
+import sessionReducer from './session_reducer';
 import tracksReducer from './tracks_reducer';
-import PlaybackReducer from './playback_reducer';
-import FetchingReducer from './fetching_reducer';
-import PlaylistReducer from './playlist_reducer';
+import playbackReducer from './playback_reducer';
+import fetchingReducer from './fetching_reducer';
+import playlistReducer from './playlist_reducer';
 
 export default combineReducers({
-  session: SessionReducer,
+  session: sessionReducer,
   tracks: tracksReducer,
-  playback: PlaybackReducer,
-  fetching: FetchingReducer,
-  playlists: PlaylistReducer,
+  playback: playbackReducer,
+  fetching: fetchingReducer,
+  playlists: playlistReducer,
 });

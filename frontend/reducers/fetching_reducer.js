@@ -8,7 +8,7 @@ const defaultState = () => ({
   fetching: false
 });
 
-const FetchingReducer = (state = false, action) => {
+const fetchingReducer = (state = false, action) => {
   Object.freeze(state);
   switch (action.type) {
     case START_FETCHING:
@@ -18,4 +18,4 @@ const FetchingReducer = (state = false, action) => {
   }
 };
 
-export default FetchingReducer;
+export default fetchingReducer;

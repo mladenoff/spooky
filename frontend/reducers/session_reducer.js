@@ -10,7 +10,7 @@ const defaultState = () => ({
   errors: []
 });
 
-const SessionReducer = (state = defaultState(), action) => {
+const sessionReducer = (state = defaultState(), action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_FOLLOWS:
@@ -26,4 +26,4 @@ const SessionReducer = (state = defaultState(), action) => {
   }
 };
 
-export default SessionReducer;
+export default sessionReducer;
