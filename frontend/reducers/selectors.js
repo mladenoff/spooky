@@ -15,9 +15,7 @@ export const orderUserPlaylists = (playlists, currentUserId) => (
 export const orderUserFollows = (playlists, currentUserFollows) => (
   _.filter(
     selectAllPlaylists(playlists),
-    playlist => (
-      currentUserFollows.includes(playlist.id)
-    )
+    playlist => (currentUserFollows.includes(playlist.id)),
   )
 );
 

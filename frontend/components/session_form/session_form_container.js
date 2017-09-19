@@ -24,5 +24,5 @@ const mapDispatchToProps = (dispatch, { location }) => {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SessionForm);

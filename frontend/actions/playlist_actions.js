@@ -21,12 +21,16 @@ export const receivePlaylist = playlist => ({
 export const playPlaylist = (tracks, id) => ({
   type: PLAY_PLAYLIST,
   tracks: orderPlaylist(tracks),
-  playlist: id
+  playlist: id,
 });
 
 export const receiveUserFollows = currentUser => ({
   type: RECEIVE_FOLLOWS,
-  currentUser
+  currentUser,
+});
+
+export const startFetchingPlaylists = () => ({
+  type: START_FETCHING,
 });
 
 export const requestAllPlaylists = () => (dispatch) => {
@@ -79,7 +83,3 @@ export const unfollowPlaylist = playlistId => dispatch => (
     dispatch(receiveUserFollows(user)))
   )
 );
-
-export const startFetchingPlaylists = () => ({
-  type: START_FETCHING,
-});

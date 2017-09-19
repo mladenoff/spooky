@@ -41,14 +41,13 @@ class SessionForm extends React.Component {
           <Link to="/signup" className="inline-link"> Sign up</Link>
         </span>
       );
-    } else {
-      return (
-        <span>
-          Already have an account?
-          <Link to="/login" className="inline-link"> Log in</Link>
-        </span>
-      );
     }
+    return (
+      <span>
+        Already have an account?
+        <Link to="/login" className="inline-link"> Log in</Link>
+      </span>
+    );
   }
 
   renderErrors() {
@@ -68,8 +67,8 @@ class SessionForm extends React.Component {
         <div id="welcome-text">
           <span>
             { this.props.formType === 'login'
-              ? "Log in and get Spooked."
-              : "Sign up and get Spooked." }
+              ? 'Log in and get Spooked.'
+              : 'Sign up and get Spooked.' }
           </span>
           <br />
           <span id="session-errors">

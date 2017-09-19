@@ -1,12 +1,8 @@
-import {
-  START_FETCHING_TRACKS,
-  RECEIVE_TRACKS, } from '../actions/track_actions';
+// import {
+//   START_FETCHING_TRACKS,
+//   RECEIVE_TRACKS, } from '../actions/track_actions';
 
 export const START_FETCHING = 'START_FETCHING';
-
-const defaultState = () => ({
-  fetching: false
-});
 
 const fetchingReducer = (state = false, action) => {
   Object.freeze(state);

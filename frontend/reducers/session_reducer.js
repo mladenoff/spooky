@@ -7,7 +7,7 @@ import { RECEIVE_FOLLOWS } from '../actions/playlist_actions';
 
 const defaultState = () => ({
   currentUser: null,
-  errors: []
+  errors: [],
 });
 
 const sessionReducer = (state = defaultState(), action) => {
