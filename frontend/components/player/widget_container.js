@@ -5,7 +5,7 @@ import { logout } from '../../actions/session_actions';
 import { pausePlayback,
   play,
   prevTrack,
-  skipTrack
+  skipTrack,
 } from '../../actions/playback_actions';
 
 const mapStateToProps = state => ({
@@ -23,5 +23,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Widget);

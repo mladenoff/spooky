@@ -42,16 +42,6 @@ class Widget extends React.Component {
     }
   }
 
-  renderSeekPos() {
-    this.setState({
-        seek: this.player.seek(),
-        progress: (this.player.seek() / this.player.duration())
-      });
-      if (this.state.playing) {
-        this._raf = raf(this.renderSeekPos);
-      }
-  }
-
   handleOnLoad() {
     this.setState({
       loaded: true,
@@ -151,6 +141,16 @@ class Widget extends React.Component {
 
   minutesSeconds(s) {
     return(s-(s%=60))/60+(9<s?':':':0')+s;
+  }
+
+  renderSeekPos() {
+    this.setState({
+      seek: this.player.seek(),
+      progress: (this.player.seek() / this.player.duration()),
+    });
+    if (this.state.playing) {
+      this._raf = raf(this.renderSeekPos);
+    }
   }
 
   render() {

@@ -56,7 +56,6 @@
     "webpack": "^3.3.0"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.0",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
