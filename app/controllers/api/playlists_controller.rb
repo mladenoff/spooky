@@ -1,4 +1,5 @@
 class Api::PlaylistsController < ApplicationController
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
     @playlists = {}
@@ -29,6 +30,10 @@ class Api::PlaylistsController < ApplicationController
     else
       render json: @playlist.errors, status: 422
     end
+  end
+
+  def record_not_found
+    render json: ["Unknown playlist"], status: 404
   end
 
   private

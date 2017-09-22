@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Loading from '../../../loading';
-import PlaylistsItem from './playlists_item';
 import PlaylistsItemContainer from './playlists_item_container';
 
 class Playlists extends React.Component {
-  componentWillMount() {
+  componentWillMount() { // should this be component did mount?
     this.props.requestAllPlaylists();
   }
 

@@ -5,7 +5,7 @@ class NewPlaylistForm extends React.Component {
     super(props);
 
     this.state = {
-      playlistTitle: ""
+      playlistTitle: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);

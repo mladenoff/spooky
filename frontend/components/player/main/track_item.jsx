@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import AddTrackModal from './playlists/add_track_modal';
 
@@ -32,5 +33,8 @@ class TrackItem extends React.Component {
   }
 }
 
+TrackItem.propTypes = {
+  idx: PropTypes.number,
+};
 
 export default TrackItem;
