@@ -1,5 +1,5 @@
-var path = require("path");
-var webpack = require("webpack");
+var path = require('path');
+var webpack = require('webpack');
 
 var plugins = []; // if using any plugins for both dev and production
 var devPlugins = []; // if using any plugins for development
@@ -23,10 +23,10 @@ plugins = plugins.concat(
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/spooky.jsx",
+  entry: './frontend/spooky.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
   plugins: plugins,
   module: {
