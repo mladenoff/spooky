@@ -7,10 +7,8 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    //
-
     this.state = {
-      searchQuery: "",
+      searchQuery: '',
       tracks: this.props.tracks
     };
 
@@ -29,7 +27,7 @@ class Search extends React.Component {
 
   handleSearch(e) {
     this.setState({
-      searchQuery: e.currentTarget.value
+      searchQuery: e.currentTarget.value,
     });
 
     clearTimeout(this.idleTimeout);
@@ -48,19 +46,18 @@ class Search extends React.Component {
   trackview() {
     if (this.props.fetching === true) {
       return <Loading />;
-    } else {
-      return (<ul className="track-list">
-        {this.state.tracks.map((track, idx) =>
-          (<TrackItem
-            key={track.id}
-            track={track}
-            tracks={this.state.tracks}
-            enqueuePlayback={this.props.enqueuePlayback}
-            idx={idx}
-          />)
-        )}
-      </ul>);
     }
+    return (<ul className="track-list">
+      {this.state.tracks.map((track, idx) =>
+        (<TrackItem
+          key={track.id}
+          track={track}
+          tracks={this.state.tracks}
+          enqueuePlayback={this.props.enqueuePlayback}
+          idx={idx}
+        />)
+      )}
+    </ul>);
   }
 
   render() {

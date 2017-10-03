@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true #, on: :create
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :geocode
   before_validation :ensure_session_token_uniqueness
 
   has_many :playlists
@@ -49,6 +49,10 @@ class User < ApplicationRecord
   end
 
   private
+
+  def geocode
+    # TODO: finish this!
+  end
 
   def ensure_session_token
     self.session_token ||= new_session_token

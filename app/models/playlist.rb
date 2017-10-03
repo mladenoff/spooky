@@ -16,9 +16,9 @@ class Playlist < ApplicationRecord
   belongs_to :user
   has_many :playlistings
   has_many :tracks, through: :playlistings
-  has_many :follows
-  has_many :followers, through: :follows, source: :user
   has_many :albums, through: :tracks
+  has_many :follows
+  has_many :followers, through: :follows
 
   def tracks_in_order # is this supposed to have a sort longer term?
     self.tracks
