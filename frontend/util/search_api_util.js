@@ -1,7 +1,7 @@
 export const fetchSearchResults = search => (
   $.ajax({
     method: 'POST',
-    url: '/api/search',
-    data: search
+    url: '/api/tracks/search',
+    data: search,
   })
 );

@@ -21,11 +21,11 @@ class Track < ApplicationRecord
   has_many :playlists, through: :playlistings
 
   def self.search(term)
-    self
+    Track
       .joins(:artist, :album)
       .where(
-        "tracks.title ILIKE ? OR artists.name ILIKE ? OR albums.title ILIKE ?",
-        "%#{term}%", "%#{term}%", "%#{term}%"
+        "tracks.title ILIKE :term OR artists.name ILIKE :term OR albums.title ILIKE :term",
+        term: "%#{term}%"
       )
   end
 end

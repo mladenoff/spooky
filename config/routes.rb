@@ -2,10 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#root'
 
-  post "api/search", to: 'api/tracks#search', defaults: { format: :json }
+  # post "api/tracks/search", to: 'api/tracks#search', defaults: { format: :json }
   # delete "api/playlists/:playlist_id/follows", to: 'api/tracks#search', defaults: { format: :json }
 
   namespace :api, defaults: { format: :json } do
+    post "tracks/search", to: 'tracks#search'
     resources :users, only: %i(create show) do
       resources :playlists, only: [:index]
     end
