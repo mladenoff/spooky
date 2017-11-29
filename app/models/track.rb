@@ -21,11 +21,12 @@ class Track < ApplicationRecord
   has_many :playlists, through: :playlistings
 
   def self.search(term)
+    parsed_term = term.gsub(/\s+/, "").chars.join("%")
     Track
       .joins(:artist, :album)
       .where(
         "tracks.title ILIKE :term OR artists.name ILIKE :term OR albums.title ILIKE :term",
-        term: "%#{term}%"
+        term: "%#{parsed_term}%"
       )
   end
 end
