@@ -1,6 +1,6 @@
 import {
   RECEIVE_TRACKS,
-  RECEIVE_TRACK_ERRORS,
+  // RECEIVE_TRACK_ERRORS,
 } from '../actions/track_actions';
 import { CLEAR_SEARCH } from '../actions/search_actions';
 

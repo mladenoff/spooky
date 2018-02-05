@@ -2,7 +2,7 @@ export const createPlaylist = data => (
   $.ajax({
     method: 'POST',
     url: 'api/playlists',
-    data
+    data,
   })
 );
 
@@ -31,7 +31,7 @@ export const addTrack = data => (
   $.ajax({
     method: 'POST',
     url: `api/playlists/${data.playlist_id}/playlistings`,
-    data
+    data,
   })
 );
 

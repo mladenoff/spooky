@@ -21,7 +21,7 @@ export const startFetchingTracks = () => ({
 
 export const requestAllTracks = () => (dispatch) => {
   dispatch(startFetchingTracks());
-  return APIUtil.fetchAllTracks().then(tracks => (
-    dispatch(receiveTracks(tracks)))
+  return APIUtil.fetchAllTracks().then(
+    tracks => (dispatch(receiveTracks(tracks))),
   );
 };

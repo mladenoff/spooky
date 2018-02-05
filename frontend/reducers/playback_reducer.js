@@ -11,7 +11,7 @@ const defaultState = () => ({
   playQueue: [],
   volume: 1,
   playing: false,
-  playlist: null
+  playlist: null,
 });
 
 const playbackReducer = (state = defaultState(), action) => {

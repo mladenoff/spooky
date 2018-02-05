@@ -2,26 +2,27 @@ import React from 'react';
 import ReactHowler from 'react-howler';
 import raf from 'raf'; // requestAnimationFrame polyfill
 import ProgressBar from 'react-progressbar.js';
+import PropTypes from 'react';
 
 class Widget extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playing: props.playback.playing,
-      mute: false,
       currentTrack: props.playback.currentTrack,
       loaded: false,
+      mute: false,
+      playing: props.playback.playing,
     };
 
     this.handleOnLoad = this.handleOnLoad.bind(this);
     this.handleOnEnd = this.handleOnEnd.bind(this);
-    this.renderSeekPos = this.renderSeekPos.bind(this);
-    this.handlePauseClick = this.handlePauseClick.bind(this);
     this.handlePlayClick = this.handlePlayClick.bind(this);
-    this.handleMuteClick = this.handleMuteClick.bind(this);
+    this.handlePauseClick = this.handlePauseClick.bind(this);
     this.handlePrevClick = this.handlePrevClick.bind(this);
     this.handleSkipClick = this.handleSkipClick.bind(this);
+    this.handleMuteClick = this.handleMuteClick.bind(this);
     this.playPause = this.playPause.bind(this);
+    this.renderSeekPos = this.renderSeekPos.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
