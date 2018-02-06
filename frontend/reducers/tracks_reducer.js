@@ -8,6 +8,7 @@ const defaultState = () => ({});
 
 const tracksReducer = (state = defaultState(), action) => {
   Object.freeze(state);
+
   switch (action.type) {
     case RECEIVE_TRACKS:
       return action.tracks;

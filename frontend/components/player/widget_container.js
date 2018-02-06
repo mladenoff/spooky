@@ -11,6 +11,8 @@ import { pausePlayback,
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   playback: state.playback,
+  playing: state.playback.playing,
+  currentTrack: state.playback.currentTrack,
 });
 
 const mapDispatchToProps = dispatch => ({

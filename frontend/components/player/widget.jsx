@@ -46,8 +46,9 @@ class Widget extends React.Component {
   handleOnLoad() {
     this.setState({
       loaded: true,
-      duration: this.player.duration()
+      duration: this.player.duration(),
     });
+
     if (this.state.playing) {
       this.renderSeekPos();
     }
@@ -56,11 +57,17 @@ class Widget extends React.Component {
   handleOnEnd() {
     this.setState({
       playing: false,
-      progress: 0
+      progress: 0,
     });
+
     if (this.state.playing === false) { this.setState({ seek: 0 }); }
+
     this.clearRAF();
-    if (this.props.playback.currentTrack !== null && this.props.playback.currentTrack < this.props.playback.playQueue.length - 1) {
+
+    if (
+      this.props.playback.currentTrack !== null &&
+      this.props.playback.currentTrack < this.props.playback.playQueue.length - 1
+    ) {
       this.props.skipTrack();
     } else {
       this.props.pausePlayback();
@@ -84,7 +91,10 @@ class Widget extends React.Component {
   }
 
   handleSkipClick() {
-    if (this.props.playback.currentTrack !== null && this.props.playback.currentTrack < this.props.playback.playQueue.length - 1) {
+    if (
+      this.props.playback.currentTrack !== null &&
+      this.props.playback.currentTrack < this.props.playback.playQueue.length - 1
+    ) {
       this.props.skipTrack();
     }
   }
@@ -99,29 +109,46 @@ class Widget extends React.Component {
 
   playPause() {
     if (this.state.playing) {
-      return <img onClick={this.handlePauseClick}
-        className="control-button"
-        src="https://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg" />;
-    } else {
-      return <img onClick={this.handlePlayClick}
-        className="control-button"
-        src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" />;
+      return (<button className="control-button pause-button" onClick={this.handlePauseClick}>
+        <img
+          className="control-button-img"
+          src="https://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg"
+          alt="Pause"
+        />
+      </button>);
     }
+
+    return (<button className="control-button" onClick={this.handlePlayClick}>
+      <img
+        className="control-button-img"
+        src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
+        alt="Play"
+      />
+    </button>);
   }
 
   prevTrack() {
-    return (<img
-      src="https://res.cloudinary.com/spooky/image/upload/q_100/v1500883825/prev_mh7tqn.svg"
-      className="control-button control-button-medium"
-      onClick={this.handlePrevClick}/>);
+    return (
+      <button className="control-button control-button-medium" onClick={this.handlePrevClick} >
+        <img
+          src="https://res.cloudinary.com/spooky/image/upload/q_100/v1500883825/prev_mh7tqn.svg"
+          className="control-button control-button-medium"
+          alt="Previous track"
+        />
+      </button>
+    );
   }
 
   skipTrack() {
-    return (<img
-      src="https://res.cloudinary.com/spooky/image/upload/q_100/v1500884211/next_ojnvpe.svg"
-      alt="Skip track"
-      className="control-button control-button-medium"
-      onClick={this.handleSkipClick}/>);
+    return (
+      <button className="control-button control-button-medium" onClick={this.handleSkipClick} >
+        <img
+          src="https://res.cloudinary.com/spooky/image/upload/q_100/v1500884211/next_ojnvpe.svg"
+          alt="Skip track"
+          className="control-button control-button-medium"
+        />
+      </button>
+    );
   }
 
   trackInfo() {
@@ -175,7 +202,8 @@ class Widget extends React.Component {
       ? (<img
         src="https://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
         className="control-button control-button-medium mute-button"
-        onClick={this.handleMuteClick} alt="Mute"
+        onClick={this.handleMuteClick} 
+        alt="Mute"
       />)
       : (<img src="https://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
         className="control-button control-button-medium mute-button"
@@ -215,13 +243,18 @@ class Widget extends React.Component {
           {this.trackInfo()}
           <div className="track-stack">
             <div className="progress-container">
-              <span>{(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}</span>
+              <span>{(
+                typeof this.state.seek === 'number') ? (
+                  this.minutesSeconds(this.state.seek.toFixed())
+                ) : (
+                  '0:00'
+                )}</span>
               <Line
                 progress={this.state.progress}
                 options={barOptions}
                 containerClassName={'progressbar-container'}
               />
-              <span>{(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}</span>
+              <span>{(this.state.duration) ? (this.minutesSeconds(this.state.duration.toFixed())) : ('0:00')}</span>
             </div>
             <div className="track-controls">
               {this.prevTrack()}
