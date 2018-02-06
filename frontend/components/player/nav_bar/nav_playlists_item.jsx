@@ -18,13 +18,12 @@ class NavPlaylistsItem extends React.Component {
           {this.props.playlist.title}
         </div>
       );
-    } else {
-      return (
-        <div className="nav-playlists-item info overflow">
-          {this.props.playlist.title}
-        </div>
-      );
     }
+    return (
+      <div className="nav-playlists-item info overflow">
+        {this.props.playlist.title}
+      </div>
+    );
   }
 
   playlistIcon() {
@@ -39,8 +38,8 @@ class NavPlaylistsItem extends React.Component {
         src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
         className="playlist-button"
         onClick={this.handlePlayClick}
-        />
-    );}
+        alt="Play playlist" // Will need to interpolate playlist name
+      />);}
     }
   }
 

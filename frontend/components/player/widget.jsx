@@ -2,7 +2,7 @@ import React from 'react';
 import ReactHowler from 'react-howler';
 import raf from 'raf'; // requestAnimationFrame polyfill
 import ProgressBar from 'react-progressbar.js';
-import PropTypes from 'react';
+import PropTypes from 'prop-types';
 
 class Widget extends React.Component {
   constructor(props) {
@@ -152,14 +152,23 @@ class Widget extends React.Component {
   }
 
   trackInfo() {
-    if (this.props.playback.currentTrack !== null){
-      return <div className="track-info">
-        <div className="track-image"><img src={this.props.playback.playQueue[this.props.playback.currentTrack].img_url} /></div>
-        <div className="track-words">
-          <div className="track-title overflow"><span>{this.props.playback.playQueue[this.props.playback.currentTrack].title}</span></div>
-          <div className="artist-name overflow"><span>{this.props.playback.playQueue[this.props.playback.currentTrack].artist}</span></div>
+    if (this.props.playback.currentTrack !== null) {
+      return (<div className="track-info">
+        <div className="track-image">
+          <img
+            src={this.props.playback.playQueue[this.props.playback.currentTrack].img_url}
+            alt="Current track album art"
+          />
         </div>
-      </div>;
+        <div className="track-words">
+          <div className="track-title overflow">
+            <span>{this.props.playback.playQueue[this.props.playback.currentTrack].title}</span>
+          </div>
+          <div className="artist-name overflow">
+            <span>{this.props.playback.playQueue[this.props.playback.currentTrack].artist}</span>
+          </div>
+        </div>
+      </div>);
     }
   }
 
@@ -167,8 +176,8 @@ class Widget extends React.Component {
     raf.cancel(this._raf);
   }
 
-  minutesSeconds(s) {
-    return(s-(s%=60))/60+(9<s?':':':0')+s;
+  minutesSeconds(s) { // TODO: move this inside render to follow linter I guess?
+    return (s-(s%=60))/60+(9<s?':':':0')+s;
   }
 
   renderSeekPos() {
@@ -184,7 +193,7 @@ class Widget extends React.Component {
   render() {
     let howler = null;
     if (this.props.playback.currentTrack !== null) {
-      howler = <ReactHowler
+      howler = (<ReactHowler
         autoPlay={false}
         src={this.props.playback.playQueue[this.props.playback.currentTrack].url}
         onLoad={this.handleOnLoad}
@@ -193,27 +202,40 @@ class Widget extends React.Component {
         playing={this.state.playing}
         mute={this.state.mute}
         preload={false}
-        html5={true}
-        ref={(ref) => (this.player = ref)}/>
+        html5
+        ref={(ref) => { this.player = ref; }}
+      />)
       ;
     }
 
     const muteButton = this.state.mute
-      ? (<img
-        src="https://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
-        className="control-button control-button-medium mute-button"
-        onClick={this.handleMuteClick} 
-        alt="Mute"
-      />)
-      : (<img src="https://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
+      ? (<button
         className="control-button control-button-medium mute-button"
         onClick={this.handleMuteClick}
-        alt="Unmute"
-      />);
+      >
+        <img
+          src="https://res.cloudinary.com/spooky/image/upload/v1500839847/mute_qdqplr.svg"
+          className="control-button control-button-medium mute-button"
+          alt="Mute"
+        />
+      </button>)
+      : (<button
+        className="control-button control-button-medium mute-button"
+        onClick={this.handleMuteClick}
+      >
+        <img
+          src="https://res.cloudinary.com/spooky/image/upload/v1500840491/unmute_ni8mso.svg"
+          className="control-button control-button-medium mute-button"
+          alt="Unmute"
+        />
+      </button>);
 
     // const playTime = (
     //     <div>
-    //       {(typeof this.state.seek === 'number') ? this.minutesSeconds(this.state.seek.toFixed()) : '0:00'}
+    //       {(typeof this.state.seek === 'number') 
+    //         ? this.minutesSeconds(this.state.seek.toFixed()) 
+    //         : '0:00'
+    //       }
     //       <Line progress={this.state.progress} />
     //       {(this.state.duration) ? this.minutesSeconds(this.state.duration.toFixed()) : '0:00'}
     //     </div>
@@ -233,7 +255,7 @@ class Widget extends React.Component {
       to: { color: 'rgb(215, 30, 58, .2)' },
       step: (state, bar) => {
         bar.path.setAttribute('stroke', state.color);
-      }
+      },
     };
 
     return (
@@ -249,11 +271,13 @@ class Widget extends React.Component {
                 ) : (
                   '0:00'
                 )}</span>
+
               <Line
                 progress={this.state.progress}
                 options={barOptions}
                 containerClassName={'progressbar-container'}
               />
+
               <span>{(this.state.duration) ? (this.minutesSeconds(this.state.duration.toFixed())) : ('0:00')}</span>
             </div>
             <div className="track-controls">
@@ -275,7 +299,8 @@ export default Widget;
 //   playing: true,
 // });
 
-// <i className="fa fa-volume-off" aria-hidden="true"></i> : <i className="fa fa-volume-up" aria-hidden="true"></i>}
+// <i className="fa fa-volume-off" aria-hidden="true"></i> 
+// : <i className="fa fa-volume-up" aria-hidden="true"></i>}
 
 // { this.state.playing
 //   ? <a onClick={this.handlePauseClick}>Pause</a>

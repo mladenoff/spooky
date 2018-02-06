@@ -11,14 +11,14 @@ import { pausePlayback,
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   playback: state.playback,
-  playing: state.playback.playing,
   currentTrack: state.playback.currentTrack,
+  playing: state.playback.playing,
 });
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  pausePlayback: () => dispatch(pausePlayback()),
   play: () => dispatch(play()),
+  pausePlayback: () => dispatch(pausePlayback()),
   prevTrack: () => dispatch(prevTrack()),
   skipTrack: () => dispatch(skipTrack()),
 });
