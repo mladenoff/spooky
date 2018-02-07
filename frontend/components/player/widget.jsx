@@ -176,10 +176,6 @@ class Widget extends React.Component {
     raf.cancel(this._raf);
   }
 
-  minutesSeconds(s) { // TODO: move this inside render to follow linter I guess?
-    return (s-(s%=60))/60+(9<s?':':':0')+s;
-  }
-
   renderSeekPos() {
     this.setState({
       seek: this.player.seek(),
@@ -241,6 +237,11 @@ class Widget extends React.Component {
     //     </div>
     //   );
 
+    function minutesSeconds(totalSeconds) { // time in seconds
+      const seconds = totalSeconds % 60;
+      return (Math.floor(totalSeconds / 60)) + (seconds > 9 ? ':' : ':0') + seconds;
+    }
+
     const Line = ProgressBar.Line;
 
     const barOptions = {
@@ -267,7 +268,7 @@ class Widget extends React.Component {
             <div className="progress-container">
               <span>{(
                 typeof this.state.seek === 'number') ? (
-                  this.minutesSeconds(this.state.seek.toFixed())
+                  minutesSeconds(this.state.seek.toFixed())
                 ) : (
                   '0:00'
                 )}</span>
@@ -278,7 +279,7 @@ class Widget extends React.Component {
                 containerClassName={'progressbar-container'}
               />
 
-              <span>{(this.state.duration) ? (this.minutesSeconds(this.state.duration.toFixed())) : ('0:00')}</span>
+              <span>{(this.state.duration) ? (minutesSeconds(this.state.duration.toFixed())) : ('0:00')}</span>
             </div>
             <div className="track-controls">
               {this.prevTrack()}
