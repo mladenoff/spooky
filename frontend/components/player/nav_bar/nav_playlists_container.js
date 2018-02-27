@@ -14,10 +14,10 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser,
   currentPlaylist: state.playback.playlist,
   userPlaylists: orderUserPlaylists(
-    state.playlists, state.session.currentUser.id,
+    state.entities.playlists, state.session.currentUser.id,
   ),
   userFollows: orderUserFollows(
-    state.playlists, state.session.currentUser.follows,
+    state.entities.playlists, state.session.currentUser.follows,
   ),
 });
 

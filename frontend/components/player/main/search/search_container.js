@@ -9,19 +9,19 @@ import {
 } from '../../../../actions/search_actions';
 
 const mapStateToProps = state => ({
-  tracks: selectAllTracks(state),
+  tracks: selectAllTracks(state.entities),
   fetching: state.fetching,
 });
 
 const mapDispatchToProps = dispatch => ({
   requestSearchResults: search => dispatch(requestSearchResults(search)),
   enqueuePlayback: (tracks, currentTrack) => dispatch(
-    enqueuePlayback(tracks, currentTrack)
+    enqueuePlayback(tracks, currentTrack),
   ),
   clearSearch: () => dispatch(clearSearch()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Search);

@@ -7,7 +7,7 @@ import Playlist from './playlist';
 // import { selectAllTracks } from '../../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  playlists: state.playlists,
+  playlists: state.entities.playlists,
   fetching: state.fetching,
 });
 
