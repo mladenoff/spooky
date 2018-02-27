@@ -21,7 +21,7 @@ class NavPlaylists extends React.Component {
         <h3 className="nav-header">Your playlists</h3>
         <div className="nav-playlists">
           <ul>
-            {this.props.userPlaylists.map((playlist, idx) =>(
+            {this.props.userPlaylists.map((playlist, idx) => (
               <NavPlaylistsItem
                 key={playlist.id}
                 playlist={playlist}
