@@ -34,12 +34,13 @@ class NavPlaylistsItem extends React.Component {
         // src="https://res.cloudinary.com/spooky/image/upload/v1500841148/pause_dgdaru.svg"
         // className="playlist-button"
         // onClick={this.handlePlayClick}/>;
-      } else { return (<img
+      }
+      return (<img
         src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg"
         className="playlist-button"
         onClick={this.handlePlayClick}
         alt="Play playlist" // Will need to interpolate playlist name
-      />);}
+      />);
     }
   }
 
