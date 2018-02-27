@@ -15,16 +15,16 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   playlist: ownProps.playlist,
   playlists: ownProps.playlists,
-// playlists: orderUserPlaylists(state.playlists, state.session.currentUser.id),
+// playlists: orderUserPlaylists(state.entities.playlists, state.session.currentUser.id),
 });
 
 const mapDispatchToProps = dispatch => ({
   requestPlaylistPlayback: id => dispatch(requestPlaylistPlayback(id)),
   followPlaylist: playlistId => dispatch(followPlaylist(playlistId)),
-  unfollowPlaylist: playlistId => dispatch(unfollowPlaylist(playlistId))
+  unfollowPlaylist: playlistId => dispatch(unfollowPlaylist(playlistId)),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(PlaylistsItem);
