@@ -22,9 +22,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token, :geocode
   before_validation :ensure_session_token_uniqueness
 
-  has_many :playlists
-  has_many :follows
-  has_many :followed_playlists, through: :follows, source: :playlist
+  has_many :playlists, dependent: :destroy
+  has_many :follows, dependent: :destroy
+  has_many :followed_playlists, through: :follows, source: :playlist, dependent: :destroy
 
   def password=(password)
     self.password_digest = BCrypt::Password.create(password)

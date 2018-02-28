@@ -42,12 +42,14 @@ There will be more social features.
 
 ### UI
 
-The UI needs further refinement.
+* The UI needs further refinement.
 
 ### More hubs
 
-The existing routes on both the front and back end could support a wider variety of 'hub' pages allowing for User, Album, Arist or Playlist browse views.
+* The existing routes on both the front and back end could support a wider variety of 'hub' pages allowing for User, Album, Arist or Playlist browse views.
 
+### Following users and playlists
+* Followable polymorphic association
 
 ### Stat keeping
 
