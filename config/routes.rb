@@ -18,5 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'api/tracks/by_title/:title', to: 'api/tracks#show', defaults: { format: :json }
+  get 'api/tracks/by_title/:title', 
+      to: 'api/tracks#show', 
+      defaults: { format: :json }
 end
