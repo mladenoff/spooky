@@ -8,6 +8,7 @@ class Api::PlaylistsController < ApplicationController
       @playlists = Playlist.where(user_id: params[:user_id])
       @playlists += Playlist.joins(:follows)
         .where("follows.user_id = ?", current_user.id)
+        .includes(:playlistings)
     else
       @playlists = Playlist.all.includes(:playlistings, :user)
     end

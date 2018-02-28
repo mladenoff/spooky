@@ -9,7 +9,7 @@ const playlistReducer = (state = defaultState(), action) => {
 
   switch (action.type) {
     case RECEIVE_PLAYLISTS:
-      return Object.assign({}, state, action.playlists);
+      return Object.assign({}, state, action.payload.playlists);
     default:
       return state;
   }

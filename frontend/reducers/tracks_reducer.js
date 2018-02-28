@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import {
   RECEIVE_TRACKS,
   // RECEIVE_TRACK_ERRORS,
@@ -11,7 +13,7 @@ const tracksReducer = (state = defaultState(), action) => {
 
   switch (action.type) {
     case RECEIVE_TRACKS:
-      return action.tracks;
+      return _.merge({}, state, action.tracks);
     case CLEAR_SEARCH:
       return {};
     default:

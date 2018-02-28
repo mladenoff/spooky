@@ -8,9 +8,9 @@ export const START_FETCHING_PLAYLISTS = 'START_FETCHING_PLAYLISTS';
 export const PLAY_PLAYLIST = 'PLAY_PLAYLIST';
 export const RECEIVE_FOLLOWS = 'RECEIVE_FOLLOWS';
 
-export const receivePlaylists = playlists => ({
+export const receivePlaylists = payload => ({
   type: RECEIVE_PLAYLISTS,
-  playlists,
+  payload,
 });
 
 export const receivePlaylist = playlist => ({
