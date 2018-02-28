@@ -41,7 +41,7 @@ const FooterNav = () => (
       >
         <i className="fa fa-linkedin footer-icon" aria-hidden="true" />
       </a>
-      <Mailto email="isak@mladenoff.xyz" obfuscate>
+      <Mailto email="isak@mladenoff.io" obfuscate>
         <i className="fa fa-envelope footer-icon" aria-hidden="true" />
       </Mailto >
     </span>
