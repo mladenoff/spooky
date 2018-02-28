@@ -9,7 +9,7 @@ class Api::PlaylistsController < ApplicationController
       @playlists += Playlist.joins(:follows)
         .where("follows.user_id = ?", current_user.id)
     else
-      @playlists = Playlist.all
+      @playlists = Playlist.all.includes(:playlistings, :user)
     end
 
     render :index
