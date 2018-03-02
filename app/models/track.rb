@@ -4,11 +4,11 @@
 #
 #  id         :integer          not null, primary key
 #  title      :string           not null
+#  artist_id  :integer          not null
 #  url        :string           not null
 #  album_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  artist_id  :integer
 #  sequence   :integer
 #
 
@@ -25,7 +25,9 @@ class Track < ApplicationRecord
     Track
       .joins(:artist, :album)
       .where(
-        "tracks.title ILIKE :term OR artists.name ILIKE :term OR albums.title ILIKE :term",
+        "tracks.title ILIKE :term 
+          OR artists.name ILIKE :term 
+          OR albums.title ILIKE :term",
         term: "%#{parsed_term}%"
       )
   end
