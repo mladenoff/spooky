@@ -156,7 +156,7 @@ class Widget extends React.Component {
       return (<div className="track-info">
         <div className="track-image">
           <img
-            src={this.props.playback.playQueue[this.props.playback.currentTrack].img_url}
+            src={this.props.playback.playQueue[this.props.playback.currentTrack].imgUrl}
             alt="Current track album art"
           />
         </div>
