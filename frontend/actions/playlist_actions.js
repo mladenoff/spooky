@@ -42,6 +42,7 @@ export const requestAllPlaylists = () => (dispatch) => {
 
 export const requestUserPlaylists = userId => (dispatch) => {
   dispatch(startFetchingPlaylists());
+
   return APIUtil.fetchUserPlaylists(userId).then(
     playlists => (dispatch(receivePlaylists(playlists))),
   );
