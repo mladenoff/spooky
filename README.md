@@ -53,6 +53,6 @@ There will be more social features.
 
 ### Stat keeping
 
-[live-link]: https://www.spooky.live
+[live-link]: http://www.spooky.live
 [spotify]: https://spotify.com
 [howler]: https://howlerjs.com
