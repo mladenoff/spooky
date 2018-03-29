@@ -48,6 +48,9 @@ There will be more social features.
 
 * The existing routes on both the front and back end could support a wider variety of 'hub' pages allowing for User, Album, Arist or Playlist browse views.
 
+### Two mode index methods
+* If passed an id, fetches user items, if no id, fetches all items
+
 ### Following users and playlists
 * Followable polymorphic association
 
