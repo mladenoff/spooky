@@ -35,6 +35,7 @@ export const startFetchingPlaylists = () => ({
 
 export const requestAllPlaylists = () => (dispatch) => {
   dispatch(startFetchingPlaylists());
+
   return APIUtil.fetchAllPlaylists().then(
     playlists => (dispatch(receivePlaylists(playlists))),
   );
@@ -50,6 +51,7 @@ export const requestUserPlaylists = userId => (dispatch) => {
 
 export const requestPlaylist = id => (dispatch) => {
   dispatch(startFetchingPlaylists());
+
   return APIUtil.fetchPlaylist(id).then(
     playlist => (dispatch(receivePlaylist(playlist))),
   );
@@ -57,8 +59,9 @@ export const requestPlaylist = id => (dispatch) => {
 
 export const requestPlaylistPlayback = id => (dispatch) => {
   dispatch(startFetchingPlaylists());
-  return APIUtil.fetchPlaylist(id).then(
-    playlist => (dispatch(playPlaylist(playlist, id))),
+
+  return APIUtil.fetchPlaylist(id).then(playlist => (
+    dispatch(playPlaylist(playlist, id))),
   );
 };
 
@@ -70,17 +73,18 @@ export const createPlaylist = data => dispatch => (
 
 export const addTrack = data => dispatch => (
   APIUtil.addTrack(data).then(
-    playlists => (dispatch(receivePlaylists(playlists))),
+    playlists => dispatch(receivePlaylists(playlists)),
   )
 );
 
 export const followPlaylist = playlistId => dispatch => (
   APIUtil.followPlaylist(playlistId).then(
-    user => (dispatch(receiveUserFollows(user))),
+    user => dispatch(receiveUserFollows(user)),
   )
 );
+
 export const unfollowPlaylist = playlistId => dispatch => (
-  APIUtil.unfollowPlaylist(playlistId).then(
-    user => (dispatch(receiveUserFollows(user))),
-  )
+  APIUtil.unfollowPlaylist(playlistId).then(user => (
+    dispatch(receiveUserFollows(user))
+  ))
 );
