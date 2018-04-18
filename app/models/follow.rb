@@ -10,6 +10,8 @@
 #
 
 class Follow < ApplicationRecord
+  enum :follow_type, playlist: 0, user: 1
+
   validates :playlist, :follower, presence: true
   validates :playlist, uniqueness: { scope: :follower }
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727010025) do
+ActiveRecord::Schema.define(version: 20180408013652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(version: 20170727010025) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.integer  "playlist_id", null: false
-    t.integer  "user_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "playlist_id",             null: false
+    t.integer  "user_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "follow_type", default: 0, null: false
     t.index ["user_id", "playlist_id"], name: "index_follows_on_user_id_and_playlist_id", unique: true, using: :btree
   end
 
@@ -58,11 +59,11 @@ ActiveRecord::Schema.define(version: 20170727010025) do
 
   create_table "tracks", force: :cascade do |t|
     t.string   "title",      null: false
-    t.integer  "artist_id",  null: false
     t.string   "url",        null: false
     t.integer  "album_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "artist_id"
     t.integer  "sequence"
     t.index ["title"], name: "index_tracks_on_title", using: :btree
   end
