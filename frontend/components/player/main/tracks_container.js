@@ -6,7 +6,7 @@ import { enqueuePlayback } from '../../../actions/playback_actions';
 import { selectAllTracks } from '../../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  tracks: selectAllTracks(state.entities),
+  tracks: Object.values(state.entities.tracks.byId),
   fetching: state.fetching,
 });
 
