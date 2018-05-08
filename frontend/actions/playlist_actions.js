@@ -13,9 +13,9 @@ export const receivePlaylists = payload => ({
   payload,
 });
 
-export const receivePlaylist = playlist => ({
+export const receivePlaylist = (id, payload) => ({
   type: RECEIVE_PLAYLIST,
-  playlist,
+  payload,
 });
 
 export const playPlaylist = (tracks, id) => ({
@@ -53,7 +53,7 @@ export const requestPlaylist = id => (dispatch) => {
   dispatch(startFetchingPlaylists());
 
   return APIUtil.fetchPlaylist(id).then(
-    playlist => (dispatch(receivePlaylist(playlist))),
+    playlist => (dispatch(receivePlaylist(id, playlist))),
   );
 };
 
