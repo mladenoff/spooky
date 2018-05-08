@@ -28,7 +28,7 @@ class PlaylistsItem extends React.Component {
           <span className="info username"> {this.props.playlist.username}</span>
         </div>
         <div className="playlist-buttons">
-          { this.props.currentUser.id !== this.props.playlist.user_id
+          { this.props.currentUser.id !== this.props.playlist.userId
             && !this.props.currentUser.follows.includes(this.props.playlist.id)
             ? <button
               className="small-follow-button"
@@ -38,7 +38,7 @@ class PlaylistsItem extends React.Component {
             </button>
             : null
           }
-          { this.props.currentUser.id !== this.props.playlist.user_id && this.props.currentUser.follows.includes(this.props.playlist.id) ?
+          { this.props.currentUser.id !== this.props.playlist.userId && this.props.currentUser.follows.includes(this.props.playlist.id) ?
             <button className="small-follow-button" onClick={this.handleUnfollowClick}>Unfollow</button> :
             null}
           <img src="https://res.cloudinary.com/spooky/image/upload/v1500841381/play_cnlwmc.svg" className="playlist-button" onClick={this.handlePlayClick}/>
