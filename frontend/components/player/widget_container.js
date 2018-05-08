@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
   playback: state.playback,
   currentTrack: state.playback.currentTrack,
   playing: state.playback.playing,
+  tracks: state.entities.tracks.byId,
 });
 
 const mapDispatchToProps = dispatch => ({
