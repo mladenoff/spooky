@@ -28,7 +28,7 @@ const playbackReducer = (state = defaultState(), action) => {
       };
     case PLAY_PLAYLIST:
       return Object.assign({}, state, {
-        playQueue: action.tracks,
+        playQueue: action.payload.tracks,
         currentTrack: 0,
         playing: true,
         playlist: action.playlist,
