@@ -9,7 +9,7 @@ class Tracks extends React.Component {
   }
 
   render() {
-    const { tracks } = this.props;
+    const tracks = Object.values(this.props.tracks.byId);
     if (this.props.fetching === true) {
       return <Loading />;
     }
@@ -22,8 +22,9 @@ class Tracks extends React.Component {
             (<TrackItem
               key={track.id}
               track={track}
-              tracks={tracks}
+              tracks={this.props.tracks.allIds}
               enqueuePlayback={this.props.enqueuePlayback}
+              play={this.props.play}
               idx={idx}
             />)
           )}

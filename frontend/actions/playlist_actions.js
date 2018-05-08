@@ -18,10 +18,10 @@ export const receivePlaylist = (id, payload) => ({
   payload,
 });
 
-export const playPlaylist = (tracks, id) => ({
+export const playPlaylist = (payload, id) => ({
   type: PLAY_PLAYLIST,
-  tracks: orderPlaylist(tracks),
-  playlist: id,
+  id,
+  payload,
 });
 
 export const receiveUserFollows = currentUser => ({

@@ -156,16 +156,16 @@ class Widget extends React.Component {
       return (<div className="track-info">
         <div className="track-image">
           <img
-            src={this.props.playback.playQueue[this.props.playback.currentTrack].imgUrl}
+            src={this.props.tracks[this.props.playback.playQueue[this.props.playback.currentTrack]].imgUrl}
             alt="Current track album art"
           />
         </div>
         <div className="track-words">
           <div className="track-title overflow">
-            <span>{this.props.playback.playQueue[this.props.playback.currentTrack].title}</span>
+            <span>{this.props.tracks[this.props.playback.playQueue[this.props.playback.currentTrack]].title}</span>
           </div>
           <div className="artist-name overflow">
-            <span>{this.props.playback.playQueue[this.props.playback.currentTrack].artist}</span>
+            <span>{this.props.tracks[this.props.playback.playQueue[this.props.playback.currentTrack]].artist}</span>
           </div>
         </div>
       </div>);
@@ -191,7 +191,7 @@ class Widget extends React.Component {
     if (this.props.playback.currentTrack !== null) {
       howler = (<ReactHowler
         autoPlay={false}
-        src={this.props.playback.playQueue[this.props.playback.currentTrack].url}
+        src={this.props.tracks[this.props.playback.playQueue[this.props.playback.currentTrack]].url}
         onLoad={this.handleOnLoad}
         onEnd={this.handleOnEnd}
         volume={this.props.volume}

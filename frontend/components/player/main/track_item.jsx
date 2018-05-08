@@ -26,7 +26,7 @@ class TrackItem extends React.Component {
               alt="Album art"
             />
           </div>
-          <AddTrackModal trackId={this.props.track.id}/>
+          <AddTrackModal trackId={this.props.track.id} />
         </div>
         <span className="track-item-words overflow">
           {this.props.track.artist} • {this.props.track.title}
