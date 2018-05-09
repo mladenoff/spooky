@@ -1,5 +1,5 @@
 import React from 'react';
-import Mailto from 'react-mailto';
+// import Mailto from 'react-mailto';
 
 const FooterNav = () => (
   <nav>
@@ -41,9 +41,9 @@ const FooterNav = () => (
       >
         <i className="fa fa-linkedin footer-icon" aria-hidden="true" />
       </a>
-      <Mailto email="isak@mladenoff.io" obfuscate>
+      {/* <Mailto email="isak@mladenoff.io" obfuscate>
         <i className="fa fa-envelope footer-icon" aria-hidden="true" />
-      </Mailto >
+      </Mailto > */}
     </span>
   </nav>
 );
