@@ -1,5 +1,5 @@
 import React from 'react';
-// import Mailto from 'react-mailto';
+import Obfuscate from 'react-obfuscate';
 
 const FooterNav = () => (
   <nav>
@@ -41,9 +41,9 @@ const FooterNav = () => (
       >
         <i className="fa fa-linkedin footer-icon" aria-hidden="true" />
       </a>
-      {/* <Mailto email="isak@mladenoff.io" obfuscate>
+      <Obfuscate email="isak@mladenoff.io">
         <i className="fa fa-envelope footer-icon" aria-hidden="true" />
-      </Mailto > */}
+      </Obfuscate >
     </span>
   </nav>
 );
