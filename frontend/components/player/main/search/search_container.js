@@ -9,7 +9,7 @@ import {
 } from '../../../../actions/search_actions';
 
 const mapStateToProps = state => ({
-  tracks: selectAllTracks(state.entities),
+  tracks: Object.values(state.entities.tracks.byId),
   fetching: state.fetching,
 });
 
