@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactHowler from 'react-howler';
 import raf from 'raf'; // requestAnimationFrame polyfill
-import ProgressBar from 'react-progressbar.js';
+import ProgressBar from 'react-progress-bar.js';
 import PropTypes from 'prop-types';
 
 class Widget extends React.Component {
