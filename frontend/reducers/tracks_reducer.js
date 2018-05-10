@@ -14,9 +14,7 @@ const tracksReducer = (state = defaultState(), action) => {
 
   switch (action.type) {
     case RECEIVE_SEARCH:
-      console.log("Receive search!");
     case RECEIVE_TRACKS:
-      console.log("Receive tracks!");
       return _.merge({}, state, action.tracks);
     case PLAY_PLAYLIST:
       return _.merge({}, state, {
