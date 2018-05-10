@@ -61,7 +61,7 @@ class Search extends React.Component {
   }
 
   render() {
-    //UPDATE TO REFLECT INPUT CLASS NAME
+    // UPDATE TO REFLECT INPUT CLASS NAME
     return (
       <div className="tracks">
         <h3 className="view-header">SEARCH</h3>
