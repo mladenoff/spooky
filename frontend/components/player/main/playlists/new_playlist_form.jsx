@@ -44,7 +44,7 @@ class NewPlaylistForm extends React.Component {
             onChange={this.update('playlistTitle')}
             value={this.state.playlistTitle}
             className="new-playlist-title"
-            placeholder="Start typing..."
+            placeholder="Start typing&hellip;"
           />
           <div className="login-button-container">
             <button className="landing-button" onClick={this.handleSubmit}>

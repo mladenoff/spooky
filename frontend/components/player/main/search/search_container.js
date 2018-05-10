@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import _ from 'lodash';
 
 import Search from './search';
 import { enqueuePlayback } from '../../../../actions/playback_actions';
@@ -9,7 +10,7 @@ import {
 } from '../../../../actions/search_actions';
 
 const mapStateToProps = state => ({
-  tracks: Object.values(state.entities.tracks.byId),
+  tracks: Object.values(_.pick(state.entities.tracks.byId, state.ui.uiTracks)),
   fetching: state.fetching,
 });
 
