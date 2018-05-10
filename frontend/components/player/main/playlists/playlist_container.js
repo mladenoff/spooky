@@ -4,7 +4,8 @@ import { withRouter } from 'react-router-dom';
 import Playlist from './playlist';
 // import { requestAllTracks } from '../../../actions/track_actions';
 // import { enqueuePlayback } from '../../../actions/playback_actions';
-// import { selectAllTracks } from '../../../reducers/selectors';
+
+// TODO: Determine what's going on with this commented out stuff
 
 const mapStateToProps = state => ({
   playlists: state.entities.playlists,
@@ -18,5 +19,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Playlist));

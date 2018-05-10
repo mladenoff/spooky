@@ -1,22 +1,20 @@
 import { connect } from 'react-redux';
 
 import Playlists from './playlists';
-import {
-  selectAllTracks,
-  selectAllPlaylists } from '../../../../reducers/selectors';
+import { selectAllPlaylists } from '../../../../reducers/selectors';
 import { requestAllPlaylists } from '../../../../actions/playlist_actions';
 
 const mapStateToProps = state => ({
   playlists: selectAllPlaylists(state.entities.playlists),
   fetching: state.fetching,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestAllPlaylists: () => dispatch(requestAllPlaylists())
+  requestAllPlaylists: () => dispatch(requestAllPlaylists()),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Playlists);

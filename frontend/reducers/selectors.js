@@ -1,6 +1,10 @@
 import _ from 'lodash';
 
-export const selectAllTracks = ({ tracks }) => _.values(tracks);
+// TODO: Potentially add a `selectTracksByIds` method to filter in various
+// places. Remember `_.pick` is what we want for filtering objects.
+
+// export const selectAllTracks = ({ tracks }) => _.values(tracks);
+// TODO: potentially remove if no longer in use
 
 export const selectAllPlaylists = playlists => (
   _.orderBy(_.values(playlists), ['updatedAt'], ['desc'])

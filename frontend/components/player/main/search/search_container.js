@@ -2,15 +2,14 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import Search from './search';
-import { enqueuePlayback } from '../../../../actions/playback_actions';
-import { selectAllTracks } from '../../../../reducers/selectors';
 import {
   requestSearchResults,
   clearSearch,
 } from '../../../../actions/search_actions';
+import { enqueuePlayback } from '../../../../actions/playback_actions';
 
 const mapStateToProps = state => ({
-  tracks: Object.values(_.pick(state.entities.tracks.byId, state.ui.uiTracks)),
+  tracks: Object.values(_.pick(state.entities.tracks.byId, state.ui.uiTracks)), // make me a selector?
   fetching: state.fetching,
 });
 

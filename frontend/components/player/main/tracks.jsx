@@ -26,7 +26,7 @@ class Tracks extends React.Component {
               enqueuePlayback={this.props.enqueuePlayback}
               play={this.props.play}
               idx={idx}
-            />)
+            />),
           )}
         </ul>
       </div>

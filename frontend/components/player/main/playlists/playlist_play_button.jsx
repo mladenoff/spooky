@@ -12,6 +12,6 @@ playlistIcon() {
       onClick={this.handlePlayClick}/>;
     }
   }
-}
+};
 
 //TODO: make this a component

@@ -10,7 +10,7 @@ class Search extends React.Component {
 
     this.state = {
       searchQuery: '',
-      tracks: this.props.tracks
+      tracks: this.props.tracks,
     };
 
     this.handleSearch = this.handleSearch.bind(this);
@@ -37,7 +37,7 @@ class Search extends React.Component {
 
   fireSearch() {
     const data = { search: { term: this.state.searchQuery } };
-    if (this.state.searchQuery === "") {
+    if (this.state.searchQuery === '') {
       this.props.clearSearch();
     } else {
       this.props.requestSearchResults(data);
@@ -56,7 +56,7 @@ class Search extends React.Component {
           tracks={this.state.tracks}
           enqueuePlayback={this.props.enqueuePlayback}
           idx={idx}
-        />)
+        />),
       )}
     </ul>);
   }
@@ -85,11 +85,16 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  tracks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tracks: PropTypes.arrayOf(PropTypes.object),
+  fetching: PropTypes.bool,
+  clearSearch: PropTypes.func.isRequired,
+  requestSearchResults: PropTypes.func.isRequired,
+  enqueuePlayback: PropTypes.func.isRequired,
 };
 
-// Search.defaultProps = {
-//   tracks: [],
-// };
+Search.defaultProps = {
+  tracks: [],
+  fetching: false,
+};
 
 export default Search;
