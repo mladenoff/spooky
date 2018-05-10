@@ -1,18 +1,18 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import LandingContainer from './landing_container';
+import LandingMainContainer from './LandingMainContainer';
 import SessionFormContainer from '../session_form/session_form_container';
 import LandingHeaderContainer from './landing_header_container';
-import Footer from '../footer/footer';
-import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import Footer from './Footer';
+import { AuthRoute } from '../../util/route_util';
 
-const LandingBG = () => (
+const Landing = () => (
   <div>
     <div className="landing-bg">
       <LandingHeaderContainer />
       <div className="landing-container">
-        <Route exact path="/" component={LandingContainer} />
+        <Route exact path="/" component={LandingMainContainer} />
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
       </div>
@@ -21,4 +21,4 @@ const LandingBG = () => (
   </div>
 );
 
-export default LandingBG;
+export default Landing;

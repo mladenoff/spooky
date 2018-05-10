@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Landing from './landing';
+import Landing from './LandingMain';
 import { logout, login } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
@@ -14,5 +14,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Landing);

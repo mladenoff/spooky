@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, withRouter } from 'react-router-dom';
+
 import SessionLinks from './session_links';
 
 const personalLanding = (currentUser, logout) => (

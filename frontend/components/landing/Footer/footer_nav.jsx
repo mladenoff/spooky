@@ -5,26 +5,22 @@ const FooterNav = () => (
   <nav>
     <div className="footer-text">
       Flashlight icon made by
-      <a href="http://www.freepik.com" title="Freepik">
-        Freepik
-      </a>
+      <a href="http://www.freepik.com" title="Freepik"> Freepik, </a>
       from
-      <a href="http://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      <a href="http://www.flaticon.com/" title="Flaticon"> www.flaticon.com </a>
       is licensed by
       <a
         href="http://creativecommons.org/licenses/by/3.0/"
         title="Creative Commons BY 3.0"
         target="_blank"
         rel="noopener noreferrer"
-      >CC 3.0 BY</a>
+      > CC 3.0 BY </a>
      |
       <a href="https://thenounproject.com/kozinn/collection/media-player/">
         Audio control icons
       </a>
-      by
-      <a href="https://thenounproject.com/kozinn">Nikita Kozin</a>
-      from the
-      <a href="https://thenounproject.com">Noun Project</a>
+      by <a href="https://thenounproject.com/kozinn">Nikita Kozin</a> from the
+      <a href="https://thenounproject.com"> Noun Project</a>
     </div>
     <span>
       <a

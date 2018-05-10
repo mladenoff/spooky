@@ -14,13 +14,15 @@ class Playlist < ApplicationRecord
   validates :title, uniqueness: { scope: :user }
 
   belongs_to :user
-  has_many :playlistings
+  has_many :playlistings,
+    dependent: :destroy
   has_many :tracks, through: :playlistings
   has_many :albums, through: :tracks
   has_many :follows
   has_many :followers, through: :follows
 
-  def tracks_in_order # is this supposed to have a sort longer term?
+  def tracks_in_order 
+    # is this supposed to have a sort longer term?
     self.tracks
   end
 end

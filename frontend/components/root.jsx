@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 
@@ -11,5 +12,10 @@ const Root = ({ store }) => (
     </HashRouter>
   </Provider>
 );
+
+
+Root.propTypes = {
+  store: PropTypes.shape({}).isRequired,
+};
 
 export default Root;
