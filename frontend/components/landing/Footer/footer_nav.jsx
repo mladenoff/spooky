@@ -15,7 +15,7 @@ const FooterNav = () => (
         target="_blank"
         rel="noopener noreferrer"
       > CC 3.0 BY </a>
-     |
+     |&nbsp;
       <a href="https://thenounproject.com/kozinn/collection/media-player/">
         Audio control icons
       </a>
