@@ -157,7 +157,7 @@ GEM
     public_suffix (2.0.5)
     puma (3.12.6)
     racc (1.5.2)
-    rack (2.2.3)
+    rack (2.2.6.2)
     rack-livereload (0.3.16)
       rack
     rack-test (0.6.3)
